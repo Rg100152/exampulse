@@ -1,0 +1,6 @@
+<svg width="240" height="50" viewBox="0 0 240 50" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ExamPulse">
+  <title>ExamPulse - 1000+ IT &amp; CS Mock Test Engine</title>
+  <rect x="4" y="6" width="38" height="38" rx="9" fill="#1E293B" stroke="#3B82F6" stroke-width="2.2"/>
+  <path d="M11 26H17L20 18L25 33L28 24H35" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="52" y="32" fill="#F8FAFC" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-weight="900" font-size="22" letter-spacing="0.5">Exam<tspan fill="#60A5FA">Pulse</tspan></text>
+</svg>

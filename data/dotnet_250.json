@@ -1,0 +1,3257 @@
+{
+  "subject": "dotnet",
+  "title": ".NET Framework & C#",
+  "total_questions": 250,
+  "questions": [
+    {
+      "question": "Which component of the .NET Framework is responsible for executing managed code and providing services such as garbage collection, JIT compilation, and type safety?",
+      "options": [
+        "Common Language Runtime (CLR)",
+        "Common Language Specification (CLS)",
+        "Common Type System (CTS)",
+        "Microsoft Intermediate Language (MSIL)"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "CLR & CTS",
+      "explanation": "The CLR is the execution engine that runs managed code and supplies garbage collection, JIT compilation, and type safety. CLS and CTS are specification layers, and MSIL is the intermediate language the CLR compiles, not the engine itself."
+    },
+    {
+      "question": "What does the Common Type System (CTS) primarily define in .NET?",
+      "options": [
+        "The rules for garbage collection",
+        "How types are declared, used, and managed across .NET languages",
+        "The HTTP pipeline used by ASP.NET",
+        "The process of converting source code to native code"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "CLR & CTS",
+      "explanation": "The CTS defines how types are declared, used, and managed so that types from different .NET languages interoperate. Garbage collection is a CLR service, HTTP pipelines are ASP.NET concerns, and source-to-native conversion is the JIT compiler's job."
+    },
+    {
+      "question": "What is the purpose of the Common Language Specification (CLS)?",
+      "options": [
+        "To compile C# into machine code",
+        "To manage memory allocation on the large object heap",
+        "To define a set of language features that ensure cross-language interoperability",
+        "To store assemblies in the Global Assembly Cache"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "CLR & CTS",
+      "explanation": "CLS defines a subset of CTS features that language compilers should support to guarantee cross-language interoperability. It does not compile code, manage the LOH, or store assemblies in the GAC."
+    },
+    {
+      "question": "What is Microsoft Intermediate Language (MSIL/IL) in .NET?",
+      "options": [
+        "A markup language for UI layout",
+        "The compiled native machine code executed directly by the CPU",
+        "A database query language",
+        "A platform-independent intermediate representation produced by .NET compilers"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "CLR & CTS",
+      "explanation": "MSIL (IL) is a platform-independent intermediate representation emitted by .NET compilers and later JIT-compiled to native code. It is not UI markup, not native code itself, and not a database query language."
+    },
+    {
+      "question": "What does the JIT (Just-In-Time) compiler do in the CLR?",
+      "options": [
+        "Compiles IL methods into native machine code at runtime",
+        "Translates C# source into IL at build time",
+        "Collects unused objects from the heap",
+        "Loads assemblies into the Global Assembly Cache"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "CLR & CTS",
+      "explanation": "The JIT compiler converts IL into native machine code at runtime, just before a method executes. The C# compiler produces IL at build time, the GC reclaims memory, and the GAC is an assembly store, so those are not JIT duties."
+    },
+    {
+      "question": "Which of the following is a primary benefit of Just-In-Time compilation over purely ahead-of-time native compilation?",
+      "options": [
+        "It eliminates the need for any intermediate language",
+        "It can optimize for the actual runtime environment and CPU at execution time",
+        "It removes the need for a garbage collector",
+        "It produces smaller source files"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "CLR & CTS",
+      "explanation": "JIT compilation can tailor native code to the actual runtime environment and CPU features. It still relies on IL, does not remove the GC, and has no effect on source file size."
+    },
+    {
+      "question": "What is an assembly in .NET?",
+      "options": [
+        "A single source file written in C#",
+        "A type of database transaction",
+        "A compiled, versioned unit of deployment containing IL, metadata, and a manifest",
+        "A design pattern for web applications"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "CLR & CTS",
+      "explanation": "An assembly is the compiled, versioned unit of deployment in .NET containing IL, metadata, and a manifest. It is not a single source file, a database transaction, or a design pattern."
+    },
+    {
+      "question": "Which part of an assembly's metadata contains information such as the assembly name, version, culture, and referenced assemblies?",
+      "options": [
+        "The pdb file",
+        "The IL source",
+        "The config file",
+        "The manifest"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "CLR & CTS",
+      "explanation": "The assembly manifest stores metadata such as name, version, culture, and referenced assemblies. PDB files hold debug symbols, config files configure the app, and IL is code rather than this metadata."
+    },
+    {
+      "question": "What is the Global Assembly Cache (GAC) used for in the .NET Framework?",
+      "options": [
+        "Storing assemblies that are shared by multiple applications on a machine",
+        "Compiling C# source code into IL",
+        "Storing user session data",
+        "Caching web pages on a web server"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "CLR & CTS",
+      "explanation": "The GAC stores strong-named assemblies shared by multiple applications on a machine. It is not a compiler, not session storage, and not a web page cache."
+    },
+    {
+      "question": "What is required for an assembly to be installed into the Global Assembly Cache?",
+      "options": [
+        "It must be written in C#",
+        "It must have a strong name (public key token)",
+        "It must be a console application",
+        "It must reference ASP.NET Core"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "CLR & CTS",
+      "explanation": "Assemblies placed in the GAC must be strong-named so they have a unique identity via a public key token. Language, application type, and ASP.NET Core references are irrelevant to GAC installation."
+    },
+    {
+      "question": "What is an AppDomain in the .NET Framework?",
+      "options": [
+        "A class representing a network domain",
+        "A wrapper around a database connection",
+        "An isolated execution environment within a process for running managed code",
+        "A tool for compiling projects"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "CLR & CTS",
+      "explanation": "An AppDomain is an isolated environment within a process that hosts managed code, providing separation for unloading and security. It is not a network concept, a DB wrapper, or a build tool. Modern .NET removed AppDomains."
+    },
+    {
+      "question": "Which statement about AppDomains is correct for modern .NET (.NET Core / .NET 5+)?",
+      "options": [
+        "They are the recommended way to unload code in .NET 8",
+        "They provide stronger isolation than processes in .NET 8",
+        "They were renamed to AssemblyLoadContexts but behave identically",
+        "They are not supported; AssemblyLoadContext and processes are used instead"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "CLR & CTS",
+      "explanation": "Modern .NET does not support creating AppDomains; code isolation and unloading use AssemblyLoadContext or separate processes. Claiming they are recommended or identical to AssemblyLoadContext is incorrect."
+    },
+    {
+      "question": "What distinguishes managed code from unmanaged code in .NET?",
+      "options": [
+        "Managed code executes under CLR control and is verified and garbage-collected; unmanaged code is not",
+        "Managed code is written only in C#; unmanaged code is written only in C++",
+        "Managed code runs faster than unmanaged code always",
+        "Managed code cannot call unmanaged code"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "CLR & CTS",
+      "explanation": "Managed code runs under CLR supervision with verification and garbage collection; unmanaged code runs outside the CLR. Both can be written in various languages, speed varies, and managed code can call unmanaged code via P/Invoke or COM interop."
+    },
+    {
+      "question": "Which feature allows managed C# code to call functions in native DLLs?",
+      "options": [
+        "Reflection",
+        "P/Invoke (Platform Invocation Services)",
+        "Language Integrated Query",
+        "Serialization"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "CLR & CTS",
+      "explanation": "P/Invoke enables managed code to call unmanaged functions exported from native DLLs. Reflection inspects types, LINQ queries data, and serialization converts objects to storable formats, so none of those call native DLLs."
+    },
+    {
+      "question": "Which of the following is an example of a value type in C#?",
+      "options": [
+        "string",
+        "object",
+        "int",
+        "class instance"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "CLR & CTS",
+      "explanation": "int (System.Int32) is a value type deriving from System.ValueType. string and object are reference types, and class instances are always reference types."
+    },
+    {
+      "question": "The .NET type hierarchy in which all types derive from a single root type is known as:",
+      "options": [
+        "The CLS rule set",
+        "The assembly manifest",
+        "The JIT chain",
+        "The unified type system rooted at System.Object"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "CLR & CTS",
+      "explanation": "In CTS, all types ultimately derive from System.Object in a unified type system. CLS is a language interoperability spec, the manifest is assembly metadata, and JIT is a compiler process."
+    },
+    {
+      "question": "What is the difference between a process and an AppDomain in the .NET Framework?",
+      "options": [
+        "A process is an OS-level unit of isolation that can contain multiple AppDomains; an AppDomain is a CLR-level isolation boundary",
+        "An AppDomain is an OS process and a process is a thread",
+        "They are exactly the same concept",
+        "A process can contain only one thread but many AppDomains"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "CLR & CTS",
+      "explanation": "A process is an OS-level isolation unit that can host multiple AppDomains, which are lighter CLR-level boundaries. They are not synonyms; an AppDomain is not an OS process, and a process can contain many threads."
+    },
+    {
+      "question": "What is the main reason strong naming an assembly uses a public/private key pair?",
+      "options": [
+        "It guarantees the assembly is free of bugs",
+        "It gives a unique identity and tamper-evidence through a public/private key pair",
+        "It forces the assembly to target the latest .NET version",
+        "It makes JIT compilation faster"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "CLR & CTS",
+      "explanation": "Strong naming uses a public/private key pair to give an assembly a unique identity and detect tampering. It does not guarantee bug-free code, a target framework version, or faster compilation."
+    },
+    {
+      "question": "Which tool is used to view and disassemble the IL contained in a .NET assembly?",
+      "options": [
+        "MSBuild",
+        "NuGet",
+        "ILDasm (or ILSpy)",
+        "dotnet test"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "CLR & CTS",
+      "explanation": "ILDasm (and tools like ILSpy) disassemble and display IL and metadata in an assembly. MSBuild builds projects, NuGet manages packages, and dotnet test runs tests."
+    },
+    {
+      "question": "What is the typical content of a satellite assembly in .NET?",
+      "options": [
+        "Compiled IL code for the main program",
+        "Localized resources such as strings for a specific culture",
+        "CLR garbage collector configuration",
+        "The strong-name public key of the main assembly"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "CLR & CTS",
+      "explanation": "Satellite assemblies contain localized (culture-specific) resources so applications can ship multiple languages. They do not hold the main program's IL, GC settings, or the strong-name key."
+    },
+    {
+      "question": "When the CLR loads an assembly, which metadata is checked to satisfy type references across assembly boundaries?",
+      "options": [
+        "The assembly references listed in the manifest and type metadata",
+        "The PDB debug symbols",
+        "The embedded resource stream only",
+        "The application configuration file"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "CLR & CTS",
+      "explanation": "The CLR uses the manifest's assembly references and type metadata to resolve cross-assembly type references. PDB symbols are for debugging, resources are data, and config files do not define type identity."
+    },
+    {
+      "question": "Which of these languages can target the .NET runtime and interoperate through the CTS?",
+      "options": [
+        "Only C#",
+        "Only C# and VB.NET",
+        "C#, VB.NET, F#, and other CLS-compliant languages",
+        "Only languages that compile to native code"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "CLR & CTS",
+      "explanation": "Many languages including C#, VB.NET, and F# target .NET and interoperate through the CTS when they follow CLS rules. It is not limited to one or two languages, nor to native-compiling languages."
+    },
+    {
+      "question": "What is the role of metadata in a .NET assembly?",
+      "options": [
+        "It stores user configuration values",
+        "It is the compiled machine code",
+        "It only lists referenced NuGet packages",
+        "It describes the types, members, references, and other information about the assembly"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "CLR & CTS",
+      "explanation": "Metadata describes the assembly's types, members, and references, enabling reflection and runtime type resolution. It is not user config, not machine code, and not limited to package listing."
+    },
+    {
+      "question": "A public API is marked with [CLSCompliant(true)]. What does this signal to consumers written in other .NET languages?",
+      "options": [
+        "The API is guaranteed to be callable from all CLS-compliant .NET languages",
+        "The API uses only value types",
+        "The API can only be called from C#",
+        "The API has no public members"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "CLR & CTS",
+      "explanation": "CLSCompliant(true) indicates the API follows CLS rules and should be usable from any CLS-compliant language. It does not restrict to value types, is not C#-only, and certainly can have public members."
+    },
+    {
+      "question": "What is the verification historically performed by the CLR for managed code in partial-trust scenarios?",
+      "options": [
+        "Checking that the code compiles at build time",
+        "Ensuring IL is type-safe so code cannot access memory it is not entitled to",
+        "Optimizing the IL for speed",
+        "Signing the assembly with a strong name"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "CLR & CTS",
+      "explanation": "Verification checks IL type safety to prevent unsafe memory access, a concept prominent in partial trust. It is not build-time compilation, not optimization, and not strong-name signing."
+    },
+    {
+      "question": "Which of the following best describes the relationship between IL, the CLR, and native code?",
+      "options": [
+        "The CLR converts native code back into IL at runtime",
+        "IL runs directly on the CPU without translation",
+        "The CLR JIT-compiles IL into native code that the CPU executes",
+        "The CLR stores IL as source code in text files"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "CLR & CTS",
+      "explanation": "The CLR JIT-compiles IL to native machine code for the CPU to execute. IL does not run directly on the CPU, the CLR does not reverse native code to IL, and IL is binary, not source text."
+    },
+    {
+      "question": "What is the purpose of the .NET runtime identifier (RID) when publishing an application?",
+      "options": [
+        "It names the NuGet package source",
+        "It sets the application's version number",
+        "It defines the assembly's strong name",
+        "It specifies the target platform (OS and architecture) for a self-contained deployment"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "CLR & CTS",
+      "explanation": "A RID such as win-x64 or linux-x64 identifies the target OS and architecture for publishing, especially self-contained deployments. It is not a package source, version number, or strong name."
+    },
+    {
+      "question": "In the .NET Framework, what is the effect of loading two assemblies with the same identity into different AppDomains?",
+      "options": [
+        "They are isolated and can coexist because each AppDomain has its own loader",
+        "The second load always fails with an exception",
+        "They share the same static fields",
+        "The CLR merges them into a single assembly"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "CLR & CTS",
+      "explanation": "Each AppDomain has its own loader, so identical assemblies can be loaded separately and remain isolated, including separate statics. The load does not inherently fail, share statics, or merge."
+    },
+    {
+      "question": "Which of the following is stored in an assembly's manifest?",
+      "options": [
+        "Local variable values",
+        "Assembly version number",
+        "Method local instructions only",
+        "Thread stack contents"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "CLR & CTS",
+      "explanation": "The manifest contains assembly metadata including the version number, name, culture, and references. It does not hold local variables, individual method instructions, or thread stacks."
+    },
+    {
+      "question": "What is the difference between CTS and CLS in .NET?",
+      "options": [
+        "CTS is a subset of CLS used only in web apps",
+        "CLS defines garbage collection while CTS defines assemblies",
+        "CTS defines the type system of the runtime; CLS defines a subset of features languages should support for interoperability",
+        "They are synonyms defined by ECMA-335"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "CLR & CTS",
+      "explanation": "CTS is the runtime's type system defining how types behave; CLS is a set of rules (a subset of CTS) that languages follow for cross-language interoperability. They are distinct, not synonyms or GC specs."
+    },
+    {
+      "question": "What is the main reason .NET uses an intermediate language rather than compiling directly to machine code?",
+      "options": [
+        "To make applications run faster than native code always",
+        "To eliminate versioning entirely",
+        "To avoid the need for any compiler",
+        "To enable portability and language interoperability through a common runtime"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "CLR & CTS",
+      "explanation": "IL provides hardware-independent portability and lets multiple languages share one runtime and type system. It does not inherently make code faster, eliminate versioning, or remove the need for compilers."
+    },
+    {
+      "question": "Which .NET CLI command compiles a project and produces an assembly?",
+      "options": [
+        "dotnet build",
+        "dotnet restore (only)",
+        "dotnet run (only for display)",
+        "dotnet new"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "CLR & CTS",
+      "explanation": "dotnet build compiles the project and produces assemblies. dotnet restore only downloads dependencies, dotnet new scaffolds projects, and dotnet run builds then executes, so build is the direct compile command."
+    },
+    {
+      "question": "Which of the following is a reference type in C#?",
+      "options": [
+        "int",
+        "bool",
+        "string",
+        "decimal"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "C# Fundamentals",
+      "explanation": "string is a reference type in C# (though it behaves immutably and is sealed). int, bool, and decimal are value types deriving from System.ValueType."
+    },
+    {
+      "question": "What is boxing in C#?",
+      "options": [
+        "Converting a value type to a reference type (object)",
+        "Converting a reference type to a value type",
+        "Wrapping a class in a generic constraint",
+        "Converting a struct to an enum"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "C# Fundamentals",
+      "explanation": "Boxing converts a value type into an object reference by allocating a heap box. Unboxing is the reverse, and the other options describe constraints or unrelated conversions."
+    },
+    {
+      "question": "What happens when you unbox a null reference to a value type like int?",
+      "options": [
+        "It yields 0",
+        "It yields null",
+        "It compiles but returns default(int) silently",
+        "It throws an exception at runtime"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "C# Fundamentals",
+      "explanation": "Unboxing null to a value type throws (NullReferenceException for a direct unbox, InvalidCastException for a wrong type). It does not produce 0 or null, since value types cannot be null."
+    },
+    {
+      "question": "Which type is used to represent an integer that can also be null in C#?",
+      "options": [
+        "int?",
+        "System.Maybe<int>",
+        "object",
+        "Nullable<int> only in C# 8 and later"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "C# Fundamentals",
+      "explanation": "int? is shorthand for Nullable<int> and can represent null. There is no System.Maybe, object is not type-safe for this, and Nullable<int> has existed since C# 2."
+    },
+    {
+      "question": "What does the null-conditional operator ?. do in C#?",
+      "options": [
+        "Throws an exception if operand is null",
+        "Always returns null",
+        "Accesses a member only if the operand is non-null, otherwise returns null",
+        "Converts a value type to nullable"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "C# Fundamentals",
+      "explanation": "?. short-circuits member access when the operand is null, yielding null instead of throwing. It does not always return null, does not throw, and does not perform type conversion."
+    },
+    {
+      "question": "What is the null-coalescing operator ?? used for?",
+      "options": [
+        "Comparing two values",
+        "Casting between types",
+        "Declaring nullable types",
+        "Providing a default value when the left operand is null"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "C# Fundamentals",
+      "explanation": "?? returns the left operand if non-null, otherwise the right operand, giving a default. It is not comparison, casting, or declaration syntax."
+    },
+    {
+      "question": "What is a record type (record class) in C# primarily designed for?",
+      "options": [
+        "Immutable/reference-based data modelling with value equality",
+        "Creating database tables",
+        "Defining COM interfaces",
+        "Replacing all class usage"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "C# Fundamentals",
+      "explanation": "Records are reference types with value-based equality and built-in immutability support via init accessors and with-expressions. They are not DB tables, COM interfaces, or a universal class replacement."
+    },
+    {
+      "question": "What does the 'with' expression on a record produce?",
+      "options": [
+        "Modifies the original record in place",
+        "A clone of the record with specified properties changed",
+        "A new enum value",
+        "A nullable copy that may be null"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "C# Fundamentals",
+      "explanation": "A with-expression creates a new record instance with the specified init properties changed; it does not mutate the original, and it has nothing to do with enums or nullability."
+    },
+    {
+      "question": "What keyword declares a value type in C#?",
+      "options": [
+        "class",
+        "interface",
+        "struct",
+        "enum only"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "C# Fundamentals",
+      "explanation": "struct declares a value type deriving from System.ValueType. class and interface declare reference types; enum is a distinct value type but not the general value-type declaration keyword."
+    },
+    {
+      "question": "What is the default value of an enum with no explicit assignments in C#?",
+      "options": [
+        "The first member has value 1",
+        "All members are null",
+        "It has no default",
+        "The first member has value 0 and subsequent members increment by 1"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "C# Fundamentals",
+      "explanation": "By default the first enum member is 0 and each subsequent member increases by 1. Enum members are not null, there is a default, and it is not 1-based."
+    },
+    {
+      "question": "Which delegate type represents a method that takes no arguments and returns void?",
+      "options": [
+        "Action",
+        "Func",
+        "Predicate",
+        "EventHandler<T>"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "C# Fundamentals",
+      "explanation": "System.Action represents a void-returning method with no parameters (and generic variants take up to 16 args). Func returns a value, Predicate returns bool, and EventHandler<T> targets events."
+    },
+    {
+      "question": "Which delegate type returns a bool and is commonly used for membership tests?",
+      "options": [
+        "Action<T>",
+        "Predicate<T>",
+        "Func<T> with no bool",
+        "Converter<T>"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "C# Fundamentals",
+      "explanation": "Predicate<T> takes a T and returns bool, used by methods like List.Find. Action<T> returns void, Func<T> here returns T not bool, and Converter<T> converts between types."
+    },
+    {
+      "question": "What is a lambda expression in C#?",
+      "options": [
+        "A type of loop",
+        "A way to declare a class",
+        "An anonymous function written as => that can be converted to a delegate or expression tree",
+        "A special kind of property"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "C# Fundamentals",
+      "explanation": "A lambda uses => to write an anonymous function convertible to delegates or expression trees. It is not a loop, class declaration, or property."
+    },
+    {
+      "question": "What is the key difference between a lambda converted to Expression<Func<...>> versus Func<...>?",
+      "options": [
+        "Expression<Func> compiles to native code immediately",
+        "Func<...> can be translated by LINQ providers; Expression cannot",
+        "They are identical in every way",
+        "Expression<Func<...>> builds an expression tree that providers can translate; Func<...> is compiled delegate code"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "C# Fundamentals",
+      "explanation": "Expression<TDelegate> produces an expression tree that LINQ providers inspect and translate (e.g., to SQL), while Func is compiled IL executed locally. They are not identical and Func cannot be SQL-translated."
+    },
+    {
+      "question": "What is an event in C# built upon?",
+      "options": [
+        "A delegate, providing encapsulated publish/subscribe",
+        "A generic list of strings",
+        "A static class",
+        "An interface with one method"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "C# Fundamentals",
+      "explanation": "Events are built on delegates and expose a restricted add/remove accessor interface for publish/subscribe. They are not lists of strings, static classes, or single-method interfaces."
+    },
+    {
+      "question": "Why is an event's invocation typically restricted to the declaring class?",
+      "options": [
+        "Because events are static by default",
+        "To prevent external code from raising the event or overwriting its subscriber list",
+        "Because C# does not allow delegates outside a class",
+        "Because of garbage collection rules"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "C# Fundamentals",
+      "explanation": "Events expose only add/remove to outside callers so external code cannot invoke the event or replace the whole delegate list. Events are not necessarily static, delegates can exist anywhere, and GC is unrelated."
+    },
+    {
+      "question": "Which collection type provides O(1) average-time lookup by key?",
+      "options": [
+        "List<T>",
+        "LinkedList<T>",
+        "Dictionary<TKey,TValue>",
+        "Queue<T>"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "C# Fundamentals",
+      "explanation": "Dictionary<TKey,TValue> is a hash table giving average O(1) key lookup. List<T> lookup by index is O(1) but by value is O(n), LinkedList and Queue do not support key lookup."
+    },
+    {
+      "question": "Which collection enforces that elements are unique and unordered?",
+      "options": [
+        "List<T>",
+        "Dictionary<TKey,TValue>",
+        "Stack<T>",
+        "HashSet<T>"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "C# Fundamentals",
+      "explanation": "HashSet<T> stores unique elements with no guaranteed order. List<T> allows duplicates and preserves order, dictionaries map keys to values, and Stack<T> is LIFO."
+    },
+    {
+      "question": "What is the difference between '==' and Equals for string in C#?",
+      "options": [
+        "They behave the same for string: both compare content value, not reference",
+        "== compares content, Equals compares references",
+        "Equals compares content, == compares references",
+        "One of them cannot be used on string"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "C# Fundamentals",
+      "explanation": "For string, both == and Equals compare the character content (value equality) because string overloads ==. For general reference types, == is reference equality while Equals may be overridden."
+    },
+    {
+      "question": "What is the effect of the readonly struct modifier in C#?",
+      "options": [
+        "It makes the struct allocate on the heap",
+        "It declares that all instance fields are readonly, helping avoid defensive copies",
+        "It prevents the struct from being boxed",
+        "It makes the struct a reference type"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "C# Fundamentals",
+      "explanation": "readonly struct marks every instance field readonly and lets the compiler avoid defensive copies when calling members. It does not force heap allocation, prevent boxing, or change it into a reference type."
+    },
+    {
+      "question": "What is the purpose of pattern matching with the 'is' operator, e.g., 'if (o is int i)'?",
+      "options": [
+        "It always returns true",
+        "It only checks the type without providing a value",
+        "It tests the runtime type and, on success, declares a typed variable bound to the value",
+        "It converts all objects to int"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "C# Fundamentals",
+      "explanation": "The is-pattern checks the runtime type and, if matched, introduces a strongly-typed variable i containing the value. It does not always return true, is not type-check-only, and does not convert arbitrary objects."
+    },
+    {
+      "question": "In C# 8+ nullable reference types, what does the '!' (null-forgiving) operator do?",
+      "options": [
+        "Throws if the value is null at runtime",
+        "Converts a reference type to a value type",
+        "Declares the variable as nullable",
+        "Suppresses the compiler's nullable warning without changing runtime behavior"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "C# Fundamentals",
+      "explanation": "The null-forgiving operator tells the compiler to suppress nullable warnings for an expression; it emits no runtime check. It does not throw, convert types, or change nullability declarations."
+    },
+    {
+      "question": "Which compiler option enables nullable reference type warnings in a C# project?",
+      "options": [
+        "<Nullable>enable</Nullable>",
+        "<WarningsAsErrors>true</WarningsAsErrors>",
+        "<LangVersion>8</LangVersion> alone",
+        "<TreatWarningsAsErrors>all</TreatWarningsAsErrors>"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "C# Fundamentals",
+      "explanation": "The <Nullable>enable</Nullable> MSBuild property enables nullable annotations and warnings. LangVersion alone only selects the language version, and the warnings-as-errors settings do not enable the analysis."
+    },
+    {
+      "question": "What does the switch expression (C# 8) return compared to a classic switch statement?",
+      "options": [
+        "It returns void",
+        "A value computed from the matched arm",
+        "Only a boolean",
+        "A delegate always"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "C# Fundamentals",
+      "explanation": "A switch expression evaluates to a value from the selected arm, enabling expression-bodied code. A classic switch statement executes statements and does not itself produce a value."
+    },
+    {
+      "question": "What is a 'record struct' (C# 10)?",
+      "options": [
+        "A reference type with value equality only",
+        "A struct that cannot have methods",
+        "A value-type record providing value equality and record features without heap allocation",
+        "A class that implements IRecord"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "C# Fundamentals",
+      "explanation": "record struct is a value-type record: it has record-style value equality and syntax but is a struct (no heap allocation for the value itself). It is not a reference type, can have methods, and IRecord does not exist."
+    },
+    {
+      "question": "Which statement about struct constructors is correct in modern C#?",
+      "options": [
+        "Structs cannot have any constructor",
+        "A parameterless struct constructor must be declared explicitly and is never implicit",
+        "Structs can only have static constructors",
+        "Since C# 10 structs may declare an explicit parameterless constructor"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "C# Fundamentals",
+      "explanation": "C# 10 introduced explicit parameterless constructors for structs. Structs can have constructors, an implicit zero-initialization exists without one, and many structs have instance constructors with parameters."
+    },
+    {
+      "question": "What does the 'params' keyword allow in C#?",
+      "options": [
+        "A method to accept a variable number of arguments as an array",
+        "A parameter to be passed by reference always",
+        "A method to return multiple values",
+        "A field to be optional"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "C# Fundamentals",
+      "explanation": "params lets a method take a variable number of arguments, collected into an array. It is not related to ref passing, multiple return values, or optional fields."
+    },
+    {
+      "question": "Which keyword passes an argument by reference so the method can reassign the caller's variable?",
+      "options": [
+        "in",
+        "ref",
+        "out only for input",
+        "params"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "C# Fundamentals",
+      "explanation": "ref passes a variable by reference and requires it be initialized; the callee can reassign it. in is read-only by reference, out is for outputs (callee must assign), and params collects an array."
+    },
+    {
+      "question": "What is the difference between 'out' and 'ref' parameters?",
+      "options": [
+        "They are identical",
+        "out requires the variable be initialized before the call; ref does not",
+        "out does not require initialization before the call and the callee must assign it; ref requires initialization",
+        "ref can only be used with value types"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "C# Fundamentals",
+      "explanation": "out parameters need not be initialized before the call but must be assigned inside the method; ref requires prior initialization. They are not identical, and ref works with reference types too."
+    },
+    {
+      "question": "What is the 'in' parameter modifier used for?",
+      "options": [
+        "To pass a copy that can be discarded",
+        "To mark a parameter as optional",
+        "To pass by value but allow reassignment",
+        "To pass an argument by readonly reference, avoiding copies of large value types"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "C# Fundamentals",
+      "explanation": "in passes an argument by reference but prevents the callee from reassigning it, useful to avoid copying large structs. It does not pass a disposable copy, mark optional, or allow reassignment."
+    },
+    {
+      "question": "What does the 'var' keyword do in C#?",
+      "options": [
+        "Infers the variable's type from its initializer at compile time",
+        "Declares a dynamically typed variable resolved at runtime",
+        "Declares a constant",
+        "Makes the variable nullable"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "C# Fundamentals",
+      "explanation": "var asks the compiler to infer a static type from the initializer; it is still strongly typed at compile time. dynamic (not var) is resolved at runtime, and var is neither const nor nullable."
+    },
+    {
+      "question": "What is a potential pitfall of using 'var' with an anonymous type?",
+      "options": [
+        "Anonymous types cannot be stored in variables",
+        "The variable's exact anonymous type cannot be named explicitly, so it cannot be returned as that type from a method",
+        "var makes it a reference to a dynamic object",
+        "It causes boxing of the anonymous object"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "C# Fundamentals",
+      "explanation": "Anonymous types have compiler-generated names you cannot write explicitly, so a var-bound anonymous object cannot be returned as its exact named type. It can still be local, is not dynamic, and is not boxed."
+    },
+    {
+      "question": "Which keyword is used to declare a class that cannot be inherited?",
+      "options": [
+        "abstract",
+        "virtual",
+        "sealed",
+        "static"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "OOP in C#",
+      "explanation": "sealed prevents a class from being used as a base class. abstract is meant to be inherited, virtual applies to members, and static classes are implicitly sealed but primarily cannot be instantiated."
+    },
+    {
+      "question": "What is an abstract class in C#?",
+      "options": [
+        "A class with only static members",
+        "A class that cannot have any methods",
+        "A class that can be instantiated directly",
+        "A class that cannot be instantiated and may contain abstract members that derived classes must implement"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "OOP in C#",
+      "explanation": "An abstract class cannot be instantiated and can declare abstract methods that non-abstract derived classes must override. It can have concrete methods too, and it is not about static-only or method-less classes."
+    },
+    {
+      "question": "What is the key difference between an interface and an abstract class in modern C#?",
+      "options": [
+        "A class can implement multiple interfaces but inherit only one base class; interfaces can now have default implementations but no instance fields",
+        "Interfaces can have constructors; abstract classes cannot",
+        "Abstract classes support multiple inheritance; interfaces do not",
+        "There is no difference"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "OOP in C#",
+      "explanation": "C# allows multiple interface implementation but single class inheritance, and C# 8 added default interface methods though interfaces still cannot hold instance state. Abstract classes can have constructors and fields."
+    },
+    {
+      "question": "What does the 'virtual' keyword on a method mean?",
+      "options": [
+        "The method has no implementation",
+        "The method can be overridden in a derived class",
+        "The method is thread-safe",
+        "The method is static"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "OOP in C#",
+      "explanation": "virtual marks a member whose implementation can be replaced by an override in a derived class. It must have a body (unlike abstract), and it is unrelated to threading or static."
+    },
+    {
+      "question": "What is the purpose of the 'override' keyword?",
+      "options": [
+        "To hide a base member with a new member",
+        "To declare an abstract method",
+        "To provide a new implementation of an inherited virtual/abstract member",
+        "To prevent inheritance"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "OOP in C#",
+      "explanation": "override supplies a new implementation of a virtual or abstract base member, enabling polymorphism. Hiding uses new, declaring abstract uses abstract, and preventing inheritance uses sealed."
+    },
+    {
+      "question": "What is the effect of using 'new' when redeclaring a member in a derived class?",
+      "options": [
+        "It creates a new object instance",
+        "It overrides the base member virtually",
+        "It makes the member static",
+        "It hides the inherited member with a new, non-virtual member (name hiding)"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "OOP in C#",
+      "explanation": "new explicitly hides an inherited member rather than overriding it, so calls through a base reference still reach the base version. It does not allocate objects, override virtually, or make members static."
+    },
+    {
+      "question": "Given Base b = new Derived(); where Derived hides (new) a method M() also present in Base, which M() is called by b.M()?",
+      "options": [
+        "Base.M()",
+        "Derived.M()",
+        "A compile error occurs",
+        "Both are called"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "OOP in C#",
+      "explanation": "Because M is hidden with new rather than overridden, the call is bound at compile time by the static type Base, so Base.M() runs. Polymorphic dispatch applies only to overridden virtual members."
+    },
+    {
+      "question": "What is a static class in C#?",
+      "options": [
+        "A class that can be instantiated once",
+        "A class that cannot be instantiated and can only contain static members",
+        "A class with only private constructors",
+        "A class that supports instance methods"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "OOP in C#",
+      "explanation": "A static class cannot be instantiated and may contain only static members; it is implicitly sealed and abstract. It is not instantiable once, not defined merely by a private constructor, and cannot have instance methods."
+    },
+    {
+      "question": "Which access modifier restricts a member to its containing class only?",
+      "options": [
+        "protected",
+        "internal",
+        "private",
+        "public"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "OOP in C#",
+      "explanation": "private restricts access to the containing type. protected allows derived access, internal allows same-assembly access, and public allows unrestricted access."
+    },
+    {
+      "question": "What does 'protected internal' access mean in C#?",
+      "options": [
+        "Accessible only within the same class",
+        "Accessible only from derived classes",
+        "Accessible only within the same assembly",
+        "Accessible from derived classes anywhere OR from any type in the same assembly"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "OOP in C#",
+      "explanation": "protected internal is a union: accessible from derived classes (any assembly) or from any type in the same assembly. It is not limited to one of those and not class-only."
+    },
+    {
+      "question": "What does 'private protected' (C# 7.2) mean?",
+      "options": [
+        "Accessible only from derived classes within the same assembly",
+        "Accessible from anywhere in the assembly",
+        "Accessible from derived classes in any assembly",
+        "Same as protected internal"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "OOP in C#",
+      "explanation": "private protected is an intersection: derived classes in the same assembly only. protected internal is the union; plain protected allows derived classes across assemblies, and internal allows all same-assembly types."
+    },
+    {
+      "question": "What is a partial class used for?",
+      "options": [
+        "Inheritance from multiple base classes",
+        "Splitting a class definition across multiple files, combined at compile time",
+        "Creating a class at runtime via reflection",
+        "Making a class thread-safe"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "OOP in C#",
+      "explanation": "partial lets a class/struct/interface be split across files that the compiler merges into one type. It is not multiple inheritance, runtime generation, or a threading feature."
+    },
+    {
+      "question": "What is an extension method in C#?",
+      "options": [
+        "A method that overrides a base method",
+        "A method added to a class by inheritance",
+        "A static method in a static class that appears to be an instance method of another type via a 'this' parameter",
+        "A method declared only in interfaces"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "OOP in C#",
+      "explanation": "Extension methods are static methods in a non-generic static class whose first parameter uses 'this', letting them be called with instance syntax. They do not actually modify the target type or use inheritance."
+    },
+    {
+      "question": "If an instance method and an extension method have the same name and signature, which wins?",
+      "options": [
+        "The extension method always",
+        "Neither compiles",
+        "A random one is chosen",
+        "The instance method takes precedence"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "OOP in C#",
+      "explanation": "Instance methods always take precedence over extension methods; an extension is only considered when no matching instance method exists. There is no ambiguity error or randomness."
+    },
+    {
+      "question": "What is a property in C#?",
+      "options": [
+        "A member providing controlled access to a private field via get/set accessors",
+        "A public field with no accessors",
+        "A type of method that must return void",
+        "A kind of class constructor"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "OOP in C#",
+      "explanation": "A property uses get and/or set accessors to encapsulate a field with controlled reads/writes. It is not a raw public field, not void-only, and not a constructor."
+    },
+    {
+      "question": "What is an indexer in C#?",
+      "options": [
+        "A property that returns an integer",
+        "A member that allows an object to be indexed like an array using this[...]",
+        "A method that returns the count of elements",
+        "A special kind of enum"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "OOP in C#",
+      "explanation": "An indexer uses 'this' with parameters so instances can be indexed with bracket syntax, like obj[0]. It is not limited to int-returning properties, not a count method, and not an enum."
+    },
+    {
+      "question": "What is operator overloading in C#?",
+      "options": [
+        "Defining a method with the same name as another",
+        "Creating multiple constructors",
+        "Defining custom behavior for operators like + or == on a type",
+        "Changing the precedence of built-in operators"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "OOP in C#",
+      "explanation": "Operator overloading lets a type define how operators such as + or == behave for its instances. It does not create same-named methods, define constructors, or change operator precedence."
+    },
+    {
+      "question": "In C#, when you overload == on a type, what else should you typically do?",
+      "options": [
+        "Nothing else is required",
+        "Override ToString only",
+        "Make the type sealed",
+        "Override Equals and GetHashCode to keep equality semantics consistent"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "OOP in C#",
+      "explanation": "Overloading == should be paired with overriding Equals and GetHashCode so all equality mechanisms agree, especially for hash-based collections. Sealing or ToString alone is insufficient."
+    },
+    {
+      "question": "What is the purpose of a constructor in C#?",
+      "options": [
+        "To initialize a new object's state when it is created",
+        "To destroy an object",
+        "To compare two objects",
+        "To declare a static field"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "OOP in C#",
+      "explanation": "A constructor runs when an object is created to initialize its fields. Destruction is handled by finalizers/GC, comparison by equality methods, and static fields are declared with static."
+    },
+    {
+      "question": "What is method overloading?",
+      "options": [
+        "Overriding a virtual method in a derived class",
+        "Defining multiple methods with the same name but different parameter lists",
+        "Hiding a method with new",
+        "Making a method static"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "OOP in C#",
+      "explanation": "Overloading defines several methods with the same name but different signatures (parameter count/types). Overriding replaces a virtual base implementation, and new hides a member."
+    },
+    {
+      "question": "Which principle does virtual method dispatch (polymorphism) support?",
+      "options": [
+        "Compile-time binding only",
+        "Encapsulation of fields",
+        "Runtime binding to the most-derived override of a virtual member",
+        "Static type inference"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "OOP in C#",
+      "explanation": "Virtual dispatch binds the call at runtime to the overriding implementation on the actual object type, enabling polymorphism. It is not compile-time-only, not field encapsulation, and not type inference."
+    },
+    {
+      "question": "What happens if a non-abstract derived class fails to implement an inherited abstract method?",
+      "options": [
+        "It compiles and uses the base method body",
+        "The method is ignored",
+        "It becomes a static method",
+        "The compiler reports an error; the derived class must be abstract or implement the member"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "OOP in C#",
+      "explanation": "A concrete derived class must implement all inherited abstract members or be declared abstract itself. There is no base body to fall back on and no ignoring or static conversion."
+    },
+    {
+      "question": "What is the 'base' keyword used for in a derived class constructor?",
+      "options": [
+        "To call the base class constructor",
+        "To reference a static field",
+        "To declare an abstract member",
+        "To create a new object"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "OOP in C#",
+      "explanation": "base(...) in a constructor initializer invokes a base class constructor; base.Member also accesses base members. It is not for static fields, abstract declarations, or object creation."
+    },
+    {
+      "question": "Which modifier marks a method as having no implementation and requiring override in a derived class?",
+      "options": [
+        "sealed",
+        "virtual",
+        "abstract",
+        "override"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "OOP in C#",
+      "explanation": "abstract declares a member with no implementation that concrete derived classes must override. virtual has a default body, sealed prevents overriding, and override supplies an implementation."
+    },
+    {
+      "question": "Can a sealed class be abstract?",
+      "options": [
+        "Yes, always",
+        "Yes, if it has abstract members",
+        "Only in .NET Framework",
+        "No, because abstract implies it must be inheritable while sealed forbids inheritance"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "OOP in C#",
+      "explanation": "sealed and abstract are mutually exclusive: abstract requires subclassing to implement members, but sealed forbids inheritance, so the compiler rejects combining them."
+    },
+    {
+      "question": "What is 'sealed override' used for?",
+      "options": [
+        "To override a virtual member and prevent further overriding in derived classes",
+        "To hide a member with new",
+        "To declare a static member",
+        "To make a class abstract"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "OOP in C#",
+      "explanation": "sealed override provides an override that derived classes cannot override further, while still being virtual up to that point. It is not name hiding, static declaration, or abstract."
+    },
+    {
+      "question": "Which of the following can an interface declare in C# 8 and later?",
+      "options": [
+        "Instance fields for storing state",
+        "Default method implementations with bodies",
+        "Constructors",
+        "Destructors"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "OOP in C#",
+      "explanation": "C# 8 allows default interface method implementations with bodies, but interfaces still cannot declare instance fields, constructors, or destructors. This enables limited API evolution without breaking implementers."
+    },
+    {
+      "question": "How is multiple inheritance of implementation approximated in C#?",
+      "options": [
+        "Inheriting from multiple classes",
+        "Implementing multiple interfaces with no code reuse",
+        "Via multiple interfaces (often with default methods) since C# allows only one base class",
+        "It is not possible in any form"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "OOP in C#",
+      "explanation": "C# permits only one base class but multiple interfaces; with default interface methods that can provide some implementation reuse. True multiple class inheritance is not supported."
+    },
+    {
+      "question": "What is the 'this' keyword used for in an instance method?",
+      "options": [
+        "To call the base constructor",
+        "To create a new instance",
+        "To declare an indexer only",
+        "To refer to the current object instance"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "OOP in C#",
+      "explanation": "this refers to the current instance, used to qualify members or pass the object onward. base calls base members, 'this' in a constructor initializer calls another constructor, and it is not indexer-only."
+    },
+    {
+      "question": "What does 'public' access mean in C#?",
+      "options": [
+        "Accessible from any code that can reference the type",
+        "Accessible only within the namespace",
+        "Accessible only within the same file",
+        "Accessible only to derived classes"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "OOP in C#",
+      "explanation": "public members are accessible from any code with access to the containing type. There is no namespace- or file-level restriction for members, and derived-only access is protected."
+    },
+    {
+      "question": "What is a nested type in C#?",
+      "options": [
+        "A type defined inside a method only",
+        "A type declared inside another type, with access controlled by the containing type's modifiers",
+        "A type that inherits from System.Object only",
+        "A generic type parameter"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "OOP in C#",
+      "explanation": "A nested type is declared within another type and can access the containing type's private members; its accessibility is controlled by modifiers. Local functions exist in methods but nested types are declared at type scope."
+    },
+    {
+      "question": "What does LINQ stand for?",
+      "options": [
+        "Language Integrated Query",
+        "Linked Integrated Query",
+        "Linear Integrated Query",
+        "Language Interface for Querying"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "LINQ",
+      "explanation": "LINQ stands for Language Integrated Query, a set of C#/VB features for querying data using a SQL-like syntax and composable operators over IEnumerable/IQueryable."
+    },
+    {
+      "question": "Which namespace contains the standard LINQ query operators?",
+      "options": [
+        "System.Linq.Expressions only",
+        "System.Linq",
+        "System.Data.Linq only",
+        "System.Collections"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "LINQ",
+      "explanation": "The Enumerable and Queryable extension methods live in System.Linq. System.Linq.Expressions holds expression tree types, System.Data.Linq is older LINQ to SQL, and System.Collections has non-generic collections."
+    },
+    {
+      "question": "Which of these is an example of LINQ method (fluent) syntax?",
+      "options": [
+        "from x in list select x",
+        "SELECT * FROM table",
+        "list.Where(x => x > 5).Select(x => x)",
+        "foreach (var x in list)"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "LINQ",
+      "explanation": "Method syntax chains extension methods with lambdas, e.g., list.Where(...).Select(...). The 'from ... select' form is query syntax, SQL is not C#, and foreach is a loop."
+    },
+    {
+      "question": "Which of these uses LINQ query syntax?",
+      "options": [
+        "list.Where(x => x.Age > 18)",
+        "list.Select(x => x.Name)",
+        "list.Count(x => x > 0)",
+        "from p in people where p.Age > 18 select p.Name"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "LINQ",
+      "explanation": "Query syntax uses from/where/select clauses. The other examples are fluent method syntax using extension methods and lambdas."
+    },
+    {
+      "question": "What is deferred (lazy) execution in LINQ?",
+      "options": [
+        "The query is not executed until it is enumerated",
+        "The query executes immediately when defined",
+        "The query runs on a background thread automatically",
+        "The query is cached permanently"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "LINQ",
+      "explanation": "Most LINQ operators build a query object and only execute when enumerated (foreach, ToList, etc.). Defining the query does not run it, there is no automatic threading, and results are not permanently cached."
+    },
+    {
+      "question": "Which of the following forces immediate execution of a LINQ query?",
+      "options": [
+        "Where(...)",
+        "ToList()",
+        "Select(...)",
+        "OrderBy(...)"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "LINQ",
+      "explanation": "ToList enumerates the query immediately and materializes results. Where, Select, and OrderBy are deferred operators that only build the query."
+    },
+    {
+      "question": "What is a common pitfall of deferred execution when the source collection changes after the query is defined?",
+      "options": [
+        "The query always throws a compile error",
+        "The query results are frozen at definition time",
+        "The query reflects the source's state at enumeration time, which can produce unexpected results",
+        "The source is copied automatically"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "LINQ",
+      "explanation": "A deferred query reads the source when enumerated, so changes made between definition and enumeration affect results. It does not freeze results, copy the source, or fail at compile time."
+    },
+    {
+      "question": "What is the difference between IEnumerable<T> and IQueryable<T> in LINQ?",
+      "options": [
+        "They are identical",
+        "IQueryable is only for arrays",
+        "IEnumerable is slower always",
+        "IEnumerable executes queries in-memory via LINQ to Objects; IQueryable builds expression trees that a provider can translate to a data source such as SQL"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "LINQ",
+      "explanation": "IEnumerable uses Enumerable delegates executed in memory; IQueryable uses Queryable expression trees that providers like EF translate to SQL. They are not identical, not array-only, and not simply about speed."
+    },
+    {
+      "question": "Why can a lambda in an IQueryable.Where(p => ...) be translated to SQL but the same lambda on an IEnumerable cannot?",
+      "options": [
+        "IQueryable captures the lambda as an expression tree that a provider can inspect and translate; IEnumerable compiles it to a delegate",
+        "IQueryable runs on the server while IEnumerable runs on the client",
+        "IEnumerable cannot use lambdas",
+        "IQueryable uses reflection to run SQL directly"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "LINQ",
+      "explanation": "IQueryable stores the predicate as an Expression tree the provider translates to SQL; IEnumerable compiles it into an executable delegate. Both can use lambdas, and location is a consequence, not the mechanism."
+    },
+    {
+      "question": "What does GroupBy return in LINQ?",
+      "options": [
+        "A flat list of elements",
+        "A sequence of IGrouping<TKey,TElement> groups, each with a Key",
+        "A single scalar value",
+        "A dictionary always"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "LINQ",
+      "explanation": "GroupBy produces groups (IGrouping<TKey,TElement>) keyed by the selector; each group exposes a Key and its elements. It is not a flat list, scalar, or necessarily a Dictionary."
+    },
+    {
+      "question": "Which LINQ operator combines elements of two sequences based on a matching key, similar to an SQL inner join?",
+      "options": [
+        "SelectMany",
+        "GroupBy",
+        "Join",
+        "Union"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "LINQ",
+      "explanation": "Join correlates two sequences by key selectors and produces results for matching pairs, like an inner join. SelectMany flattens, GroupBy groups, and Union combines distinct elements."
+    },
+    {
+      "question": "What does SelectMany accomplish in LINQ?",
+      "options": [
+        "Selects only distinct elements",
+        "Filters elements by a predicate",
+        "Groups elements by key",
+        "Projects each element to a sequence and flattens the resulting sequences into one"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "LINQ",
+      "explanation": "SelectMany applies a sequence-returning selector to each element and flattens all inner sequences into one result sequence. Distinct is separate, Where filters, GroupBy groups."
+    },
+    {
+      "question": "What does the Aggregate operator do in LINQ?",
+      "options": [
+        "Applies an accumulator function across a sequence to produce a single value",
+        "Splits a sequence into chunks",
+        "Finds the largest element only",
+        "Concatenates two sequences"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "LINQ",
+      "explanation": "Aggregate applies an accumulator (and optional seed/result selector) to reduce a sequence to a single value. Chunking is Chunk, max is Max, and concatenation is Concat."
+    },
+    {
+      "question": "Which LINQ operator returns the number of elements in a sequence immediately?",
+      "options": [
+        "Where",
+        "Count",
+        "Select",
+        "Skip"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "LINQ",
+      "explanation": "Count enumerates the sequence and returns an int immediately (an immediate operator). Where, Select, and Skip are deferred and return query objects."
+    },
+    {
+      "question": "What is the difference between First() and FirstOrDefault()?",
+      "options": [
+        "They are identical",
+        "First() returns null when empty",
+        "First() throws InvalidOperationException if no element matches; FirstOrDefault returns the default value instead",
+        "FirstOrDefault throws when empty while First does not"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "LINQ",
+      "explanation": "First throws when no element exists (or matches); FirstOrDefault returns default(T) (null for reference types). They are not identical and the throwing behavior is not reversed."
+    },
+    {
+      "question": "Which method should you prefer to check for existence of elements to avoid materializing a whole list?",
+      "options": [
+        "ToList().Count > 0",
+        "ToArray().Length",
+        "Count() on an arbitrary IEnumerable",
+        "Any()"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "LINQ",
+      "explanation": "Any() stops at the first matching element and is optimized by providers; ToList/ToArray materialize everything, and Count() may enumerate the whole sequence. So Any is the efficient existence check."
+    },
+    {
+      "question": "What does the 'let' clause do in LINQ query syntax?",
+      "options": [
+        "Introduces a range variable to store an intermediate computed value",
+        "Declares a new data source",
+        "Groups results",
+        "Sorts results"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "LINQ",
+      "explanation": "let creates an intermediate range variable for a computed expression that can be reused in later clauses. from introduces sources, group/orderby handle grouping and sorting."
+    },
+    {
+      "question": "Which operator would you use to return distinct elements from a sequence?",
+      "options": [
+        "Distinct",
+        "Union",
+        "Except",
+        "Intersect"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "LINQ",
+      "explanation": "Distinct removes duplicate elements from a sequence. Union also combines but removes duplicates across two sequences, Except returns set difference, and Intersect returns common elements."
+    },
+    {
+      "question": "In LINQ to Objects, how does OrderBy perform its sort with respect to stability?",
+      "options": [
+        "It is always unstable",
+        "It does not sort",
+        "OrderBy performs a stable sort (equal keys retain original order)",
+        "It sorts only numeric types"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "LINQ",
+      "explanation": "Enumerable.OrderBy is documented as a stable sort, so elements with equal keys keep their relative order. It works on any comparable/key-selector type and does sort."
+    },
+    {
+      "question": "Which method skips a specified number of elements and then returns the remaining ones?",
+      "options": [
+        "Take",
+        "Where",
+        "Select",
+        "Skip"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "LINQ",
+      "explanation": "Skip bypasses the first n elements and returns the rest; Take returns the first n. Where filters by predicate, and Select projects."
+    },
+    {
+      "question": "What does the 'into' keyword do in a LINQ query?",
+      "options": [
+        "Continues a query after a group/join/select clause by introducing a new range variable",
+        "Imports a namespace",
+        "Creates a new method",
+        "Declares a variable as nullable"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "LINQ",
+      "explanation": "into creates a new range variable to continue composing a query after group, join, or select clauses. It is not namespace import, method declaration, or nullability syntax."
+    },
+    {
+      "question": "What is the effect of calling ToList() on an IQueryable<T> from Entity Framework Core?",
+      "options": [
+        "It only builds the expression tree with no database call",
+        "It translates and executes the query against the database and materializes the results into a list",
+        "It disables change tracking automatically",
+        "It creates a new empty list"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "LINQ",
+      "explanation": "ToList enumerates the IQueryable, causing EF Core to translate and run SQL and materialize entities. Defining the query alone does not hit the DB; ToList does not disable tracking or return an empty list."
+    },
+    {
+      "question": "What is a 'projection' in LINQ?",
+      "options": [
+        "Deleting elements from a source",
+        "Sorting a sequence",
+        "Selecting/transforming elements into a new shape, often an anonymous or DTO type",
+        "Grouping into buckets"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "LINQ",
+      "explanation": "Projection uses Select to transform each element into a new form, such as an anonymous type or DTO. It is not deletion, sorting, or grouping."
+    },
+    {
+      "question": "Which LINQ operator can throw InvalidOperationException when the source contains more than one element?",
+      "options": [
+        "FirstOrDefault",
+        "Any",
+        "Take(1)",
+        "Single"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "LINQ",
+      "explanation": "Single throws if zero or more than one element matches; SingleOrDefault throws only when more than one. First/FirstOrDefault tolerate multiple by taking the first, Any just tests existence, Take(1) returns at most one."
+    },
+    {
+      "question": "What is the result type of a GroupBy followed by Select(g => new { g.Key, Count = g.Count() })?",
+      "options": [
+        "A sequence of anonymous objects with Key and Count properties",
+        "A single integer",
+        "The original source elements",
+        "A dictionary only"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "LINQ",
+      "explanation": "Select over groups projects each group into an anonymous object containing the Key and computed Count, producing a sequence of those projected objects, not a scalar or the original elements."
+    },
+    {
+      "question": "In method syntax, which overload of Where gives you the element's index?",
+      "options": [
+        "Where((x) => ...)",
+        "Where((x, index) => ...)",
+        "WhereIndexed(...)",
+        "Select((x, i) => i)"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "LINQ",
+      "explanation": "Enumerable.Where has an overload taking (element, index) => bool. There is no WhereIndexed method; the indexed overload is part of Where, and Select's indexed overload projects rather than filters."
+    },
+    {
+      "question": "Which operator concatenates two sequences into one?",
+      "options": [
+        "Union",
+        "Zip",
+        "Concat",
+        "Join"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "LINQ",
+      "explanation": "Concat appends the second sequence to the first, keeping duplicates. Union also combines but removes duplicates, Zip pairs elements, and Join correlates by key."
+    },
+    {
+      "question": "What does the Zip operator do in LINQ?",
+      "options": [
+        "Groups elements by key",
+        "Sorts two sequences",
+        "Removes duplicates",
+        "Produces a sequence of pairs from corresponding elements of two sequences"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "LINQ",
+      "explanation": "Zip combines elements of two sequences pairwise into results (optionally via a result selector). It does not group, sort, or deduplicate."
+    },
+    {
+      "question": "Which operator returns all elements except those appearing in a second sequence (set difference)?",
+      "options": [
+        "Except",
+        "Union",
+        "Intersect",
+        "Distinct"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "LINQ",
+      "explanation": "Except returns set difference: elements in the first sequence but not the second. Union combines, Intersect returns common elements, and Distinct removes duplicates within one sequence."
+    },
+    {
+      "question": "What is the difference between Sum and Average LINQ operators?",
+      "options": [
+        "They are the same",
+        "Sum returns the total of numeric values; Average returns the arithmetic mean",
+        "Sum works only on integers",
+        "Average returns a boolean"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "LINQ",
+      "explanation": "Sum totals numeric values and Average computes their mean. Sum works on all numeric types (including floating point/decimal), and neither returns a boolean."
+    },
+    {
+      "question": "Which LINQ operator reverses the order of a sequence?",
+      "options": [
+        "OrderBy",
+        "Skip",
+        "Reverse",
+        "Distinct"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "LINQ",
+      "explanation": "Reverse yields elements in the opposite order. OrderBy sorts by a key, Skip bypasses elements, and Distinct removes duplicates."
+    },
+    {
+      "question": "What is middleware in ASP.NET Core?",
+      "options": [
+        "Software components assembled into a request pipeline that each can inspect, modify, or short-circuit requests and responses",
+        "A class that maps URLs to database tables",
+        "A logging provider only",
+        "A deployment configuration file"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "ASP.NET Core",
+      "explanation": "Middleware are request-handling components chained in order, each able to process the request/response and call the next or short-circuit. They are not DB mappers, logging-only, or config files."
+    },
+    {
+      "question": "Which method in Program.cs adds user-defined middleware to the ASP.NET Core pipeline?",
+      "options": [
+        "app.MapGet() only",
+        "app.Use() / app.UseMiddleware<>()",
+        "services.AddControllers()",
+        "builder.Build()"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "ASP.NET Core",
+      "explanation": "app.Use(...) (and UseMiddleware<T>) adds middleware to the pipeline. MapGet maps endpoints, AddControllers registers MVC services, and builder.Build() creates the app."
+    },
+    {
+      "question": "What is the significance of middleware order in the ASP.NET Core pipeline?",
+      "options": [
+        "Order has no effect",
+        "Middleware always runs in reverse",
+        "Middleware runs in registration order on the way in and reverse order on the way out, so order affects exception handling and auth",
+        "Middleware runs in parallel randomly"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "ASP.NET Core",
+      "explanation": "Requests pass through middleware in registration order and responses unwind in reverse, so placement determines which components see exceptions, auth context, and headers. It is not unordered, always reversed, or random."
+    },
+    {
+      "question": "Which middleware typically should be placed early to convert exceptions into responses?",
+      "options": [
+        "UseStaticFiles",
+        "UseAuthentication",
+        "UseRouting",
+        "UseExceptionHandler / DeveloperExceptionPage"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "ASP.NET Core",
+      "explanation": "Exception handling middleware is registered early so it can catch exceptions thrown by later middleware. Static files, auth, and routing have different roles and generally sit after the exception handler."
+    },
+    {
+      "question": "What does UseRouting() do in ASP.NET Core?",
+      "options": [
+        "Adds route matching to the middleware pipeline so endpoints can be selected",
+        "Starts the web server",
+        "Configures the database context",
+        "Enables CORS only"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "ASP.NET Core",
+      "explanation": "UseRouting adds endpoint routing so the pipeline can match an incoming request to an endpoint. The server is Kestrel, DbContext is configured in services, and CORS is separate middleware."
+    },
+    {
+      "question": "In endpoint routing, which middleware makes the routing decision and which executes the matched endpoint?",
+      "options": [
+        "UseStaticFiles and UseCors",
+        "UseRouting matches the endpoint and UseEndpoints / endpoint mappings execute it",
+        "UseAuth and UseSession",
+        "UseHttps and UseForwardedHeaders"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "ASP.NET Core",
+      "explanation": "UseRouting performs route matching; endpoint execution happens via UseEndpoints (implicit in modern minimal hosting) and endpoint mappings. The other pairs handle unrelated concerns."
+    },
+    {
+      "question": "Which built-in web server does ASP.NET Core use by default?",
+      "options": [
+        "IIS Express only",
+        "Apache",
+        "Kestrel",
+        "Nginx"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "ASP.NET Core",
+      "explanation": "Kestrel is the default cross-platform web server for ASP.NET Core. IIS, Apache, or Nginx can act as reverse proxies in front of Kestrel, but they are not the default embedded server."
+    },
+    {
+      "question": "What is dependency injection (DI) in ASP.NET Core?",
+      "options": [
+        "A way to compile views",
+        "A database migration tool",
+        "A logging framework",
+        "A technique where a class receives its dependencies from an external container rather than creating them"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "ASP.NET Core",
+      "explanation": "DI supplies a class's dependencies from a registered container rather than the class constructing them, improving testability and decoupling. It is not view compilation, migrations, or logging."
+    },
+    {
+      "question": "Which DI lifetime creates a new instance every time it is requested?",
+      "options": [
+        "Transient",
+        "Scoped",
+        "Singleton",
+        "Instance"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "ASP.NET Core",
+      "explanation": "Transient services are created on each resolution. Scoped are created once per request/scope, Singleton once per application container, and 'Instance' refers to registering a pre-built instance."
+    },
+    {
+      "question": "What is the lifetime of a Scoped service in a typical ASP.NET Core web request?",
+      "options": [
+        "A new instance on every resolution",
+        "One instance per request (scope)",
+        "One instance for the whole application",
+        "One instance per thread forever"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "ASP.NET Core",
+      "explanation": "Scoped services are created once per scope, which in a web app is typically one per HTTP request. Transient creates each time, Singleton once for the app, and it is not per-thread-forever."
+    },
+    {
+      "question": "What is the 'captive dependency' problem in DI?",
+      "options": [
+        "A singleton depending on a transient service",
+        "A transient depending on a singleton",
+        "A long-lived singleton capturing a shorter-lived scoped or transient service, keeping it alive too long",
+        "A scoped service depending on another scoped service"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "ASP.NET Core",
+      "explanation": "A captive dependency occurs when a longer-lived service (often singleton) holds a shorter-lived one (scoped/transient), causing stale or cross-request state. A transient depending on singleton is fine."
+    },
+    {
+      "question": "Where are services registered in ASP.NET Core?",
+      "options": [
+        "In the middleware pipeline only",
+        "In appsettings.json only",
+        "In the controller only",
+        "In the service collection, e.g., builder.Services.Add... in Program.cs"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "ASP.NET Core",
+      "explanation": "Services are registered with the IServiceCollection (builder.Services.Add...). Middleware handles requests, appsettings holds configuration, and controllers consume injected services rather than register them."
+    },
+    {
+      "question": "What is model binding in ASP.NET Core MVC / minimal APIs?",
+      "options": [
+        "The process of creating action parameters from request data such as route values, query string, and body",
+        "Converting C# classes to JavaScript",
+        "Mapping database tables to entities",
+        "Serializing responses to JSON only"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "ASP.NET Core",
+      "explanation": "Model binding populates action/endpoint parameters from request data (route, query, headers, body). It is not JS generation, ORM mapping, or serialization of responses (that is formatting)."
+    },
+    {
+      "question": "Which attribute binds a controller action parameter to a JSON request body in ASP.NET Core?",
+      "options": [
+        "[FromQuery]",
+        "[FromBody]",
+        "[FromRoute]",
+        "[FromHeader]"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "ASP.NET Core",
+      "explanation": "[FromBody] binds from the request body (typically JSON via input formatters). FromQuery reads the query string, FromRoute reads route values, and FromHeader reads headers."
+    },
+    {
+      "question": "What is an action filter in ASP.NET Core MVC?",
+      "options": [
+        "A middleware that handles static files",
+        "A class that maps routes",
+        "A filter that runs code before and/or after an action method executes",
+        "A database concurrency attribute"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "ASP.NET Core",
+      "explanation": "Action filters wrap action execution with before/after logic (e.g., validation, logging). They are distinct from middleware, routing, and concurrency attributes."
+    },
+    {
+      "question": "Which built-in filter runs only when an action (or result) throws an unhandled exception?",
+      "options": [
+        "ActionFilter",
+        "ResultFilter",
+        "ResourceFilter",
+        "ExceptionFilter"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "ASP.NET Core",
+      "explanation": "Exception filters handle unhandled exceptions in action/result execution. Action filters run around the action, result filters around result execution, and resource filters surround the whole pipeline stage."
+    },
+    {
+      "question": "What is a minimal API in ASP.NET Core?",
+      "options": [
+        "A way to define HTTP endpoints with small lambda-based handlers directly in Program.cs",
+        "An API with no endpoints",
+        "A legacy SOAP-style service",
+        "A database-first API generator"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "ASP.NET Core",
+      "explanation": "Minimal APIs let you define endpoints concisely with lambdas and app.MapGet/MapPost etc., avoiding controller classes for simple scenarios. They are not empty, SOAP-based, or DB generators."
+    },
+    {
+      "question": "Which method maps an HTTP GET endpoint in a minimal API?",
+      "options": [
+        "app.Post(...)",
+        "app.MapGet(...)",
+        "app.UseGet(...)",
+        "services.AddGet(...)"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "ASP.NET Core",
+      "explanation": "app.MapGet(pattern, handler) maps a GET endpoint. Post maps POST, there is no UseGet middleware, and services.AddGet is not an API."
+    },
+    {
+      "question": "What is routing in ASP.NET Core primarily concerned with?",
+      "options": [
+        "Encrypting traffic",
+        "Storing configuration",
+        "Compiling Razor views",
+        "Matching incoming request URLs to endpoints and generating URLs"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "ASP.NET Core",
+      "explanation": "Routing maps request paths to endpoint handlers and can generate outbound URLs. Encryption is HTTPS/TLS, config uses providers, and Razor compilation is a view concern."
+    },
+    {
+      "question": "Which configuration provider does ASP.NET Core use by default to read appsettings.json?",
+      "options": [
+        "JSON configuration provider (via appsettings.json and environment variables)",
+        "XML-only provider",
+        "Registry-only provider",
+        "Database-only provider"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "ASP.NET Core",
+      "explanation": "ASP.NET Core's default host reads appsettings.json through a JSON provider plus environment variables, user secrets, and command-line providers. It is not limited to XML, registry, or database."
+    },
+    {
+      "question": "What is the recommended way to access configuration values with built-in binding in ASP.NET Core?",
+      "options": [
+        "Read files directly with File.ReadAllText everywhere",
+        "Use IConfiguration (e.g., configuration[\"Key\"]) or the Options pattern with IOptions<T>",
+        "Use global static variables",
+        "Hard-code values in controllers"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "ASP.NET Core",
+      "explanation": "IConfiguration and the Options pattern provide typed, testable access to config with reload support. Direct file reads, globals, and hard-coded values are fragile and not recommended."
+    },
+    {
+      "question": "What is the purpose of logging abstractions (ILogger<T>) in ASP.NET Core?",
+      "options": [
+        "To store user sessions",
+        "To encrypt configuration",
+        "To write structured log messages through configurable providers without coupling to a specific logging framework",
+        "To compile middleware"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "ASP.NET Core",
+      "explanation": "ILogger<T> provides a provider-agnostic API for structured logging; providers like Console, Application Insights, or Serilog handle output. It is not session storage, encryption, or compilation."
+    },
+    {
+      "question": "What is the difference between authentication and authorization in ASP.NET Core?",
+      "options": [
+        "They are synonyms",
+        "Authentication checks roles; authorization verifies identity",
+        "Authorization happens before authentication always",
+        "Authentication establishes who the user is; authorization decides what that user is allowed to do"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "ASP.NET Core",
+      "explanation": "Authentication determines the caller's identity; authorization evaluates permissions/roles/policies for that identity. They are distinct and authentication normally precedes authorization."
+    },
+    {
+      "question": "Which middleware enables authentication in ASP.NET Core?",
+      "options": [
+        "UseAuthentication",
+        "UseStaticFiles",
+        "UseCors",
+        "UseHsts"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "ASP.NET Core",
+      "explanation": "UseAuthentication adds middleware that sets HttpContext.User from the authentication scheme. Static files, CORS, and HSTS handle unrelated concerns."
+    },
+    {
+      "question": "What does the [Authorize] attribute do?",
+      "options": [
+        "Allows anonymous access",
+        "Requires an authenticated (and optionally authorized) user to access an endpoint/controller",
+        "Enables CORS",
+        "Validates model state"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "ASP.NET Core",
+      "explanation": "[Authorize] applies authorization policy to a controller or action, requiring an authenticated user (and roles/policies if specified). [AllowAnonymous] permits anonymous access; model validation is separate."
+    },
+    {
+      "question": "Which result type returns a 404 response from a controller action?",
+      "options": [
+        "Ok()",
+        "BadRequest()",
+        "NotFound()",
+        "StatusCode(200)"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "ASP.NET Core",
+      "explanation": "NotFound() produces an HTTP 404. Ok() is 200, BadRequest() is 400, and StatusCode(200) is also 200."
+    },
+    {
+      "question": "What is a model binder's relationship to model validation in ASP.NET Core?",
+      "options": [
+        "They are the same mechanism",
+        "Validation runs before binding",
+        "Validation only applies to query strings",
+        "Binding creates the model from request data, then validation checks it (e.g., via data annotations) and sets ModelState"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "ASP.NET Core",
+      "explanation": "Binding populates the model first; validation then verifies constraints such as [Required] and records errors in ModelState. They are separate steps, validation is not limited to query strings."
+    },
+    {
+      "question": "What is CORS in a web application context?",
+      "options": [
+        "A browser security mechanism controlling which origins may access resources via cross-origin requests",
+        "A database indexing strategy",
+        "A logging level",
+        "A deployment pipeline stage"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "ASP.NET Core",
+      "explanation": "CORS (Cross-Origin Resource Sharing) lets a server declare which external origins may access its resources from browsers. It is not a DB, logging, or deployment concept."
+    },
+    {
+      "question": "Which middleware is used to enable CORS in ASP.NET Core?",
+      "options": [
+        "UseAuthentication",
+        "UseCors",
+        "UseStaticFiles",
+        "UseExceptionHandler"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "ASP.NET Core",
+      "explanation": "UseCors (with a configured CORS policy/service) enables cross-origin request handling. Auth, static files, and exception handling serve different purposes."
+    },
+    {
+      "question": "What does the [ApiController] attribute provide in ASP.NET Core?",
+      "options": [
+        "Enables Razor pages",
+        "Disables model binding",
+        "Conventions such as automatic 400 responses for invalid ModelState, attribute routing requirement, and inference of [FromBody]",
+        "Creates the database"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "ASP.NET Core",
+      "explanation": "[ApiController] applies API-specific conventions including automatic model validation error responses, inferred body binding, and attribute routing. It does not enable Razor, disable binding, or create databases."
+    },
+    {
+      "question": "What is the role of IHttpClientFactory in ASP.NET Core?",
+      "options": [
+        "It creates HTTP responses for incoming requests",
+        "It replaces Kestrel",
+        "It serializes database entities",
+        "It creates and manages HttpClient instances to avoid socket exhaustion and DNS staleness"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "ASP.NET Core",
+      "explanation": "IHttpClientFactory manages HttpClient lifetimes, addressing socket exhaustion and stale DNS issues from misusing long-lived or new-per-call clients. It does not handle inbound responses, replace Kestrel, or serialize DB entities."
+    },
+    {
+      "question": "What is Entity Framework Core (EF Core)?",
+      "options": [
+        "An object-relational mapper (ORM) that lets .NET developers work with a database using strongly typed objects and LINQ",
+        "A web server",
+        "A JavaScript framework",
+        "A testing framework"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Entity Framework",
+      "explanation": "EF Core is a lightweight, cross-platform ORM for .NET that maps classes to database tables and supports LINQ queries and change tracking. It is not a web server, JS framework, or test framework."
+    },
+    {
+      "question": "What is the Code First approach in EF Core?",
+      "options": [
+        "Generating entity classes from an existing database",
+        "Defining model classes in code and using them to create/migrate the database schema",
+        "Writing raw SQL only",
+        "Using a visual database designer only"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Entity Framework",
+      "explanation": "Code First means you write entity classes and configuration in code, and EF creates or evolves the database via migrations. Database First generates classes from an existing DB."
+    },
+    {
+      "question": "Which class is the primary entry point for interacting with the database in EF Core?",
+      "options": [
+        "DbSet only",
+        "EntityFrameworkConfig",
+        "DbContext",
+        "SqlConnection exclusively"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Entity Framework",
+      "explanation": "DbContext is the main class coordinating entity objects, change tracking, and database operations. DbSet represents a set/table but is not the overall coordinator; EF works with providers, not only SqlConnection."
+    },
+    {
+      "question": "What does a DbSet<TEntity> property on a DbContext typically represent?",
+      "options": [
+        "A single entity instance",
+        "A stored procedure",
+        "A database connection string",
+        "A collection/table of entities that supports LINQ querying and Add/Remove/Update"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Entity Framework",
+      "explanation": "DbSet<TEntity> represents a queryable set corresponding to a table, supporting LINQ and operations like Add, Remove, and Update. It is not a single entity, stored proc, or connection string."
+    },
+    {
+      "question": "What is change tracking in EF Core?",
+      "options": [
+        "EF keeping track of entity state (Added, Modified, Deleted, Unchanged, Detached) so it can detect changes and persist them on SaveChanges",
+        "Tracking HTTP sessions",
+        "Watching file changes in the project",
+        "Logging SQL queries only"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Entity Framework",
+      "explanation": "Change tracking monitors entity states so SaveChanges can issue the right INSERT/UPDATE/DELETE statements. It is not about HTTP sessions, file watching, or logging."
+    },
+    {
+      "question": "Which method persists tracked changes to the database in EF Core?",
+      "options": [
+        "SubmitChanges",
+        "SaveChanges",
+        "Commit",
+        "UpdateDatabase"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Entity Framework",
+      "explanation": "SaveChanges (or SaveChangesAsync) writes tracked changes to the database. SubmitChanges is LINQ to SQL terminology, and Commit/UpdateDatabase are not EF Core methods for this."
+    },
+    {
+      "question": "What does the EntityState.Detached mean?",
+      "options": [
+        "The entity is marked for deletion",
+        "The entity has unsaved modifications",
+        "The entity is not tracked by any DbContext change tracker",
+        "The entity was just added"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Entity Framework",
+      "explanation": "Detached entities are not tracked by a context, so changes to them are not persisted automatically. Added, Modified, and Deleted are other states that are tracked."
+    },
+    {
+      "question": "What are EF Core migrations used for?",
+      "options": [
+        "Importing CSV data",
+        "Generating test data",
+        "Compiling the application",
+        "Evolving the database schema in a versioned, incremental way as the model changes"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Entity Framework",
+      "explanation": "Migrations create and apply incremental schema changes based on model changes, keeping the DB in sync with code. They are not for CSV import, test data, or compilation."
+    },
+    {
+      "question": "Which CLI command adds a new migration in EF Core?",
+      "options": [
+        "dotnet ef migrations add <Name>",
+        "dotnet ef database update <Name>",
+        "dotnet new migration",
+        "dotnet ef dbcontext scaffold only"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Entity Framework",
+      "explanation": "dotnet ef migrations add <Name> scaffolds a migration from model changes. 'database update' applies migrations, 'dotnet new migration' is not an EF command, and scaffold is for Database First."
+    },
+    {
+      "question": "Which command applies pending migrations to the database?",
+      "options": [
+        "dotnet ef migrations add",
+        "dotnet ef database update",
+        "dotnet ef migrations remove",
+        "dotnet build"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Entity Framework",
+      "explanation": "dotnet ef database update applies pending migrations to the database. migrations add creates a migration, migrations remove deletes the last migration, and build compiles code."
+    },
+    {
+      "question": "What is eager loading in EF Core?",
+      "options": [
+        "Loading navigation properties only when accessed",
+        "Loading entities on demand via lazy proxies",
+        "Explicitly loading related entities as part of the initial query, typically with Include",
+        "Caching queries permanently"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Entity Framework",
+      "explanation": "Eager loading fetches related data in the same query using Include/ThenInclude, avoiding later round trips. Lazy loading defers until access, and explicit loading is a separate Load call."
+    },
+    {
+      "question": "Which method is used to specify related entities to eager-load in EF Core?",
+      "options": [
+        "Load()",
+        "AsNoTracking()",
+        "ToListAsync()",
+        "Include()"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Entity Framework",
+      "explanation": "Include(...) specifies navigation properties to eager-load. Load is for explicit loading, AsNoTracking disables tracking, and ToListAsync executes the query."
+    },
+    {
+      "question": "What is lazy loading in EF Core?",
+      "options": [
+        "Related data is loaded automatically when the navigation property is first accessed",
+        "All related data is loaded in the initial query",
+        "Data is never loaded",
+        "Data is loaded only via explicit SQL"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Entity Framework",
+      "explanation": "Lazy loading defers loading related entities until a navigation property is accessed, typically via proxies or ILazyLoader. Eager loading loads up front; data is not never loaded or SQL-only."
+    },
+    {
+      "question": "What problem does lazy loading commonly cause when looping over collections, often called the N+1 query problem?",
+      "options": [
+        "Too few database connections",
+        "A separate query is issued per entity when navigating, causing many round trips",
+        "Automatic transaction commit failures",
+        "Indexes become corrupted"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Entity Framework",
+      "explanation": "Lazy loading can trigger one query per parent entity when accessing navigations (N+1), leading to many database round trips. It does not reduce connections, corrupt indexes, or auto-commit transactions."
+    },
+    {
+      "question": "What does AsNoTracking() do in EF Core?",
+      "options": [
+        "Disables logging for the query",
+        "Deletes tracked entities",
+        "Returns results that are not tracked by the change tracker, improving read-only performance",
+        "Forces eager loading"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Entity Framework",
+      "explanation": "AsNoTracking returns untracked entities, reducing overhead for read-only scenarios and avoiding identity-resolution side effects. It does not disable logging, delete entities, or force Include."
+    },
+    {
+      "question": "If you query an entity with AsNoTracking(), modify it, and call SaveChanges(), what happens?",
+      "options": [
+        "EF updates the entity automatically",
+        "EF throws a compile error",
+        "EF deletes the entity",
+        "EF does not detect the modification because the entity is untracked, so no UPDATE is issued"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Entity Framework",
+      "explanation": "Untracked entities are invisible to the change tracker, so modifications are not persisted via SaveChanges unless you explicitly Attach/Update the entity. No compile error or automatic delete occurs."
+    },
+    {
+      "question": "What is a transaction in EF Core / databases?",
+      "options": [
+        "A unit of work executed atomically: all operations succeed or all are rolled back",
+        "A log of queries",
+        "A type of index",
+        "A caching mechanism"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Entity Framework",
+      "explanation": "A transaction groups operations so they are atomic (all-or-nothing), consistent, isolated, and durable (ACID). It is not a query log, index, or cache."
+    },
+    {
+      "question": "What is optimistic concurrency in EF Core?",
+      "options": [
+        "Locking rows for the entire transaction",
+        "Allowing concurrent edits and detecting conflicts at save time, usually via a concurrency token/rowversion, throwing DbUpdateConcurrencyException on conflict",
+        "Disabling all updates",
+        "Using database-level exclusive locks always"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Entity Framework",
+      "explanation": "Optimistic concurrency lets transactions proceed without locks and checks for conflicts on save using a concurrency token; conflicts raise DbUpdateConcurrencyException. Pessimistic concurrency uses locks."
+    },
+    {
+      "question": "Which exception does EF Core throw when a concurrency conflict is detected on SaveChanges?",
+      "options": [
+        "InvalidOperationException",
+        "NullReferenceException",
+        "DbUpdateConcurrencyException",
+        "KeyNotFoundException"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Entity Framework",
+      "explanation": "DbUpdateConcurrencyException signals that the UPDATE/DELETE affected zero rows due to a concurrency conflict. The others are general .NET exceptions not specific to EF concurrency."
+    },
+    {
+      "question": "What is the [Key] attribute used for in EF Core?",
+      "options": [
+        "Marks a property as required",
+        "Specifies the table name",
+        "Enables lazy loading",
+        "Marks a property as the primary key of the entity"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Entity Framework",
+      "explanation": "[Key] designates the primary key property. [Required] marks non-null, [Table] sets the table name, and lazy loading is configured separately."
+    },
+    {
+      "question": "What is a navigation property in EF Core?",
+      "options": [
+        "A property on an entity that references a related entity or collection of related entities",
+        "A connection string property",
+        "A migration setting",
+        "A logging configuration"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Entity Framework",
+      "explanation": "Navigation properties represent relationships (reference or collection) to other entities, enabling eager/lazy/explicit loading. They are not connection strings, migrations, or logging settings."
+    },
+    {
+      "question": "What does the Include(...).ThenInclude(...) chain accomplish?",
+      "options": [
+        "Filters the query results",
+        "Loads related entities and then related entities of those entities (multi-level eager loading)",
+        "Deletes orphaned records",
+        "Creates a database index"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Entity Framework",
+      "explanation": "Include loads a navigation and ThenInclude extends to a second-level navigation, enabling multi-level eager loading. It does not filter, delete, or create indexes."
+    },
+    {
+      "question": "What is the difference between Database First and Code First in EF?",
+      "options": [
+        "Database First uses migrations; Code First does not",
+        "They are identical",
+        "Database First generates the model/classes from an existing database; Code First generates the schema from classes",
+        "Code First cannot use SQL Server"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Entity Framework",
+      "explanation": "Database First reverse-engineers classes from an existing DB (scaffolding); Code First creates/evolves the DB from code via migrations. Both can use migrations concepts and SQL Server."
+    },
+    {
+      "question": "What is a DbContext pooling (AddDbContextPool) benefit?",
+      "options": [
+        "It disables change tracking globally",
+        "It automatically creates migrations",
+        "It removes the need for DbSet properties",
+        "It reuses DbContext instances to reduce allocation overhead for short-lived contexts"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Entity Framework",
+      "explanation": "DbContext pooling reuses contexts across requests to cut allocation costs, resetting state between uses. It does not disable tracking, create migrations, or remove DbSets."
+    },
+    {
+      "question": "What do ExecuteSqlRaw / FromSqlRaw allow in EF Core?",
+      "options": [
+        "Running raw SQL commands / queries against the database from EF Core",
+        "Compiling C# to SQL automatically",
+        "Generating migrations only",
+        "Disabling the database connection"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Entity Framework",
+      "explanation": "ExecuteSqlRaw runs raw SQL statements and FromSqlRaw maps raw SQL query results to entities. EF does not auto-compile C# to SQL in this API, nor do these generate migrations."
+    },
+    {
+      "question": "What is the purpose of the OnModelCreating method in DbContext?",
+      "options": [
+        "To open the database connection",
+        "To configure the model using Fluent API (keys, relationships, constraints, table mappings)",
+        "To execute queries",
+        "To log SQL statements"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Entity Framework",
+      "explanation": "OnModelCreating is where Fluent API configuration of the model occurs. Connections, query execution, and logging are handled elsewhere in EF."
+    },
+    {
+      "question": "Which Fluent API method configures a property as required?",
+      "options": [
+        "HasKey()",
+        "HasMaxLength()",
+        "IsRequired()",
+        "HasForeignKey()"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Entity Framework",
+      "explanation": "IsRequired() marks a property as non-nullable/required in Fluent API. HasKey sets the key, HasMaxLength sets length, and HasForeignKey configures relationships."
+    },
+    {
+      "question": "What is the Unit of Work pattern as applied to EF Core?",
+      "options": [
+        "A single DbContext instance representing a transaction-like scope coordinating multiple repository operations",
+        "A database index type",
+        "A logging strategy",
+        "A caching layer only"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Entity Framework",
+      "explanation": "DbContext embodies Unit of Work by tracking all changes in a scope and committing them together via SaveChanges. It is not an index, logging strategy, or mere cache."
+    },
+    {
+      "question": "What is a shadow property in EF Core?",
+      "options": [
+        "A property hidden by the [Hidden] attribute",
+        "A property that exists in the EF model/database but not on the entity class",
+        "A property that is encrypted",
+        "A property that is read-only"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Entity Framework",
+      "explanation": "Shadow properties are defined in the model (e.g., foreign keys) but have no corresponding CLR property on the entity; values are accessed via ChangeTracker. They are not about [Hidden], encryption, or read-only."
+    },
+    {
+      "question": "What is the Global Query Filter feature in EF Core used for?",
+      "options": [
+        "Filtering log output",
+        "Limiting the number of results always",
+        "Applying a query predicate automatically to all queries for an entity type, e.g., soft-delete filtering",
+        "Creating indexes"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Entity Framework",
+      "explanation": "Global query filters add an automatic WHERE predicate to queries for an entity (commonly soft delete or multi-tenancy). They do not filter logs, cap result counts arbitrarily, or create indexes."
+    },
+    {
+      "question": "Which method loads related entities explicitly after the main query has run?",
+      "options": [
+        "Include()",
+        "ThenInclude()",
+        "AsNoTracking()",
+        "Load() on a navigation, often via Entry(...).Collection(...).Load()"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Entity Framework",
+      "explanation": "Explicit loading uses Entry(entity).Collection/Reference(...).Load() to load navigations on demand. Include/ThenInclude are eager loading; AsNoTracking affects tracking."
+    },
+    {
+      "question": "What is garbage collection (GC) in .NET?",
+      "options": [
+        "Automatic reclamation of memory occupied by objects no longer reachable",
+        "Manual memory deallocation by the programmer",
+        "A compiler optimization for loops",
+        "A database cleanup process"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Memory & Exceptions",
+      "explanation": "The GC automatically frees memory of objects no longer reachable from roots, so developers do not manually free managed memory. It is not manual deallocation, a compiler loop optimization, or DB cleanup."
+    },
+    {
+      "question": "How many generations does the .NET garbage collector use for managed heap objects?",
+      "options": [
+        "1",
+        "3 (Gen 0, Gen 1, Gen 2)",
+        "2",
+        "5"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Memory & Exceptions",
+      "explanation": ".NET GC uses three generations: Gen 0 (short-lived), Gen 1, and Gen 2 (long-lived). The Large Object Heap is a separate heap, not a fourth generation."
+    },
+    {
+      "question": "Which generation are newly created small objects initially allocated in?",
+      "options": [
+        "Gen 2",
+        "Gen 1",
+        "Gen 0",
+        "LOH"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Memory & Exceptions",
+      "explanation": "New small objects start in Gen 0. Those surviving collections get promoted to Gen 1 then Gen 2; large objects go directly to the LOH."
+    },
+    {
+      "question": "What is the Large Object Heap (LOH) in .NET?",
+      "options": [
+        "A heap for objects smaller than 85,000 bytes",
+        "A stack for large value types",
+        "A disk cache for large files",
+        "A heap for objects roughly 85,000 bytes or larger, collected with Gen 2 and historically not compacted by default"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Memory & Exceptions",
+      "explanation": "The LOH holds large objects (>= ~85,000 bytes) and is collected with Gen 2; historically it was not compacted by default (compaction can be enabled). It is not for small objects, a stack, or a disk cache."
+    },
+    {
+      "question": "What is the purpose of the IDisposable interface?",
+      "options": [
+        "To release unmanaged resources deterministically via a Dispose method",
+        "To make an object garbage-collectable",
+        "To implement equality",
+        "To serialize an object"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Memory & Exceptions",
+      "explanation": "IDisposable provides a Dispose pattern for deterministic release of unmanaged resources (files, connections). GC handles managed memory, equality uses IEquatable, and serialization is separate."
+    },
+    {
+      "question": "Which C# statement ensures Dispose is called on an IDisposable even if an exception occurs?",
+      "options": [
+        "lock",
+        "using",
+        "fixed",
+        "unchecked"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Memory & Exceptions",
+      "explanation": "using translates to try/finally that calls Dispose on the resource. lock is for synchronization, fixed pins pointers, and unchecked disables overflow checks."
+    },
+    {
+      "question": "What is a finalizer (destructor) in C#?",
+      "options": [
+        "A method called by the programmer to free memory",
+        "A method that runs when an object is created",
+        "A special method (~ClassName) called by the GC before the object's memory is reclaimed, used as a fallback for unmanaged resource cleanup",
+        "The same thing as Dispose"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Memory & Exceptions",
+      "explanation": "A finalizer runs on the finalizer thread before GC reclaims an object and should only be a fallback for unmanaged resources. It is not called directly, not on creation, and differs from deterministic Dispose."
+    },
+    {
+      "question": "What is the recommended dispose pattern when a class owns unmanaged resources?",
+      "options": [
+        "Only write a finalizer and never implement IDisposable",
+        "Only implement IDisposable with no finalizer ever",
+        "Call GC.Collect in Dispose",
+        "Implement IDisposable, suppress finalization after manual Dispose (GC.SuppressFinalize), and have the finalizer call Dispose(false)"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Memory & Exceptions",
+      "explanation": "The standard pattern implements IDisposable with a protected Dispose(bool), calls GC.SuppressFinalize after disposing, and uses a finalizer calling Dispose(false) as fallback. Calling GC.Collect is discouraged."
+    },
+    {
+      "question": "What does GC.SuppressFinalize(this) do?",
+      "options": [
+        "Prevents the object's finalizer from being queued/run because resources were already disposed",
+        "Disables garbage collection for the object",
+        "Deletes the object immediately",
+        "Prevents the object from being boxed"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Memory & Exceptions",
+      "explanation": "GC.SuppressFinalize marks the object so its finalizer will not run, avoiding duplicate cleanup after Dispose. It does not disable GC, delete the object, or affect boxing."
+    },
+    {
+      "question": "What is a WeakReference in .NET?",
+      "options": [
+        "A reference that causes the object to be collected immediately",
+        "A reference to an object that does not prevent the GC from collecting it",
+        "A reference that cannot be assigned",
+        "A strongly typed delegate"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Memory & Exceptions",
+      "explanation": "A WeakReference allows referencing an object while still permitting the GC to collect it when only weak references remain. It does not force immediate collection, is assignable, and is not a delegate."
+    },
+    {
+      "question": "Which block in C# always executes, regardless of whether an exception was thrown?",
+      "options": [
+        "catch",
+        "finally",
+        "try",
+        "switch"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Memory & Exceptions",
+      "explanation": "The finally block runs whether or not an exception occurred, making it ideal for cleanup. catch only runs on exceptions, try is the protected block, and switch is unrelated."
+    },
+    {
+      "question": "What is the difference between 'throw ex;' and 'throw;' inside a catch block?",
+      "options": [
+        "They are identical",
+        "throw ex preserves the stack trace; throw resets it",
+        "throw ex rethrows only some exceptions",
+        "throw rethrows the current exception preserving its original stack trace; throw ex resets the stack trace to the rethrow point"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Memory & Exceptions",
+      "explanation": "throw; rethrows the caught exception while preserving the original stack trace; throw ex; creates a new throw point and loses the original trace. They are not identical."
+    },
+    {
+      "question": "What is an exception filter in C# (the 'when' clause)?",
+      "options": [
+        "A 'when' clause on catch that runs a condition before deciding to handle the exception, without unwinding the stack if it returns false",
+        "A filter applied to collections",
+        "A query predicate in LINQ only",
+        "A compiler warning setting"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Memory & Exceptions",
+      "explanation": "catch (Exception e) when (condition) evaluates the condition before entering the catch; if false, the stack is not unwound and the exception continues searching. It is not a collection/LINQ filter or warning setting."
+    },
+    {
+      "question": "Why are exception filters considered better than catching and rethrowing based on a condition inside the catch?",
+      "options": [
+        "They are faster to compile",
+        "They evaluate before stack unwinding, preserving the original stack trace and allowing the correct handler to be chosen without rethrow",
+        "They catch all exceptions automatically",
+        "They disable the finally block"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Memory & Exceptions",
+      "explanation": "Filters run during the first pass before unwinding, so the correct handler is selected and the original stack trace is preserved. They do not auto-catch everything, disable finally, or mainly affect compile speed."
+    },
+    {
+      "question": "Which base class should a custom exception in .NET typically derive from?",
+      "options": [
+        "System.Exception only (never a subclass)",
+        "System.Object",
+        "System.Exception or a more specific exception like ApplicationException/ArgumentException",
+        "System.String"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Memory & Exceptions",
+      "explanation": "Custom exceptions derive from System.Exception or a suitable subclass. Deriving from Object or String is invalid for exceptions, and deriving from System.Exception is allowed (ApplicationException is another option)."
+    },
+    {
+      "question": "Why is it recommended that custom exception class names end with 'Exception' and be serializable in .NET Framework?",
+      "options": [
+        "To make them throw faster",
+        "To satisfy the CLR verifier",
+        "Because all classes must end with Exception",
+        "For clarity and so they can be serialized across AppDomain/remoting boundaries"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Memory & Exceptions",
+      "explanation": "The 'Exception' suffix is a naming convention for clarity, and serialization supported crossing AppDomain/remoting boundaries in .NET Framework. It is not about speed, verification, or a class naming rule."
+    },
+    {
+      "question": "What happens if an exception is thrown and no matching catch is found?",
+      "options": [
+        "It propagates up the call stack and may terminate the application if unhandled",
+        "It is ignored silently",
+        "The program continues at the next statement",
+        "It is converted into a warning"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Memory & Exceptions",
+      "explanation": "An unmatched exception propagates up the stack looking for a handler; if none is found it becomes unhandled and typically terminates the process. It is not ignored, continued past, or downgraded to a warning."
+    },
+    {
+      "question": "What does a 'throw expression' (C# 7), e.g., value ?? throw new ArgumentNullException(...), do?",
+      "options": [
+        "It is only usable in catch blocks",
+        "It throws the given exception when the expression is evaluated, allowing throw in expression-bodied members and null-coalescing",
+        "It logs the exception without throwing",
+        "It creates a custom exception type"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Memory & Exceptions",
+      "explanation": "A throw expression throws immediately when evaluated, enabling concise argument validation and use in expression-bodied members. It is not restricted to catch, does not merely log, and does not define new types."
+    },
+    {
+      "question": "In a try/catch/finally, if the finally block itself throws an exception, what happens to an exception originally thrown in try?",
+      "options": [
+        "Both exceptions are combined automatically",
+        "The original exception is always preserved and the finally exception ignored",
+        "The exception thrown in finally supersedes/masks the original exception",
+        "The finally block is skipped"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Memory & Exceptions",
+      "explanation": "An exception thrown in finally replaces the original in-flight exception, effectively masking it. finally is not skipped, exceptions are not auto-combined, and the original is not preserved."
+    },
+    {
+      "question": "What type of exception is thrown when dividing an integer by zero?",
+      "options": [
+        "NullReferenceException",
+        "IndexOutOfRangeException",
+        "ArgumentException",
+        "DivideByZeroException"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Memory & Exceptions",
+      "explanation": "Integer division by zero throws DivideByZeroException. NullReferenceException is for null member access, IndexOutOfRange for bad indices, and ArgumentException for invalid arguments."
+    },
+    {
+      "question": "What is the difference between a finalizer and IDisposable.Dispose regarding timing?",
+      "options": [
+        "Dispose runs deterministically when called; finalizers run nondeterministically on the GC's finalizer thread",
+        "Finalizers run immediately when an object goes out of scope",
+        "Dispose is called automatically by the GC",
+        "They always run at the same time"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Memory & Exceptions",
+      "explanation": "Dispose gives deterministic cleanup at the call site; finalization is nondeterministic, controlled by the GC and finalizer thread. Finalizers do not run at scope exit, and Dispose is not auto-invoked."
+    },
+    {
+      "question": "What is the purpose of the 'using declaration' (C# 8), e.g., 'using var fs = ...;'?",
+      "options": [
+        "It creates a global variable",
+        "It disposes the variable at the end of the enclosing scope",
+        "It only works with value types",
+        "It suppresses exceptions"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Memory & Exceptions",
+      "explanation": "A using declaration disposes the resource at the end of its enclosing scope without an explicit block. It is not global, works with IDisposable/IAsyncDisposable references, and does not suppress exceptions."
+    },
+    {
+      "question": "What does GC.Collect() do and why is it generally discouraged?",
+      "options": [
+        "It disables the GC permanently",
+        "It only collects Gen 2",
+        "It forces a garbage collection but disrupts the GC's tuned heuristics and hurts performance, so it is rarely needed",
+        "It frees unmanaged resources deterministically"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Memory & Exceptions",
+      "explanation": "GC.Collect forces a collection but overrides the GC's optimized heuristics, typically degrading performance. It does not disable GC, target only Gen 2, or free unmanaged resources."
+    },
+    {
+      "question": "Which GC method requests that the runtime wait for pending finalizers?",
+      "options": [
+        "GC.SuppressFinalize",
+        "GC.KeepAlive",
+        "GC.GetTotalMemory",
+        "GC.WaitForPendingFinalizers"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Memory & Exceptions",
+      "explanation": "GC.WaitForPendingFinalizers suspends the current thread until the finalizer queue is processed. SuppressFinalize prevents finalization, KeepAlive extends lifetime, and GetTotalMemory reports memory."
+    },
+    {
+      "question": "What does the 'as' operator do in C#?",
+      "options": [
+        "Performs a reference/nullable conversion returning null on failure instead of throwing",
+        "Always throws on a failed cast",
+        "Converts value types to string",
+        "Creates a new object"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Memory & Exceptions",
+      "explanation": "as performs a safe cast returning null (for reference/nullable types) if it fails, rather than throwing InvalidCastException. It does not always throw, convert to string, or allocate objects."
+    },
+    {
+      "question": "Which of these best describes a 'reachable' object for GC purposes?",
+      "options": [
+        "An object with a finalizer",
+        "An object that can be reached from a GC root such as a static field, local variable, or stack reference",
+        "An object larger than the LOH threshold",
+        "An object that implements IDisposable"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Memory & Exceptions",
+      "explanation": "Reachability is determined by paths from GC roots (statics, stack locals, registers). Having a finalizer, being large, or implementing IDisposable does not by itself make an object reachable."
+    },
+    {
+      "question": "What is 'GC.KeepAlive(obj)' primarily used for?",
+      "options": [
+        "To increase an object's reference count",
+        "To force a Gen 0 collection",
+        "To keep an object reachable until that point, preventing premature finalization by an aggressive JIT/GC",
+        "To suppress the object's finalizer"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Memory & Exceptions",
+      "explanation": "GC.KeepAlive prevents the object from being considered dead before the call, avoiding premature finalization when the JIT determines it is no longer used. It does not alter ref counts, force collection, or suppress finalization."
+    },
+    {
+      "question": "What exception is thrown for accessing an element with an invalid array index?",
+      "options": [
+        "NullReferenceException",
+        "InvalidCastException",
+        "ArgumentException",
+        "IndexOutOfRangeException"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Memory & Exceptions",
+      "explanation": "IndexOutOfRangeException is thrown for out-of-bounds array indexing. NullReferenceException is for null access, InvalidCast for bad casts, and ArgumentException for invalid method arguments."
+    },
+    {
+      "question": "What is the purpose of a try-catch block?",
+      "options": [
+        "To handle exceptions that occur in the try block, preventing them from propagating if caught",
+        "To loop over a collection",
+        "To define a class",
+        "To allocate unmanaged memory"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Memory & Exceptions",
+      "explanation": "try-catch catches exceptions raised in the try block so they can be handled instead of propagating. It is not a loop, class declaration, or memory allocation construct."
+    },
+    {
+      "question": "Which exception is typically thrown when a null object reference is dereferenced?",
+      "options": [
+        "ArgumentException",
+        "NullReferenceException",
+        "InvalidOperationException",
+        "NotSupportedException"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Memory & Exceptions",
+      "explanation": "NullReferenceException occurs when accessing a member on a null reference. ArgumentException relates to bad arguments, InvalidOperationException to invalid object state, and NotSupportedException to unsupported operations."
+    },
+    {
+      "question": "What is 'exception rethrow with context' using 'throw new Exception(\"...\", ex)' doing?",
+      "options": [
+        "Preserving the original stack trace exactly",
+        "Suppressing the inner exception",
+        "Wrapping the original exception as InnerException, losing nothing but adding a new outer layer with extra context",
+        "Converting exceptions into return codes"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Memory & Exceptions",
+      "explanation": "Passing ex as the inner exception wraps it so the original is retained as InnerException while you add context; the outer stack trace is new. It does not suppress the inner, convert to return codes, or exactly preserve the outer trace."
+    },
+    {
+      "question": "What does the 'async' keyword do in C#?",
+      "options": [
+        "Marks a method as asynchronous, enabling await and typically returning Task/Task<T>/ValueTask",
+        "Runs the method on a new thread always",
+        "Makes the method thread-safe",
+        "Disables exceptions in the method"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Advanced C#",
+      "explanation": "async enables await inside a method and changes its return type to Task/Task<T> (or void/ValueTask). It does not inherently create a thread, guarantee thread safety, or disable exceptions."
+    },
+    {
+      "question": "What does 'await' do when applied to a Task in an async method?",
+      "options": [
+        "Blocks the current thread until the task completes",
+        "Asynchronously waits for the task, suspending the method and returning the caller while allowing the thread to be reused",
+        "Cancels the task",
+        "Creates a new task"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Advanced C#",
+      "explanation": "await suspends the async method until the task completes without blocking the thread, letting the caller continue and the thread be reused. It does not block, cancel, or create the task."
+    },
+    {
+      "question": "What is the main benefit of ConfigureAwait(false) in library code?",
+      "options": [
+        "It makes the task run faster",
+        "It forces all continuations onto the UI thread",
+        "It avoids capturing the synchronization context, reducing deadlock risk and overhead in libraries",
+        "It cancels the task on failure"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Advanced C#",
+      "explanation": "ConfigureAwait(false) prevents capturing the current SynchronizationContext, avoiding deadlocks common when upper layers block on async code and reducing overhead. It does not speed up tasks, force UI thread, or cancel."
+    },
+    {
+      "question": "What is a Task in .NET?",
+      "options": [
+        "A physical thread",
+        "A timer",
+        "A lock primitive",
+        "An abstraction representing an asynchronous operation that may complete in the future, with a result for Task<T>"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Advanced C#",
+      "explanation": "Task represents an asynchronous operation (Task<T> with a result), not a thread itself. Threads, timers, and locks are separate primitives."
+    },
+    {
+      "question": "What is the difference between Task and ValueTask?",
+      "options": [
+        "ValueTask can avoid heap allocation when results are often available synchronously; Task always allocates a task object (except cached cases)",
+        "Task is only for CPU-bound work",
+        "ValueTask cannot be awaited",
+        "Task cannot represent asynchronous work"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Advanced C#",
+      "explanation": "ValueTask is a lightweight struct that can wrap a synchronous result or a Task, avoiding allocations on hot paths. Both can be awaited and represent async work; Task is not limited to CPU-bound."
+    },
+    {
+      "question": "Which of the following is a recommended constraint when using ValueTask?",
+      "options": [
+        "Always call Result multiple times",
+        "Await it only once (or convert with AsTask if multiple awaits are needed)",
+        "Never await it",
+        "Always wrap it in Task.Run"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Advanced C#",
+      "explanation": "ValueTask should generally be consumed once; multiple awaits or Result accesses can be invalid because it may wrap an IValueTaskSource. Convert to Task via AsTask for repeated consumption."
+    },
+    {
+      "question": "What does a CancellationToken do in async programming?",
+      "options": [
+        "Increases the timeout of an operation",
+        "Creates a new thread",
+        "Provides a cooperative way to signal cancellation to asynchronous/long-running operations",
+        "Locks shared state"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Advanced C#",
+      "explanation": "CancellationToken propagates cooperative cancellation requests; operations check IsCancellationRequested or call ThrowIfCancellationRequested. It is not a timeout extender, thread creator, or lock."
+    },
+    {
+      "question": "Which exception is thrown by token.ThrowIfCancellationRequested() when cancellation is requested?",
+      "options": [
+        "InvalidOperationException",
+        "ArgumentException",
+        "TimeoutException",
+        "OperationCanceledException (TaskCanceledException is a subtype)"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Advanced C#",
+      "explanation": "ThrowIfCancellationRequested throws OperationCanceledException (TaskCanceledException derives from it). It is not InvalidOperation, Argument, or TimeoutException."
+    },
+    {
+      "question": "What does Task.Run do?",
+      "options": [
+        "Queues work to the thread pool, useful for offloading CPU-bound work",
+        "Creates a new foreground thread",
+        "Runs code synchronously on the caller thread",
+        "Cancels all running tasks"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Advanced C#",
+      "explanation": "Task.Run schedules a delegate on the thread pool, typically for CPU-bound offloading. It does not create explicit foreground threads, run synchronously, or cancel tasks."
+    },
+    {
+      "question": "Why is async I/O preferred over blocking synchronous I/O in servers?",
+      "options": [
+        "It always uses more threads",
+        "It frees threads while waiting for I/O, improving scalability by not blocking thread-pool threads",
+        "It disables the garbage collector",
+        "It guarantees lower latency per request"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Advanced C#",
+      "explanation": "Async I/O does not hold a thread while waiting, allowing the server to handle more concurrent requests with fewer threads. It does not use more threads, disable GC, or guarantee lower per-request latency."
+    },
+    {
+      "question": "What is a generic type parameter constraint in C#?",
+      "options": [
+        "A limit on the number of generic arguments",
+        "A runtime check that throws on violation",
+        "A compile-time restriction on the kinds of types that can be used as type arguments (e.g., where T : class)",
+        "A way to make a type nullable"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Advanced C#",
+      "explanation": "Constraints like where T : class, struct, new(), or an interface restrict acceptable type arguments at compile time. They are not runtime checks, argument-count limits, or nullability features."
+    },
+    {
+      "question": "Which constraint requires T to have a public parameterless constructor?",
+      "options": [
+        "where T : class",
+        "where T : struct",
+        "where T : IDisposable",
+        "where T : new()"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Advanced C#",
+      "explanation": "new() requires a public parameterless constructor so the generic code can use new T(). class/struct constrain reference/value types, and interface constraints require implementation."
+    },
+    {
+      "question": "What is covariance in generic type parameters (the 'out' modifier)?",
+      "options": [
+        "Allowing a generic type to be used as a more derived type argument version, e.g., IEnumerable<string> assignable to IEnumerable<object>",
+        "Allowing conversion to a base class only",
+        "Permitting mutation of type parameters",
+        "Making a type thread-safe"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Advanced C#",
+      "explanation": "Covariance (out) allows IEnumerable<string> to be treated as IEnumerable<object> because the type parameter appears only in output positions. It is not about mutation, thread safety, or arbitrary base conversion."
+    },
+    {
+      "question": "What is contravariance (the 'in' modifier) as in Action<in T>?",
+      "options": [
+        "Allowing Action<object> to be assigned where Action<string> is expected, because T appears only in input positions",
+        "Allowing Action<string> assigned to Action<object>",
+        "Permitting output positions only",
+        "Making collections immutable"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Advanced C#",
+      "explanation": "Contravariance (in) permits Action<object> to be used where Action<string> is needed, since a method accepting object can accept string inputs. The reverse is not safe; it does not relate to outputs or immutability."
+    },
+    {
+      "question": "What is reflection in .NET?",
+      "options": [
+        "Compiling C# at design time",
+        "A database normalization technique",
+        "The ability to inspect and manipulate types, members, and metadata at runtime",
+        "A debugging breakpoint feature"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Advanced C#",
+      "explanation": "Reflection uses System.Reflection to examine assemblies, types, and members at runtime and can invoke them dynamically. It is not compilation, database design, or a breakpoint feature."
+    },
+    {
+      "question": "Which class represents a type at runtime and is central to reflection?",
+      "options": [
+        "System.String",
+        "System.Object only",
+        "System.Exception",
+        "System.Type"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Advanced C#",
+      "explanation": "System.Type is the root of reflection, describing types and their members; typeof and GetType return it. String, Object, and Exception are ordinary classes, not the reflection descriptor."
+    },
+    {
+      "question": "What is an attribute in C#?",
+      "options": [
+        "A declarative metadata annotation applied to code elements, retrievable via reflection",
+        "A method modifier that changes return type",
+        "A compiler directive like #if",
+        "A type of loop"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Advanced C#",
+      "explanation": "Attributes like [Obsolete] or [Serializable] attach metadata to code and can be read through reflection. They are not return-type modifiers, preprocessor directives, or loops."
+    },
+    {
+      "question": "What is the 'dynamic' keyword in C#?",
+      "options": [
+        "A synonym for var with compile-time typing",
+        "Defers member resolution to runtime via the DLR instead of compile time",
+        "Makes a variable nullable",
+        "Enables async behavior"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Advanced C#",
+      "explanation": "dynamic bypasses static type checking, resolving operations at runtime through the Dynamic Language Runtime. var is statically inferred, and dynamic is unrelated to nullability or async."
+    },
+    {
+      "question": "What does the 'unsafe' context allow in C#?",
+      "options": [
+        "Skipping all exception handling",
+        "Disabling the garbage collector",
+        "Pointer arithmetic and direct memory access, requiring /unsafe and often fixed statements",
+        "Running code without a CLR"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Advanced C#",
+      "explanation": "unsafe enables pointer operations and direct memory access and must be enabled with the AllowUnsafeBlocks setting. It does not disable exceptions, GC, or the CLR."
+    },
+    {
+      "question": "What is Span<T> in modern .NET?",
+      "options": [
+        "A thread-safe collection with locking",
+        "A database result type",
+        "A replacement for arrays that always allocates on the heap",
+        "A ref struct providing a type-safe, allocation-free view over contiguous memory (stack or heap)"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Advanced C#",
+      "explanation": "Span<T> is a ref struct that offers a safe, allocation-free view over contiguous memory. It is not a locking collection, DB type, or always-heap-allocated array replacement."
+    },
+    {
+      "question": "Why can't Span<T> be stored as a field of a class or used across await boundaries?",
+      "options": [
+        "Because it is a ref struct restricted to stack-only contexts to guarantee memory safety",
+        "Because it is abstract",
+        "Because it implements IDisposable",
+        "Because it is a generic interface"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Advanced C#",
+      "explanation": "Span<T> is a ref struct confined to the stack so it cannot be boxed, stored on the heap, or captured across awaits, ensuring memory safety. It is not abstract, disposable, or an interface."
+    },
+    {
+      "question": "What is the 'lock' statement used for in C#?",
+      "options": [
+        "To acquire a database lock",
+        "To synchronize access to a shared resource by taking a monitor on an object so only one thread enters at a time",
+        "To freeze an object's fields",
+        "To dispose an object"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Advanced C#",
+      "explanation": "lock(obj) uses Monitor.Enter/Exit so only one thread can execute the block for a given object at a time, protecting shared state. It is not a DB lock, freeze, or disposal mechanism."
+    },
+    {
+      "question": "What does System.Threading.Monitor.Wait() do?",
+      "options": [
+        "Terminates the thread",
+        "Acquires a lock immediately",
+        "Releases the lock and blocks until another thread calls Pulse/PulseAll, then reacquires it",
+        "Creates a new mutex"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Advanced C#",
+      "explanation": "Monitor.Wait temporarily releases the lock and waits until signaled by Pulse/PulseAll, then reacquires it. It does not terminate threads, immediately acquire, or create mutexes."
+    },
+    {
+      "question": "What is a SemaphoreSlim used for?",
+      "options": [
+        "Serializing console output",
+        "Disposing resources",
+        "Marking methods async",
+        "Limiting the number of threads that can access a resource concurrently, with async WaitAsync support"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Advanced C#",
+      "explanation": "SemaphoreSlim is a lightweight semaphore that allows a configurable number of concurrent entrants and supports async waiting. It is not for console serialization, disposal, or marking methods async."
+    },
+    {
+      "question": "What is NuGet in the .NET ecosystem?",
+      "options": [
+        "A package manager for distributing and consuming .NET libraries and tools",
+        "A build compiler",
+        "A web framework",
+        "A database engine"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Advanced C#",
+      "explanation": "NuGet is the package manager for .NET, handling creation, distribution, and consumption of packages. It is not a compiler, web framework, or database."
+    },
+    {
+      "question": "Which command creates a new console project with the .NET CLI?",
+      "options": [
+        "dotnet build",
+        "dotnet new console",
+        "dotnet add package",
+        "dotnet publish only"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Advanced C#",
+      "explanation": "dotnet new console scaffolds a console app project. dotnet build compiles, dotnet add package adds dependencies, and dotnet publish produces deployable output."
+    },
+    {
+      "question": "What does MSBuild primarily do?",
+      "options": [
+        "Manages NuGet packages only",
+        "Hosts ASP.NET apps",
+        "Runs unit tests only",
+        "Builds .NET projects by processing XML project files defining targets and tasks"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Advanced C#",
+      "explanation": "MSBuild is the build engine that reads project files to compile, package, and run targets. NuGet handles packages, Kestrel hosts apps, and test running is a separate target."
+    },
+    {
+      "question": "What is the underlying representation of Nullable<T> (a nullable value type)?",
+      "options": [
+        "A struct with HasValue and Value, where null means HasValue is false",
+        "A class that can be null",
+        "A pointer to the value",
+        "A string wrapper"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Advanced C#",
+      "explanation": "Nullable<T> is a struct holding HasValue and Value; null corresponds to HasValue == false. It is not a reference type, a pointer, or a string."
+    },
+    {
+      "question": "What is the difference between IEnumerable<T> and IEnumerator<T>?",
+      "options": [
+        "They are the same interface",
+        "IEnumerable<T> supports iteration via GetEnumerator and can be enumerated repeatedly; IEnumerator<T> is the cursor holding current position over one iteration",
+        "IEnumerator is only for arrays",
+        "IEnumerable cannot be foreach-ed"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Advanced C#",
+      "explanation": "IEnumerable<T> exposes GetEnumerator and represents a sequence; IEnumerator<T> is the enumerator (cursor) tracking the current element during a single iteration. Arrays are not the only enumerator users, and foreach requires IEnumerable/pattern."
+    },
+    {
+      "question": "What is a 'ref struct' in C#?",
+      "options": [
+        "A struct passed by reference to methods",
+        "A struct that can be boxed",
+        "A stack-only type that cannot be boxed, put on the heap, or used in async/iterator methods, used by Span<T>",
+        "A struct with only reference fields"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Advanced C#",
+      "explanation": "ref struct is restricted to stack-only usage: no boxing, no heap fields, no async/iterator capture, enabling safe stack-allocated data like Span<T>. It is not merely pass-by-ref or a boxing struct."
+    },
+    {
+      "question": "What is the 'checked' context in C#?",
+      "options": [
+        "Verifies null arguments",
+        "Enables exception filters",
+        "Runs code under debugging",
+        "Causes arithmetic overflow to throw OverflowException instead of wrapping silently"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Advanced C#",
+      "explanation": "checked enables overflow checking so integer arithmetic that overflows throws OverflowException; unchecked wraps around (the default for non-constant expressions). It does not check nulls, filters, or debugging."
+    }
+  ]
+}

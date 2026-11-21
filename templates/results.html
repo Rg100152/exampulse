@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}All Results · ExamPulse 1000{% endblock %}
+{% block body_class %}page-results{% endblock %}
+{% block content %}
+<div class="simple-shell">
+  <div class="simple-head">
+    <div><div class="eyebrow"><span class="pulse-dot"></span> Attempt history</div><h1>My results</h1></div>
+    <a class="btn btn-primary" href="{{ url_for('exam.lobby') }}">New mock →</a>
+  </div>
+  {% if attempts %}
+  <div class="results-table">
+    <div class="results-row results-header"><span>Attempt</span><span>Subject</span><span>Mode</span><span>Score</span><span>Accuracy</span><span>Submitted</span><span></span></div>
+    {% for a in attempts %}
+    <a class="results-row" href="{{ url_for('exam.result', code=a.code) }}">
+      <span class="recent-code">{{ a.code }}</span>
+      <span>{{ subjects[a.subject].short if a.subject in subjects else a.subject }}</span>
+      <span>{{ modes[a.mode].label if a.mode in modes else a.mode }}</span>
+      <span><strong>{{ a.score }}/{{ a.max }}</strong></span>
+      <span>{{ a.accuracy }}%</span>
+      <span>{{ (a.submitted_at or '—')[:16]|replace('T',' ') }}</span>
+      <span class="recent-arrow">→</span>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-state"><h2>No attempts yet</h2><p>Your completed mocks will appear here with full analytics.</p></div>
+  {% endif %}
+</div>
+{% endblock %}

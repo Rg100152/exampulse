@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block title %}{{ subject.short }} · Live CBT Exam · ExamPulse 1000{% endblock %}
+{% block body_class %}page-exam{% endblock %}
+
+{% block content %}
+<div class="exam-shell" id="examShell"
+     data-code="{{ attempt.code }}"
+     data-submit-url="/api/attempts/{{ attempt.code }}/submit"
+     data-subject="{{ subject_slug }}">
+  <div class="exam-topbar">
+    <div class="exam-title">
+      <span class="exam-live"><span class="pulse-dot"></span> EXAM IN PROGRESS</span>
+      <h1>{{ subject.name }}</h1>
+      <p>{{ mode.label }} · {{ attempt.total_questions }} questions · +1 / −0.25 marking</p>
+    </div>
+    <div class="exam-topbar-right">
+      <div class="attempt-pill">Attempt ID <strong>{{ attempt.code }}</strong></div>
+      <a class="exit-link" href="{{ url_for('exam.lobby') }}">Exit to dashboard ✕</a>
+    </div>
+  </div>
+
+  <div class="exam-layout">
+    <!-- 72% : question working area -->
+    <section class="question-panel">
+      <div class="question-card" id="questionCard">
+        <div class="question-meta">
+          <div class="q-number">Question <strong id="qNumber">1</strong> <span id="qOutOf">/ {{ attempt.total_questions }}</span></div>
+          <div class="q-tags">
+            <span class="tag tag-difficulty" id="qDifficulty">Easy</span>
+            <span class="tag tag-topic" id="qTopic">Topic</span>
+            <span class="tag tag-marked" id="qMarkedTag" hidden>Marked for Review</span>
+          </div>
+        </div>
+        <div class="question-body" id="qText">Loading question…</div>
+        <div class="options" id="optionsList" role="radiogroup" aria-label="Answer options"></div>
+      </div>
+
+      <div class="action-bar">
+        <button type="button" class="btn btn-ghost" id="prevBtn">← Previous</button>
+        <div class="action-right">
+          <button type="button" class="btn btn-danger-ghost" id="clearBtn">Clear Response</button>
+          <button type="button" class="btn btn-purple" id="markBtn">Mark for Review</button>
+          <button type="button" class="btn btn-primary" id="saveNextBtn">Save &amp; Next →</button>
+        </div>
+      </div>
+      <p class="keyboard-hint">Shortcuts: <kbd>1</kbd>–<kbd>4</kbd> choose option · <kbd>←</kbd>/<kbd>→</kbd> navigate · <kbd>M</kbd> mark</p>
+    </section>
+
+    <!-- 28% : timer + palette -->
+    <aside class="side-panel">
+      <div class="timer-card" id="timerCard">
+        <div class="timer-label">TIME REMAINING</div>
+        <div class="timer-value" id="timerValue">--:--:--</div>
+        <div class="timer-bar"><span id="timerBarFill"></span></div>
+        <div class="timer-sub" id="timerSub">{{ mode.minutes }} minute exam · auto-submits at 00:00:00</div>
+      </div>
+
+      <div class="candidate-card">
+        <span class="candidate-avatar">{{ candidate_name[:1] }}</span>
+        <div><strong>{{ candidate_name }}</strong><small>Candidate · Verified</small></div>
+        <span class="verified">✓</span>
+      </div>
+
+      <div class="palette-card">
+        <div class="palette-head">
+          <h2>Question Palette</h2>
+          <span id="paletteProgress">0/{{ attempt.total_questions }}</span>
+        </div>
+        <div class="palette-grid" id="paletteGrid" aria-label="Question navigation"></div>
+        <div class="palette-legend">
+          <span><i class="legend answered"></i>Answered</span>
+          <span><i class="legend marked"></i>Marked</span>
+          <span><i class="legend unanswered"></i>Not answered</span>
+          <span><i class="legend current"></i>Current</span>
+        </div>
+      </div>
+
+      <div class="status-summary">
+        <div><strong id="statAnswered">0</strong><span>Answered</span></div>
+        <div><strong id="statMarked">0</strong><span>Marked</span></div>
+        <div><strong id="statLeft">{{ attempt.total_questions }}</strong><span>Not answered</span></div>
+      </div>
+
+      <button type="button" class="btn btn-submit" id="submitBtn">Submit Exam <span>→</span></button>
+      <p class="submit-note">You can review marked questions before final submission.</p>
+    </aside>
+  </div>
+</div>
+
+<div class="confirm-overlay" id="confirmOverlay" hidden>
+  <div class="confirm-box" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+    <h2 id="confirmTitle">Submit this attempt?</h2>
+    <p id="confirmText">Your responses are graded instantly and the detailed analytics report will open.</p>
+    <div class="confirm-actions">
+      <button type="button" class="btn btn-ghost" id="cancelSubmit">Keep reviewing</button>
+      <button type="button" class="btn btn-primary" id="confirmSubmit">Yes, submit exam</button>
+    </div>
+  </div>
+</div>
+
+<script>window.EXAM_BOOT = {{ questions_json|safe }};</script>
+{% endblock %}

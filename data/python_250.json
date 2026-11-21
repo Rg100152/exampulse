@@ -1,0 +1,3257 @@
+{
+  "subject": "python",
+  "title": "Python Programming",
+  "total_questions": 250,
+  "questions": [
+    {
+      "question": "What is the value of the expression 3 * 2 ** 3 in Python?",
+      "options": [
+        "24",
+        "18",
+        "36",
+        "512"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Core Syntax",
+      "explanation": "Exponentiation binds more tightly than multiplication, so 2 ** 3 is 8 and 3 * 8 is 24. Option B evaluates strictly left to right, while C and D misgroup the operands."
+    },
+    {
+      "question": "What does 'Py' + 'thon' * 2 evaluate to?",
+      "options": [
+        "'PythonPython'",
+        "'Pythython'",
+        "'Pythonthon'",
+        "TypeError"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Core Syntax",
+      "explanation": "Repetition binds tighter than addition, so 'thon' * 2 is 'thonthon' and prefixing 'Py' gives 'Pythonthon'. The other options either repeat the wrong part or claim an invalid type mix."
+    },
+    {
+      "question": "Which of the following is NOT a valid Python identifier?",
+      "options": [
+        "_private",
+        "2nd_value",
+        "__dunder__",
+        "value2"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Core Syntax",
+      "explanation": "Identifiers cannot begin with a digit, so 2nd_value is invalid. Leading single or double underscores and embedded digits are all legal in the other names."
+    },
+    {
+      "question": "What is the result of 5 // 2 in Python?",
+      "options": [
+        "2.5",
+        "3",
+        "2.0",
+        "2"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Core Syntax",
+      "explanation": "The floor-division operator discards the fractional part and returns an int for integer operands, giving 2. It never rounds up, and it does not produce a float."
+    },
+    {
+      "question": "What is the value of True + True + False?",
+      "options": [
+        "1",
+        "True",
+        "TypeError",
+        "2"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Core Syntax",
+      "explanation": "bool is a subclass of int, so True acts as 1 and False as 0; the sum is 2. Adding booleans is valid, so the TypeError and boolean-result choices are wrong."
+    },
+    {
+      "question": "Which operator tests whether two names refer to the exact same object?",
+      "options": [
+        "==",
+        "is",
+        "in",
+        "equals"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Core Syntax",
+      "explanation": "The 'is' operator compares object identity, while '==' compares values. 'in' tests membership and 'equals' is not a Python operator at all."
+    },
+    {
+      "question": "What is len('hello\\n')?",
+      "options": [
+        "6",
+        "5",
+        "7",
+        "1"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Core Syntax",
+      "explanation": "The escape sequence backslash-n is a single newline character, so the string holds five letters plus one newline, totalling six characters."
+    },
+    {
+      "question": "Which built-in type is mutable?",
+      "options": [
+        "tuple",
+        "str",
+        "list",
+        "int"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Core Syntax",
+      "explanation": "Lists can be changed in place after creation. Tuples, strings and integers are immutable, so attempts to modify them create new objects instead."
+    },
+    {
+      "question": "What is the value of 7 % -3 in Python?",
+      "options": [
+        "1",
+        "-2",
+        "2",
+        "-1"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Core Syntax",
+      "explanation": "Python's modulo result takes the sign of the divisor. Since -3 * -3 = 9 and 7 - 9 = -2, the remainder is -2; the positive choices ignore the divisor's sign."
+    },
+    {
+      "question": "Which of these is NOT a Python keyword?",
+      "options": [
+        "def",
+        "lambda",
+        "yield",
+        "function"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Core Syntax",
+      "explanation": "'function' is just an ordinary identifier; Python uses 'def' for named functions, 'lambda' for anonymous ones and 'yield' inside generators."
+    },
+    {
+      "question": "What does the guard if __name__ == '__main__': accomplish?",
+      "options": [
+        "It is required in every module",
+        "It defines the main() function",
+        "It runs the block only when the file is executed directly",
+        "It prevents the module from being imported"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Core Syntax",
+      "explanation": "When a file is run directly its __name__ is '__main__', but on import it is the module name. The guard therefore separates script behaviour from importable definitions."
+    },
+    {
+      "question": "What is len([1, 2, 3, [4, 5]])?",
+      "options": [
+        "4",
+        "5",
+        "3",
+        "TypeError"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Core Syntax",
+      "explanation": "len() counts top-level elements only. The nested list counts as one element, so the answer is 4 rather than 5, and no error is raised."
+    },
+    {
+      "question": "What type does type(3 / 2) return?",
+      "options": [
+        "int",
+        "complex",
+        "float",
+        "Decimal"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Core Syntax",
+      "explanation": "True division always produces a float in Python 3, even when the result is mathematically whole. Only // gives an int, and Decimal requires an explicit import."
+    },
+    {
+      "question": "What is the value of the chained comparison 1 < 2 < 3?",
+      "options": [
+        "True",
+        "False",
+        "3",
+        "SyntaxError"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Core Syntax",
+      "explanation": "Chained comparisons are equivalent to 1 < 2 and 2 < 3, with the middle expression evaluated once. Both tests hold, so the result is True, not an integer."
+    },
+    {
+      "question": "Why does False and (1 / 0) not raise ZeroDivisionError?",
+      "options": [
+        "Division by zero is allowed in boolean expressions",
+        "'and' has higher precedence than '/'",
+        "The expression is removed at compile time",
+        "'and' short-circuits and never evaluates the right operand"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Core Syntax",
+      "explanation": "Boolean operators evaluate left to right and stop as soon as the outcome is fixed. Because the left operand is falsy, the division is never executed."
+    },
+    {
+      "question": "What does the expression (n := 5) > 3 do?",
+      "options": [
+        "Raises SyntaxError outside a loop",
+        "Assigns 5 to n and evaluates to True",
+        "Returns 5 without comparing",
+        "Declares n as a global variable"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Core Syntax",
+      "explanation": "The walrus operator assigns and yields the assigned value in one expression, so n becomes 5 and 5 > 3 is True. It does not create globals or require a loop."
+    },
+    {
+      "question": "What does a, b = b, a accomplish?",
+      "options": [
+        "Swaps the two values using tuple packing and unpacking",
+        "Creates two aliases to one object",
+        "Raises ValueError",
+        "Copies only the first value"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Core Syntax",
+      "explanation": "The right side is packed into a tuple before any assignment, then unpacked into the left targets. This makes the classic swap work without a temporary variable."
+    },
+    {
+      "question": "Which values does range(2, 10, 3) produce?",
+      "options": [
+        "[2, 5, 8, 11]",
+        "[2, 4, 6, 8]",
+        "[2, 5, 8]",
+        "[3, 6, 9]"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Core Syntax",
+      "explanation": "range starts at 2, adds the step 3, and stops before 10, giving 2, 5 and 8. The stop value is exclusive and the step is not applied past it."
+    },
+    {
+      "question": "What is sorted([3, 1, 2], reverse=True)?",
+      "options": [
+        "[1, 2, 3]",
+        "[3, 2, 1]",
+        "[2, 3, 1]",
+        "None"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Core Syntax",
+      "explanation": "sorted() returns a new list in descending order when reverse is True. It does not sort in place, so None is not returned and the ascending choices are wrong."
+    },
+    {
+      "question": "What does all([]) return in Python?",
+      "options": [
+        "False",
+        "[]",
+        "None",
+        "True"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Core Syntax",
+      "explanation": "all() is vacuously True for an empty iterable because no element violates the condition. By contrast any([]) is False; neither returns the iterable itself."
+    },
+    {
+      "question": "What is '  x  '.strip()?",
+      "options": [
+        "'  x'",
+        "'x  '",
+        "'  x  '",
+        "'x'"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Core Syntax",
+      "explanation": "strip() removes leading and trailing whitespace, returning a new string 'x'. It does not alter internal characters and the original string is unchanged."
+    },
+    {
+      "question": "What is the value of f'{3.14159:.2f}'?",
+      "options": [
+        "'3.14 '",
+        "'3.14'",
+        "'3.14159'",
+        "'3.15'"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Core Syntax",
+      "explanation": "The format specifier .2f rounds the float to two digits after the point and adds no padding, so the result is exactly '3.14'."
+    },
+    {
+      "question": "How many characters does the escape sequence '\\t' represent?",
+      "options": [
+        "1",
+        "2",
+        "0",
+        "3"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Core Syntax",
+      "explanation": "An escape sequence is a single character in the resulting string: backslash-t becomes one tab. It is not stored as two printable characters."
+    },
+    {
+      "question": "What is a is b for a = 1000; b = int('1000') in CPython?",
+      "options": [
+        "True, because both are small integers",
+        "True, because all int objects are interned",
+        "False, because int('1000') creates a distinct object",
+        "SyntaxError"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Core Syntax",
+      "explanation": "CPython caches only small integers from -5 to 256. Converting a string produces a fresh int object, so identity differs even though the values are equal."
+    },
+    {
+      "question": "What is the value of -2 ** 2?",
+      "options": [
+        "4",
+        "-4",
+        "0",
+        "1"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Core Syntax",
+      "explanation": "Exponentiation has higher precedence than unary minus, so this is -(2 ** 2) = -4. Squaring the negative number would require parentheses around -2."
+    },
+    {
+      "question": "What is the value of 0.1 + 0.2 == 0.3?",
+      "options": [
+        "True",
+        "0.3",
+        "Raises FloatingPointError",
+        "False"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Core Syntax",
+      "explanation": "Binary floating point cannot represent 0.1 and 0.2 exactly; their sum is 0.30000000000000004, so equality fails. No exception is raised by the addition."
+    },
+    {
+      "question": "What is the value of '' == False?",
+      "options": [
+        "True",
+        "None",
+        "False",
+        "TypeError"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Core Syntax",
+      "explanation": "Equality between a str and a bool returns False rather than raising an error. An empty string is falsy in a boolean context but is not equal to the boolean False."
+    },
+    {
+      "question": "What is the value of not 1 < 2?",
+      "options": [
+        "False",
+        "True",
+        "1",
+        "SyntaxError"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Core Syntax",
+      "explanation": "Comparison operators bind tighter than 'not', so this is not (1 < 2), or not True, which is False. Reading it as (not 1) < 2 would give a different, wrong result."
+    },
+    {
+      "question": "What does print(1 or 2 and 3) output?",
+      "options": [
+        "3",
+        "2",
+        "1",
+        "True"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Core Syntax",
+      "explanation": "'and' binds tighter than 'or', so 2 and 3 evaluates to 3; then 1 or 3 short-circuits to the truthy operand 1. Boolean operators return operands, not booleans."
+    },
+    {
+      "question": "What is 'abcdef'[::2]?",
+      "options": [
+        "'ace'",
+        "'bdf'",
+        "'fedcba'",
+        "'abc'"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Core Syntax",
+      "explanation": "A slice with step 2 takes every second character starting at index 0: a, c, e. Omitting start and stop uses the whole string."
+    },
+    {
+      "question": "What is list(range(5))[::-1]?",
+      "options": [
+        "[0, 1, 2, 3, 4]",
+        "[1, 2, 3, 4, 5]",
+        "[]",
+        "[4, 3, 2, 1, 0]"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Core Syntax",
+      "explanation": "A negative step of -1 with omitted bounds reverses the sequence from the end down to the start, yielding [4, 3, 2, 1, 0]."
+    },
+    {
+      "question": "Which list method removes and returns the last element?",
+      "options": [
+        "remove()",
+        "pop()",
+        "clear()",
+        "count()"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "explanation": "pop() with no index removes and returns the final item. remove() deletes the first matching value and returns None, while clear() empties the list."
+    },
+    {
+      "question": "What does [1].append(2) evaluate to?",
+      "options": [
+        "None",
+        "[1, 2]",
+        "1",
+        "True"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "explanation": "Mutating list methods return None. The list is changed in place to [1, 2], so using append() as a value or in a chain is a common mistake."
+    },
+    {
+      "question": "Which expression returns a new sorted list without mutating the original?",
+      "options": [
+        "xs.sort()",
+        "xs.reverse()",
+        "sorted(xs)",
+        "xs.order()"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "explanation": "sorted() builds a new list and leaves xs untouched. The in-place sort() method returns None, reverse() only flips order, and order() does not exist."
+    },
+    {
+      "question": "What does d.get('missing') return for a dict d?",
+      "options": [
+        "KeyError",
+        "None",
+        "0",
+        "''"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "explanation": "get() returns None for a missing key unless a default is supplied, unlike d['missing'] which raises KeyError. It never returns zero or an empty string implicitly."
+    },
+    {
+      "question": "What is set([1, 2, 2, 3])?",
+      "options": [
+        "[1, 2, 2, 3]",
+        "(1, 2, 3)",
+        "{1, 2, 2, 3}",
+        "{1, 2, 3}"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "explanation": "A set keeps only unique values and has no guaranteed order, so the duplicate 2 disappears. The bracketed forms would be a list and a tuple instead."
+    },
+    {
+      "question": "Which built-in type preserves key insertion order since Python 3.7?",
+      "options": [
+        "set",
+        "tuple",
+        "frozenset",
+        "dict"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "explanation": "Regular dictionaries are ordered by insertion since 3.7 as a language guarantee. Sets and frozensets are unordered, and tuples have no keys."
+    },
+    {
+      "question": "Which deque method inserts an element at the left end?",
+      "options": [
+        "append()",
+        "appendleft()",
+        "push()",
+        "prepend()"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "explanation": "appendleft() adds at the front of a deque in O(1). append() adds at the right, and push()/prepend() are not deque methods."
+    },
+    {
+      "question": "What is sum([1, 2, 3])?",
+      "options": [
+        "6",
+        "5",
+        "[1, 2, 3]",
+        "TypeError"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "explanation": "sum() adds numeric items from a default start of 0, producing 6. It does not return the iterable and no error occurs for integers."
+    },
+    {
+      "question": "Which of the following is a valid dictionary comprehension?",
+      "options": [
+        "{x for x in range(3)}",
+        "[x: x**2 for x in range(3)]",
+        "{x: x**2 for x in range(3)}",
+        "dict(x: x**2 for x in range(3))"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "explanation": "A dict comprehension needs key: value pairs inside braces. The first form is a set comprehension, the second invalid bracket syntax, and the fourth is not valid generator syntax for dict()."
+    },
+    {
+      "question": "What does [x*2 for x in range(4)] produce?",
+      "options": [
+        "[2, 4, 6]",
+        "[0, 2, 4, 6]",
+        "[1, 2, 3, 4]",
+        "[0, 1, 2, 3]"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "explanation": "range(4) yields 0 through 3, and each is doubled. The result has four elements including 0, unlike the three-element distractor."
+    },
+    {
+      "question": "Which dict method returns a view of its keys?",
+      "options": [
+        "values()",
+        "items()",
+        "get()",
+        "keys()"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "explanation": "keys() returns a dynamic view object reflecting later dict changes. values() yields values, items() yields key-value pairs, and get() retrieves one value."
+    },
+    {
+      "question": "What is list(zip([1, 2], ['a', 'b']))?",
+      "options": [
+        "[(1, 1), (2, 2)]",
+        "[('a', 1), ('b', 2)]",
+        "[(1, 'a'), (2, 'b')]",
+        "{1: 'a', 2: 'b'}"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "explanation": "zip pairs items positionally, taking the first element from each iterable. It returns an iterator of tuples, not a dict, and preserves the argument order."
+    },
+    {
+      "question": "Which expression creates a tuple containing exactly one element?",
+      "options": [
+        "(42,)",
+        "(42)",
+        "[42]",
+        "tuple(42)"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Data Structures",
+      "explanation": "The trailing comma is what makes (42,) a tuple; parentheses alone just group an integer. [42] is a list and tuple(42) raises TypeError."
+    },
+    {
+      "question": "What does d.setdefault('x', 5) return when 'x' already maps to 3?",
+      "options": [
+        "5",
+        "None",
+        "3",
+        "Raises KeyError"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Data Structures",
+      "explanation": "setdefault inserts the default only when the key is absent and always returns the current value. Since 'x' exists, it returns 3 and leaves the dict unchanged."
+    },
+    {
+      "question": "What is {1, 2, 3} & {2, 3, 4}?",
+      "options": [
+        "{2, 3}",
+        "{1, 4}",
+        "{1, 2, 3, 4}",
+        "{1, 2, 3}"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Data Structures",
+      "explanation": "The & operator computes set intersection, keeping elements present in both sets. Union would be | and symmetric difference would be ^."
+    },
+    {
+      "question": "What is list(range(3)) * 2?",
+      "options": [
+        "[0, 1, 2]",
+        "[0, 1, 2, 0, 1, 2, 0, 1, 2]",
+        "[0, 0, 1, 1, 2, 2]",
+        "[0, 1, 2, 0, 1, 2]"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Data Structures",
+      "explanation": "Multiplying a list by an integer repeats its elements, producing two copies of [0, 1, 2]. It does not double each element or create three copies."
+    },
+    {
+      "question": "What is sorted([(1, 'b'), (1, 'a'), (0, 'c')])?",
+      "options": [
+        "[(1, 'a'), (1, 'b'), (0, 'c')]",
+        "[(0, 'c'), (1, 'a'), (1, 'b')]",
+        "[(0, 'c'), (1, 'b'), (1, 'a')]",
+        "TypeError"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Data Structures",
+      "explanation": "Tuples compare lexicographically: the first elements decide order, and ties are broken by the second. Hence (1, 'a') precedes (1, 'b'), and tuples are comparable."
+    },
+    {
+      "question": "Which built-in collection supports O(1) append and pop from both ends?",
+      "options": [
+        "deque",
+        "list",
+        "set",
+        "array"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Data Structures",
+      "explanation": "collections.deque is implemented as a doubly linked list, giving constant-time operations at either end. Popping from the front of a list is O(n)."
+    },
+    {
+      "question": "What invariant does heapq.heappush maintain?",
+      "options": [
+        "The largest element is at index 0",
+        "The heap is fully sorted at all times",
+        "The smallest element is at heap[0]",
+        "All values in the heap are unique"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Data Structures",
+      "explanation": "heapq implements a min-heap where the root at index 0 is always smallest. It is only partially ordered, not fully sorted, and duplicates are allowed."
+    },
+    {
+      "question": "What does bisect.bisect_left([1, 3, 5], 3) return?",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Data Structures",
+      "explanation": "bisect_left returns the insertion point before existing equal elements. The value 3 sits at index 1, so inserting there keeps the list sorted."
+    },
+    {
+      "question": "What does ''.join(['a', 'b', 'c']) return?",
+      "options": [
+        "['a', 'b', 'c']",
+        "'a b c'",
+        "'abc '",
+        "'abc'"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Data Structures",
+      "explanation": "join() concatenates the iterable's strings using the receiver as separator. An empty separator gives 'abc' with no extra spaces or trailing characters."
+    },
+    {
+      "question": "What is dict.fromkeys(['a', 'b'], 0)?",
+      "options": [
+        "{'a': 0}",
+        "['a', 'b']",
+        "{0: 'a', 0: 'b'}",
+        "{'a': 0, 'b': 0}"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Data Structures",
+      "explanation": "fromkeys() builds a dict with the given keys all mapped to the supplied value. It does not swap keys and values or return a list."
+    },
+    {
+      "question": "Which exception is raised by {}['missing']?",
+      "options": [
+        "IndexError",
+        "KeyError",
+        "AttributeError",
+        "TypeError"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Data Structures",
+      "explanation": "Missing dictionary keys raise KeyError, whereas IndexError is for out-of-range sequence indices. AttributeError concerns attributes and TypeError concerns invalid operations."
+    },
+    {
+      "question": "What is list(enumerate(['a', 'b']))?",
+      "options": [
+        "[(0, 'a'), (1, 'b')]",
+        "[('a', 0), ('b', 1)]",
+        "[(1, 'a'), (2, 'b')]",
+        "{'a': 0, 'b': 1}"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Data Structures",
+      "explanation": "enumerate() yields (index, value) pairs starting from index 0 by default. It returns an iterator of tuples, not a dictionary."
+    },
+    {
+      "question": "What does s.pop() do for s = {1, 2}?",
+      "options": [
+        "Removes the smallest element",
+        "Raises AttributeError",
+        "Removes and returns an arbitrary element",
+        "Returns a new set"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Data Structures",
+      "explanation": "Sets are unordered, so pop() removes and returns an arbitrary element rather than a predictable minimum. It mutates the original set."
+    },
+    {
+      "question": "Why is [[]] * 3 risky in Python?",
+      "options": [
+        "It raises TypeError",
+        "All three inner lists reference the same list object",
+        "It creates three tuples",
+        "It makes a deep copy of the inner list"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Data Structures",
+      "explanation": "Multiplication repeats references, not objects. Appending to one inner list is visible through all three, so a deep copy or separate comprehensions are needed."
+    },
+    {
+      "question": "For a = [[0] * 2] * 2, what is a after a[0][0] = 1?",
+      "options": [
+        "[[1, 0], [0, 0]]",
+        "[[1, 0], [1, 0], [1, 0]]",
+        "[[0, 0], [1, 0]]",
+        "[[1, 0], [1, 0]]"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Data Structures",
+      "explanation": "Both outer elements point to the same inner list, so changing it through a[0] also shows at a[1]. Aliasing, not a copy, causes the doubled change."
+    },
+    {
+      "question": "In sorted(xs, key=lambda x: x[1]), what does key do?",
+      "options": [
+        "Forces descending order",
+        "Sorts by the first element",
+        "Computes the second element as the sort key",
+        "Converts each tuple to a list"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Data Structures",
+      "explanation": "The key callable is applied once per item and its results determine ordering. Taking index 1 sorts by the second field; reverse would control direction."
+    },
+    {
+      "question": "What is {x: x % 2 for x in range(4)}?",
+      "options": [
+        "{0: 0, 1: 1, 2: 0, 3: 1}",
+        "{0: 0, 1: 1}",
+        "{0: 1, 1: 0, 2: 1, 3: 0}",
+        "[0, 1, 0, 1]"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Data Structures",
+      "explanation": "The comprehension creates four key-value pairs where each key maps to its parity. Duplicate values are fine; only duplicate keys would overwrite."
+    },
+    {
+      "question": "Which comprehension builds a dict from parallel lists keys and vals?",
+      "options": [
+        "{k for k in keys for v in vals}",
+        "[k: v for k, v in zip(keys, vals)]",
+        "{k: v for k, v in zip(keys, vals)}",
+        "dict(zip(keys))"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Data Structures",
+      "explanation": "zip pairs corresponding elements and the braces with k: v form a dict comprehension. A set comprehension has no values, and dict(zip(keys)) lacks a second iterable."
+    },
+    {
+      "question": "What is collections.Counter('abca')['a']?",
+      "options": [
+        "2",
+        "3",
+        "1",
+        "KeyError"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Data Structures",
+      "explanation": "Counter counts occurrences of each element, and 'a' appears twice in 'abca'. Missing keys return 0 rather than raising KeyError."
+    },
+    {
+      "question": "What is heapq.nlargest(2, [3, 1, 4, 1, 5])?",
+      "options": [
+        "[1, 1]",
+        "[4, 5]",
+        "[3, 4]",
+        "[5, 4]"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Data Structures",
+      "explanation": "nlargest returns the two greatest values in descending order: 5 then 4. It does not sort the whole input ascending or return them in input order."
+    },
+    {
+      "question": "Which keyword begins a class definition?",
+      "options": [
+        "object",
+        "class",
+        "struct",
+        "def"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "OOP",
+      "explanation": "The class statement creates a class object. 'def' defines functions, 'struct' is not a Python keyword, and object is the base class name."
+    },
+    {
+      "question": "What is the conventional name of an instance method's first parameter?",
+      "options": [
+        "self",
+        "this",
+        "cls",
+        "me"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "OOP",
+      "explanation": "By convention the instance is bound to 'self'; 'cls' is used for classmethods. Any name works technically, but 'this' and 'me' are not Python conventions."
+    },
+    {
+      "question": "Which method initializes a newly created object?",
+      "options": [
+        "__new__",
+        "__del__",
+        "__init__",
+        "__call__"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "OOP",
+      "explanation": "__init__ sets up the instance after allocation. __new__ performs allocation, __del__ is a finalizer, and __call__ makes instances callable."
+    },
+    {
+      "question": "Which kind of attribute is shared by all instances of a class?",
+      "options": [
+        "Instance attribute",
+        "Class attribute",
+        "Local variable",
+        "Global variable"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "OOP",
+      "explanation": "A class attribute lives on the class and is found through every instance unless shadowed. Instance attributes are stored separately in each object's dictionary."
+    },
+    {
+      "question": "Which dunder method does print(obj) use for a readable string?",
+      "options": [
+        "__repr__",
+        "__format__",
+        "__doc__",
+        "__str__"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "OOP",
+      "explanation": "str() and print() prefer __str__ for user-friendly output. __repr__ is the fallback and is aimed at developers, while __doc__ is documentation."
+    },
+    {
+      "question": "Which dunder method is intended to produce an unambiguous developer string?",
+      "options": [
+        "__str__",
+        "__unicode__",
+        "__format__",
+        "__repr__"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "OOP",
+      "explanation": "__repr__ should ideally be a string that could recreate the object, and it is what containers display. __str__ is the friendlier user-facing form."
+    },
+    {
+      "question": "What does isinstance(obj, cls) return?",
+      "options": [
+        "The class object",
+        "True if obj is an instance of cls or its subclasses",
+        "The object's type name",
+        "None"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "OOP",
+      "explanation": "isinstance() checks membership in an inheritance hierarchy and returns a boolean. It does not return the class, a name, or None."
+    },
+    {
+      "question": "Which built-in returns the exact class of an object?",
+      "options": [
+        "type()",
+        "isinstance()",
+        "dir()",
+        "id()"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "OOP",
+      "explanation": "type(obj) returns the object's class object. isinstance() tests membership, dir() lists names, and id() returns an identity integer."
+    },
+    {
+      "question": "What is inheritance in Python?",
+      "options": [
+        "Copying a module's source",
+        "Defining a function inside another",
+        "Deriving a new class from an existing class",
+        "Importing a third-party package"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "OOP",
+      "explanation": "Inheritance lets a subclass reuse and override behaviour of a base class. It is not source copying, nesting functions, or importing packages."
+    },
+    {
+      "question": "What does super() provide inside a method?",
+      "options": [
+        "A copy of self",
+        "A proxy to the parent class along the MRO",
+        "A global variable",
+        "A static method"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "OOP",
+      "explanation": "super() returns a proxy that delegates attribute lookup to the next class in the method resolution order, enabling cooperative inheritance."
+    },
+    {
+      "question": "Which decorator turns a method into a read-only property?",
+      "options": [
+        "@staticmethod",
+        "@classmethod",
+        "@abstractmethod",
+        "@property"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "OOP",
+      "explanation": "@property converts a method into a descriptor accessed like an attribute, with no setter unless one is defined. The other decorators serve different purposes."
+    },
+    {
+      "question": "Which dunder method must be consistent with __eq__ for hashable objects?",
+      "options": [
+        "__str__",
+        "__len__",
+        "__hash__",
+        "__iter__"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "OOP",
+      "explanation": "Equal objects must have equal hashes, so defining __eq__ without __hash__ makes a class unhashable. __str__, __len__ and __iter__ are unrelated to hashing."
+    },
+    {
+      "question": "What does the @dataclass decorator generate automatically?",
+      "options": [
+        "__init__, __repr__ and other methods from field definitions",
+        "A database connection",
+        "A singleton instance",
+        "A new metaclass"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "OOP",
+      "explanation": "dataclasses inspect annotated fields and synthesize common methods such as __init__ and __repr__, reducing boilerplate. It does not manage databases or singletons."
+    },
+    {
+      "question": "Which dunder method makes an object callable like a function?",
+      "options": [
+        "__str__",
+        "__enter__",
+        "__call__",
+        "__init__"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "OOP",
+      "explanation": "Defining __call__ lets instances be invoked with parentheses. __init__ only runs during construction, and the other choices handle display and context management."
+    },
+    {
+      "question": "What must __len__ return?",
+      "options": [
+        "A non-negative integer",
+        "A string",
+        "Any iterable",
+        "A boolean"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "OOP",
+      "explanation": "len() requires __len__ to produce an integer >= 0; larger values or wrong types raise TypeError or ValueError. It is not converted from a string or iterable."
+    },
+    {
+      "question": "What does MRO stand for in Python classes?",
+      "options": [
+        "Memory Reference Order",
+        "Method Return Order",
+        "Module Resolution Order",
+        "Method Resolution Order"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "OOP",
+      "explanation": "Method Resolution Order is the sequence of classes searched for an attribute, computed with C3 linearization. It is unrelated to memory or modules."
+    },
+    {
+      "question": "With class C(A, B), which order does super().__init__() follow?",
+      "options": [
+        "Always B first",
+        "The C3 linearization of C's bases",
+        "Alphabetical order",
+        "The order of __init__ definitions in source"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "OOP",
+      "explanation": "super() delegates to the next class in the MRO, not simply the first listed base or a syntactic order. C3 linearization gives a consistent precedence."
+    },
+    {
+      "question": "Which statement about @staticmethod is correct?",
+      "options": [
+        "It receives no implicit first argument",
+        "It receives cls as its first argument",
+        "It can only be called on the class",
+        "It requires a return annotation"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "OOP",
+      "explanation": "A staticmethod is a plain function inside a class namespace with no automatic self or cls. It may be called on either the class or an instance."
+    },
+    {
+      "question": "What is the first parameter of a @classmethod conventionally called?",
+      "options": [
+        "self",
+        "this",
+        "cls",
+        "super"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "OOP",
+      "explanation": "A classmethod automatically receives the class object as its first argument, conventionally named cls. Instance methods use self instead."
+    },
+    {
+      "question": "What does defining __slots__ do?",
+      "options": [
+        "Adds documentation",
+        "Restricts instance attributes and reduces memory",
+        "Makes the class abstract",
+        "Enables automatic pickling"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "OOP",
+      "explanation": "__slots__ replaces per-instance dictionaries with fixed descriptors, saving memory and preventing undeclared attributes. It does not enforce abstractness."
+    },
+    {
+      "question": "What happens when instantiating an ABC with an unimplemented @abstractmethod?",
+      "options": [
+        "A warning is printed",
+        "The object is created with None methods",
+        "It raises AttributeError",
+        "It raises TypeError"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "OOP",
+      "explanation": "abstractmethod blocks instantiation until all abstract methods are overridden in a concrete subclass, and Python raises TypeError on the attempt."
+    },
+    {
+      "question": "Which dunder implements obj[key] indexing?",
+      "options": [
+        "__iter__",
+        "__contains__",
+        "__repr__",
+        "__getitem__"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "OOP",
+      "explanation": "Subscript lookup calls __getitem__. __contains__ handles 'in', __iter__ handles iteration, and __repr__ handles the developer string."
+    },
+    {
+      "question": "Which method is invoked on obj.x = value if defined?",
+      "options": [
+        "__getattr__",
+        "__setattr__",
+        "__delattr__",
+        "__getattribute__"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "OOP",
+      "explanation": "Attribute assignment goes through __setattr__, while __getattr__/__getattribute__ handle reads and __delattr__ handles deletion."
+    },
+    {
+      "question": "How does Python resolve conflicting base methods in multiple inheritance?",
+      "options": [
+        "Using the C3 linearization (MRO)",
+        "Always choosing the rightmost base",
+        "Randomly at runtime",
+        "By alphabetical order of method names"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "OOP",
+      "explanation": "C3 linearization produces a deterministic MRO preserving local precedence and consistency. It is neither random, alphabetical, nor simply rightmost-first."
+    },
+    {
+      "question": "Why use dataclasses.field(default_factory=list)?",
+      "options": [
+        "To make the field private",
+        "To speed up attribute access",
+        "To avoid a shared mutable default across instances",
+        "To turn the field into a class attribute"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "OOP",
+      "explanation": "default_factory calls the factory for every new instance, so each object gets its own list. A plain default of [] would be shared by all instances."
+    },
+    {
+      "question": "For class A(B) and class C(A, B), what is C.__mro__?",
+      "options": [
+        "C, B, A, object",
+        "C, A, B, object",
+        "B, A, C, object",
+        "C, A, object, B"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "OOP",
+      "explanation": "C3 linearization puts C first, then A, then A's base B, then object. Putting B before A would violate the precedence implied by C's base order."
+    },
+    {
+      "question": "If a class defines __eq__ but not __hash__, what happens?",
+      "options": [
+        "It is automatically hashable",
+        "__hash__ is inherited from object",
+        "Hashing raises ValueError",
+        "Instances become unhashable (TypeError in a set)"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "OOP",
+      "explanation": "Python sets __hash__ to None when __eq__ is defined, so hashing raises TypeError. Inheriting object's hash would break the equal-objects-equal-hashes rule."
+    },
+    {
+      "question": "What does object.__new__ do?",
+      "options": [
+        "Initializes attributes",
+        "Returns the class dictionary",
+        "Allocates the instance before __init__",
+        "Calls __del__"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "OOP",
+      "explanation": "__new__ is responsible for creating and returning the instance that __init__ then initializes. It does not populate attribute values itself."
+    },
+    {
+      "question": "For class C: m = 1; c = C(); c.m = 2, what does print(C.m, c.m) show?",
+      "options": [
+        "1 2",
+        "2 2",
+        "1 1",
+        "2 1"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "OOP",
+      "explanation": "Assigning c.m creates an instance attribute that shadows the class attribute only for c. C.m remains 1 while c.m resolves to 2."
+    },
+    {
+      "question": "What does zero-argument super() rely on?",
+      "options": [
+        "A module-level variable named super",
+        "The __slots__ attribute",
+        "The __class__ cell and the first argument",
+        "The metaclass's __call__"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "OOP",
+      "explanation": "The compiler adds a __class__ closure cell, and super() combines it with the method's first argument to locate the correct MRO position."
+    },
+    {
+      "question": "If __bool__ returns False and __len__ returns 0, what is bool(obj)?",
+      "options": [
+        "False",
+        "True",
+        "0",
+        "TypeError"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "OOP",
+      "explanation": "__bool__ takes precedence over __len__; its False result decides the truth value. Only when __bool__ is absent does a zero __len__ make an object falsy."
+    },
+    {
+      "question": "What does type('X', (object,), {}) return?",
+      "options": [
+        "A string 'X'",
+        "An instance of object named X",
+        "None",
+        "A new class object named X"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "OOP",
+      "explanation": "The three-argument form of type() performs dynamic class creation with the given name, bases and namespace dictionary, returning the class itself."
+    },
+    {
+      "question": "Which statement creates a named function object?",
+      "options": [
+        "function f(): pass",
+        "def f(): pass",
+        "func f(): pass",
+        "lambda f: pass"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Functions",
+      "explanation": "The def statement binds a name to a newly created function object. 'function' and 'func' are not keywords, and lambda creates an unnamed function expression."
+    },
+    {
+      "question": "What does a function return when it has no return statement?",
+      "options": [
+        "None",
+        "0",
+        "False",
+        "An empty tuple"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Functions",
+      "explanation": "Falling off the end of a function implicitly returns None. It is not zero, False, or an empty tuple, though all of those are distinct objects."
+    },
+    {
+      "question": "What does *args collect in a function signature?",
+      "options": [
+        "Keyword arguments into a dict",
+        "A single dictionary",
+        "Extra positional arguments into a tuple",
+        "Nothing; it is only a marker"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Functions",
+      "explanation": "The *name parameter packs leftover positional arguments into a tuple. Keyword arguments require **kwargs instead."
+    },
+    {
+      "question": "What does **kwargs collect?",
+      "options": [
+        "Positional arguments into a list",
+        "Extra keyword arguments into a dict",
+        "The return value",
+        "A generator"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Functions",
+      "explanation": "The double-star parameter gathers unmatched keyword arguments into a dictionary of names to values; *args handles positional extras."
+    },
+    {
+      "question": "What is the scope of a variable assigned inside a function without global?",
+      "options": [
+        "Module-level",
+        "Built-in",
+        "Class-level",
+        "Local to that function"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Functions",
+      "explanation": "Assignment in a function body creates a local name unless declared global or nonlocal. Reading a module variable does not make it local."
+    },
+    {
+      "question": "Which keyword rebinds a name in module scope from inside a function?",
+      "options": [
+        "nonlocal",
+        "extern",
+        "static",
+        "global"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Functions",
+      "explanation": "The global statement directs assignments to the module namespace. nonlocal targets an enclosing function scope, while extern and static are not Python keywords."
+    },
+    {
+      "question": "What does the return statement do?",
+      "options": [
+        "Only prints a value",
+        "Exits the function and yields a value to the caller",
+        "Restarts the function",
+        "Defines a nested function"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Functions",
+      "explanation": "return immediately ends execution of the current function and passes the expression back to the caller. Returning None explicitly is equivalent to falling off the end."
+    },
+    {
+      "question": "What is lambda x: x + 1?",
+      "options": [
+        "An anonymous function object",
+        "A list comprehension",
+        "A dictionary key",
+        "A class attribute"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Functions",
+      "explanation": "A lambda expression creates a small anonymous function without a def statement. It returns the function object itself rather than its result."
+    },
+    {
+      "question": "What does map(str, [1, 2]) return in Python 3?",
+      "options": [
+        "['1', '2']",
+        "A list of strings",
+        "An iterator producing strings",
+        "None"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Functions",
+      "explanation": "map() is lazy in Python 3 and returns an iterator. Wrapping it in list() is needed to materialize the converted values."
+    },
+    {
+      "question": "Which function applies a two-argument function cumulatively to items?",
+      "options": [
+        "filter",
+        "reduce",
+        "zip",
+        "enumerate"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Functions",
+      "explanation": "functools.reduce folds a sequence using a binary function, optionally starting from an initializer. filter selects items, zip pairs them, enumerate indexes them."
+    },
+    {
+      "question": "What is abs(-5)?",
+      "options": [
+        "-5",
+        "5.0",
+        "0",
+        "5"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Functions",
+      "explanation": "abs() returns the magnitude with the same numeric type, so an integer input gives integer 5, not the float 5.0."
+    },
+    {
+      "question": "Which syntax makes arguments keyword-only?",
+      "options": [
+        "A trailing comma",
+        "The global keyword",
+        "A leading * in the parameter list",
+        "A @ decorator"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "explanation": "Parameters after a bare * must be supplied by name. Positional-only parameters use /, while global and decorators do not affect calling conventions."
+    },
+    {
+      "question": "What does list(filter(None, [0, 1, '', 2])) produce?",
+      "options": [
+        "[1, 2]",
+        "[0, 1, 2]",
+        "[1, '', 2]",
+        "[]"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Functions",
+      "explanation": "With None as the predicate, filter keeps truthy items only. Zero and the empty string are falsy and discarded."
+    },
+    {
+      "question": "What is a closure?",
+      "options": [
+        "A class with private fields",
+        "A decorator that logs calls",
+        "A function object that captures variables from an enclosing scope",
+        "A try-except block"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "explanation": "A closure is a function plus references to nonlocal variables from its defining environment. Logging decorators are one application but not the definition."
+    },
+    {
+      "question": "What does nonlocal x do inside a nested function?",
+      "options": [
+        "Rebinds x in the nearest enclosing non-global scope",
+        "Creates a module global",
+        "Declares x as a constant",
+        "Deletes x"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "explanation": "nonlocal makes assignment target the closest enclosing function scope that already has x. It never creates module globals or constants."
+    },
+    {
+      "question": "What error occurs when an inner function reads a name before assigning to it locally without nonlocal?",
+      "options": [
+        "NameError",
+        "KeyError",
+        "ValueError",
+        "UnboundLocalError"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "explanation": "Assignment anywhere in a function makes x local there. Reading it before that assignment raises UnboundLocalError, a subclass of NameError but more specific."
+    },
+    {
+      "question": "Which function changes the recursion limit?",
+      "options": [
+        "sys.getsizeof()",
+        "sys.setrecursionlimit()",
+        "math.factorial()",
+        "gc.set_threshold()"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "explanation": "sys.setrecursionlimit() adjusts the maximum Python call stack depth. gc.set_threshold() tunes the cyclic collector, not recursion."
+    },
+    {
+      "question": "What does @functools.lru_cache provide?",
+      "options": [
+        "Memoization of results for repeated calls",
+        "Automatic parallel execution",
+        "Static type checking",
+        "Exception suppression"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "explanation": "lru_cache stores results keyed by arguments so repeated calls avoid recomputation. It does not parallelize, type-check, or swallow exceptions."
+    },
+    {
+      "question": "What does functools.partial(f, 2) create?",
+      "options": [
+        "A copy of f's source",
+        "A decorator that logs",
+        "A new callable with 2 pre-bound as an argument",
+        "A generator"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "explanation": "partial fixes some arguments or keywords of a callable and returns a new callable with a simpler signature. The original function is unchanged."
+    },
+    {
+      "question": "When are default argument values evaluated?",
+      "options": [
+        "At each call",
+        "Once at function definition time",
+        "At import of functools",
+        "At interpreter shutdown"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "explanation": "Default expressions are evaluated once when the def executes, then stored on the function object. This is why mutable defaults retain state between calls."
+    },
+    {
+      "question": "Why is def f(x=[]): x.append(1); return x problematic?",
+      "options": [
+        "Lists cannot be default arguments",
+        "It raises SyntaxError",
+        "It always returns an empty list",
+        "The same list object is shared across calls"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "explanation": "The default is created once at definition time, so successive calls mutate the same list. The usual fix is None with a fresh list created inside."
+    },
+    {
+      "question": "What does global x allow inside a function?",
+      "options": [
+        "Reading any x from any scope",
+        "Deleting the function's locals",
+        "Creating a class attribute",
+        "Assigning to the module-level name x"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "explanation": "The global declaration makes assignments inside the function target the module namespace. Reading globals does not require the declaration."
+    },
+    {
+      "question": "What does sorted(xs, key=f) use f for?",
+      "options": [
+        "To filter elements out",
+        "To compute a comparison key per element",
+        "To reverse the list",
+        "To convert the list to a set"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "explanation": "The key function is applied once per element and ordering is based on those values. It does not remove elements or set direction."
+    },
+    {
+      "question": "What does zip(a, b, strict=True) do in Python 3.10+?",
+      "options": [
+        "Raises ValueError if iterables have different lengths",
+        "Pads shorter iterables with None",
+        "Returns a list instead of an iterator",
+        "Silently ignores extra elements"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "explanation": "The strict flag makes zip raise ValueError when inputs are exhausted unevenly. By default zip truncates to the shortest input."
+    },
+    {
+      "question": "What is functools.reduce(lambda a, b: a + b, [1, 2, 3])?",
+      "options": [
+        "[1, 2, 3]",
+        "3",
+        "6",
+        "TypeError"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Functions",
+      "explanation": "reduce accumulates 1+2=3 then 3+3=6, returning the final scalar. It does not return a list and no error occurs."
+    },
+    {
+      "question": "In def f(a, /, b, *, c), how must arguments be passed?",
+      "options": [
+        "All positional",
+        "a positional-only, b either, c keyword-only",
+        "a keyword-only, b positional-only",
+        "All keyword-only"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Functions",
+      "explanation": "A slash marks preceding parameters positional-only; a bare star marks following ones keyword-only. The middle parameter b accepts either form."
+    },
+    {
+      "question": "What is the late-binding closure pitfall in loops?",
+      "options": [
+        "The loop variable is copied each iteration",
+        "Closures raise SyntaxError",
+        "The function is called immediately",
+        "All closures capture the same variable and see its final value"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Functions",
+      "explanation": "Captured variables are looked up when the closure runs, after the loop finishes. Binding the value as a default argument is a common workaround."
+    },
+    {
+      "question": "After x = 1; def f(): global x; x = 5; f(), what is x?",
+      "options": [
+        "1",
+        "None",
+        "5",
+        "UnboundLocalError"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Functions",
+      "explanation": "The global declaration routes the assignment to module scope, replacing the old value 1 with 5. The function's implicit return value is irrelevant."
+    },
+    {
+      "question": "What risk comes from setting the recursion limit too high?",
+      "options": [
+        "C stack overflow or interpreter crash",
+        "Slower garbage collection only",
+        "Automatic loop conversion",
+        "ImportError"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Functions",
+      "explanation": "Very deep Python recursion can exhaust the underlying C stack before a RecursionError is raised, crashing the process. Raising the limit does not convert recursion to loops."
+    },
+    {
+      "question": "What does functools.singledispatch provide?",
+      "options": [
+        "A decorator for caching results",
+        "A thread-safe queue",
+        "A generic function dispatching on the first argument's type",
+        "A metaclass generator"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Functions",
+      "explanation": "singledispatch turns a function into a generic function with implementations registered per type of the first argument. Caching is lru_cache's role."
+    },
+    {
+      "question": "What does f.__defaults__ contain?",
+      "options": [
+        "A tuple of default parameter values",
+        "The function's local variables",
+        "The function name",
+        "The source code string"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Functions",
+      "explanation": "Function objects store positional-or-keyword defaults in __defaults__ as a tuple. Keyword-only defaults live in __kwdefaults__, and locals are not retained there."
+    },
+    {
+      "question": "Which keyword turns a function into a generator?",
+      "options": [
+        "await",
+        "return",
+        "lambda",
+        "yield"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Generators & Decorators",
+      "explanation": "A function containing yield is a generator function; calling it returns a generator object. 'return' ends a normal function and 'await' suspends a coroutine."
+    },
+    {
+      "question": "What does next(gen) raise when the generator is exhausted?",
+      "options": [
+        "ValueError",
+        "StopIteration",
+        "IndexError",
+        "None"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Generators & Decorators",
+      "explanation": "Exhaustion is signalled by StopIteration. A for loop handles this automatically, and next() never returns None to mean exhaustion."
+    },
+    {
+      "question": "What type is produced by calling a function that contains yield?",
+      "options": [
+        "generator",
+        "list",
+        "tuple",
+        "coroutine object"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Generators & Decorators",
+      "explanation": "Calling a generator function does not run its body; it returns a generator iterator. Lists and tuples are eager containers, and coroutine objects come from async functions."
+    },
+    {
+      "question": "Which expression fully consumes a generator into a list?",
+      "options": [
+        "iter(gen)",
+        "next(gen)",
+        "list(gen)",
+        "gen()"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Generators & Decorators",
+      "explanation": "list() iterates until StopIteration and collects all yielded values. iter() only returns an iterator and next() fetches a single item."
+    },
+    {
+      "question": "What does yield from iterable do?",
+      "options": [
+        "Returns a list of values",
+        "Delegates iteration to a subgenerator or iterable",
+        "Raises StopIteration immediately",
+        "Creates a decorator"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Generators & Decorators",
+      "explanation": "yield from forwards each item from the delegated iterable and also propagates send(), throw() and the subgenerator's return value."
+    },
+    {
+      "question": "What is a decorator in Python?",
+      "options": [
+        "A comment above a function",
+        "A type annotation",
+        "A built-in sorting flag",
+        "A callable that takes a function and returns a function"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Generators & Decorators",
+      "explanation": "Decorators are higher-order callables applied with @ syntax that replace or wrap the original function. They are neither annotations nor comments."
+    },
+    {
+      "question": "Which syntax applies a decorator to a function?",
+      "options": [
+        "decorator(def f)",
+        "using a decorate keyword",
+        "@decorator on the line above def",
+        "import decorator as f"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Generators & Decorators",
+      "explanation": "The @expression form is syntactic sugar for f = decorator(f) after the def executes. There is no 'decorate' keyword or function-style wrapper syntax."
+    },
+    {
+      "question": "What does functools.wraps preserve?",
+      "options": [
+        "Only the return value",
+        "__name__, __doc__ and other metadata",
+        "The original globals dictionary",
+        "No metadata at all"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Generators & Decorators",
+      "explanation": "wraps copies metadata from the wrapped function onto the wrapper, which keeps introspection and documentation useful. It does not copy globals."
+    },
+    {
+      "question": "What does contextlib.contextmanager build?",
+      "options": [
+        "A context manager from a generator function",
+        "A thread pool",
+        "A class decorator",
+        "A CSV parser"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Generators & Decorators",
+      "explanation": "The decorator converts a generator with one yield into an object with __enter__ and __exit__, where code after the yield acts as cleanup."
+    },
+    {
+      "question": "What does with open(...) as f: guarantee?",
+      "options": [
+        "The file is read twice",
+        "The file is opened in binary mode",
+        "The file is closed automatically on exit",
+        "The file is deleted afterwards"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Generators & Decorators",
+      "explanation": "The context manager's __exit__ closes the file even if the body raises. It does not change the mode or delete the file."
+    },
+    {
+      "question": "Which dunder pair implements the context manager protocol?",
+      "options": [
+        "__iter__ and __next__",
+        "__enter__ and __exit__",
+        "__open__ and __close__",
+        "__get__ and __set__"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Generators & Decorators",
+      "explanation": "__enter__ provides the bound value and __exit__ performs cleanup and exception handling. Iterator and descriptor protocols use different dunders."
+    },
+    {
+      "question": "What must __iter__ return?",
+      "options": [
+        "None",
+        "A list",
+        "The object itself only",
+        "An iterator object"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Generators & Decorators",
+      "explanation": "The iteration protocol requires __iter__ to return an object with __next__. Some containers return self, but the requirement is an iterator."
+    },
+    {
+      "question": "What does next(it, default) do?",
+      "options": [
+        "Raises StopIteration always",
+        "Returns None always",
+        "Returns default instead of raising StopIteration",
+        "Deletes the iterator"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Generators & Decorators",
+      "explanation": "The two-argument form of next() supplies a fallback value once iteration ends. Without it, exhaustion raises StopIteration."
+    },
+    {
+      "question": "What is lazy evaluation in generators?",
+      "options": [
+        "Values are produced on demand only when requested",
+        "All values are stored at creation",
+        "The code is recompiled at each next()",
+        "Values are cached permanently"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Generators & Decorators",
+      "explanation": "A generator pauses at each yield and computes the next value only when next() is called. It does not precompute a full collection."
+    },
+    {
+      "question": "Why are generators memory efficient?",
+      "options": [
+        "They use compressed integers",
+        "They disable garbage collection",
+        "They hold one suspended frame and yield items one at a time",
+        "They store items in a set"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Generators & Decorators",
+      "explanation": "Only the current frame and local state are retained between yields, so a huge stream needs little memory. No compression or GC changes are involved."
+    },
+    {
+      "question": "What happens to a generator's local state between yields?",
+      "options": [
+        "It is preserved in the suspended frame",
+        "It is reset to defaults",
+        "It is moved to module globals",
+        "It is discarded"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Generators & Decorators",
+      "explanation": "The generator frame is kept alive on the heap, so locals and the instruction pointer survive until the next resume or closure."
+    },
+    {
+      "question": "What does gen.close() do?",
+      "options": [
+        "Pauses the generator",
+        "Deletes all yielded values",
+        "Converts it to a list",
+        "Raises GeneratorExit to terminate it"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Generators & Decorators",
+      "explanation": "close() injects GeneratorExit at the suspended yield so finally blocks can run. After closing, further next() calls raise StopIteration."
+    },
+    {
+      "question": "What does yield from propagate between subgenerator and caller?",
+      "options": [
+        "Only return values",
+        "Values, exceptions and send() calls",
+        "Nothing; it only prints",
+        "Only the first item"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Generators & Decorators",
+      "explanation": "Delegation is transparent: yielded values flow outward, while sent values and thrown exceptions flow inward to the subgenerator."
+    },
+    {
+      "question": "When is the decoration expression @dec evaluated?",
+      "options": [
+        "Once when the function is defined",
+        "On every function call",
+        "At interpreter shutdown",
+        "Only under a debugger"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Generators & Decorators",
+      "explanation": "Decorator expressions run at definition time in the enclosing scope, and the result is applied once to the function object."
+    },
+    {
+      "question": "What does @x.setter define?",
+      "options": [
+        "A static method",
+        "A class method",
+        "The setter for a property named x",
+        "A new exception class"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Generators & Decorators",
+      "explanation": "The property object's setter decorator registers a function to run on assignment to x. It is not a classmethod or a standalone exception."
+    },
+    {
+      "question": "Which module provides lru_cache?",
+      "options": [
+        "itertools",
+        "functools",
+        "collections",
+        "contextlib"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Generators & Decorators",
+      "explanation": "functools holds higher-order helpers such as lru_cache, partial and wraps. itertools focuses on iterators, collections on containers."
+    },
+    {
+      "question": "What does a @contextmanager generator need?",
+      "options": [
+        "Exactly one return statement",
+        "A class body",
+        "No yield statements",
+        "Exactly one yield that provides the with value"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Generators & Decorators",
+      "explanation": "The single yield separates setup from teardown and its expression becomes the value bound by as. Zero or multiple yields break the protocol."
+    },
+    {
+      "question": "What does returning True from __exit__ mean?",
+      "options": [
+        "The context repeats",
+        "An exception is re-raised",
+        "The file is reopened",
+        "The exception is suppressed"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Generators & Decorators",
+      "explanation": "A truthy __exit__ result tells the with statement not to propagate the active exception. Returning False or None lets it continue outward."
+    },
+    {
+      "question": "What is list(x for x in range(3) if x % 2)?",
+      "options": [
+        "[0, 2]",
+        "[1]",
+        "[1, 2]",
+        "[]"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Generators & Decorators",
+      "explanation": "Only 1 has a remainder of 1 when divided by 2 among 0, 1 and 2. The generator expression is consumed by list() into a one-element list."
+    },
+    {
+      "question": "Which statement about generator expressions is true?",
+      "options": [
+        "They do not allocate the full result list up front",
+        "They always return a list",
+        "They cannot be iterated",
+        "They evaluate every item eagerly"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Generators & Decorators",
+      "explanation": "Generator expressions are lazy and yield items one at a time, unlike list comprehensions. They are iterable and do not eagerly materialize results."
+    },
+    {
+      "question": "What does gen.send(v) do?",
+      "options": [
+        "Adds v to the generator's results",
+        "Closes the generator",
+        "Resumes execution with the yield expression evaluating to v",
+        "Raises TypeError always"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Generators & Decorators",
+      "explanation": "send() resumes a suspended generator and injects a value that becomes the result of the current yield expression. The first send must usually be None."
+    },
+    {
+      "question": "Under PEP 479, what happens if StopIteration escapes a generator body?",
+      "options": [
+        "It is silently ignored",
+        "It is converted to RuntimeError",
+        "It becomes GeneratorExit",
+        "It returns None"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Generators & Decorators",
+      "explanation": "PEP 479 replaces an escaping StopIteration with RuntimeError to avoid masking bugs in loops that consume the generator."
+    },
+    {
+      "question": "What does itertools.tee create?",
+      "options": [
+        "A sorted copy",
+        "A reversed iterator",
+        "A generator that never ends",
+        "Multiple independent iterators from one iterable"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Generators & Decorators",
+      "explanation": "tee splits one iterable into several iterators that can be consumed separately. It does not sort, reverse, or create an infinite stream."
+    },
+    {
+      "question": "For g = iter(range(4)), what is list(zip(g, g))?",
+      "options": [
+        "[(0, 0), (1, 1), (2, 2), (3, 3)]",
+        "[]",
+        "[(0, 1), (2, 3)]",
+        "[(0, 1), (1, 2), (2, 3)]"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Generators & Decorators",
+      "explanation": "Both columns of zip pull from the same iterator, so each iteration advances it twice. The pairs are therefore (0, 1) and (2, 3)."
+    },
+    {
+      "question": "Why can't an exhausted generator be iterated again?",
+      "options": [
+        "Its internal iteration state is consumed",
+        "It is deleted from memory",
+        "It raises SyntaxError",
+        "It is converted into a list"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Generators & Decorators",
+      "explanation": "A generator is a one-shot iterator whose frame is finished after exhaustion. A fresh generator must be created by calling the function again."
+    },
+    {
+      "question": "Which attributes does functools.wraps copy by default?",
+      "options": [
+        "Only __name__",
+        "Only __doc__",
+        "__module__, __name__, __qualname__, __doc__, __annotations__",
+        "All local variables"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Generators & Decorators",
+      "explanation": "wraps updates the wrapper with standard metadata fields from the wrapped callable. It cannot copy local variables, which do not exist until calls happen."
+    },
+    {
+      "question": "Which mode string opens a file for text reading?",
+      "options": [
+        "r",
+        "w",
+        "rb",
+        "a"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Files & Exceptions",
+      "explanation": "Mode 'r' is the default read-only text mode. 'w' truncates for writing, 'rb' reads bytes, and 'a' appends."
+    },
+    {
+      "question": "What does open(path, 'w') do to an existing file?",
+      "options": [
+        "Appends to it",
+        "Raises FileExistsError",
+        "Truncates it to zero length",
+        "Opens it read-only"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Files & Exceptions",
+      "explanation": "Write mode deletes existing contents as soon as the file is opened. It does not append and does not refuse to open an existing file."
+    },
+    {
+      "question": "Which file method reads the whole file into one string?",
+      "options": [
+        "readline()",
+        "read()",
+        "readall()",
+        "getline()"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Files & Exceptions",
+      "explanation": "read() with no argument returns all remaining text. readline() returns one line, and readall()/getline() are not standard file methods."
+    },
+    {
+      "question": "What does f.readline() return?",
+      "options": [
+        "One line including its trailing newline",
+        "All lines as a list",
+        "The file size",
+        "None"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Files & Exceptions",
+      "explanation": "readline() stops at the next newline and keeps that newline in the returned string. At end of file it returns an empty string, not None."
+    },
+    {
+      "question": "Which module encodes Python objects as JSON text?",
+      "options": [
+        "csv",
+        "pickle",
+        "json",
+        "marshal"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Files & Exceptions",
+      "explanation": "The json module converts between Python data and JSON text. pickle uses a binary Python-specific format, and csv handles tabular rows."
+    },
+    {
+      "question": "What does json.loads(s) return?",
+      "options": [
+        "A JSON-formatted string",
+        "A Python object decoded from s",
+        "A file object",
+        "None"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Files & Exceptions",
+      "explanation": "loads() parses a JSON string into corresponding Python types such as dict, list, str and int. It does not write files or return the input string."
+    },
+    {
+      "question": "What does json.dumps(obj) produce?",
+      "options": [
+        "A Python dict",
+        "A bytes object",
+        "A list",
+        "A JSON-formatted string"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Files & Exceptions",
+      "explanation": "dumps() serializes an object into a JSON string. dumps() returns str whereas a bytes result would require an explicit encoding step."
+    },
+    {
+      "question": "Which exception is raised by 1 / 0?",
+      "options": [
+        "ValueError",
+        "TypeError",
+        "AttributeError",
+        "ZeroDivisionError"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Files & Exceptions",
+      "explanation": "Integer or float division by zero raises ZeroDivisionError. ValueError is for bad values, TypeError for incompatible types."
+    },
+    {
+      "question": "Which clause executes whether or not an exception occurred?",
+      "options": [
+        "else",
+        "finally",
+        "except",
+        "raise"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Files & Exceptions",
+      "explanation": "finally always runs, including when a return or exception leaves the try block. The else suite runs only when no exception was raised."
+    },
+    {
+      "question": "Which block runs only when no exception was raised?",
+      "options": [
+        "else",
+        "finally",
+        "except",
+        "with"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Files & Exceptions",
+      "explanation": "The optional else suite executes after try only if no exception occurred. finally always executes, and except handles failures."
+    },
+    {
+      "question": "Which statement explicitly raises an exception?",
+      "options": [
+        "throw",
+        "assert",
+        "raise",
+        "except"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Files & Exceptions",
+      "explanation": "The raise statement triggers an exception, optionally with a new instance or a re-raise. assert raises only when its condition is false."
+    },
+    {
+      "question": "Which class is the usual base for custom exceptions?",
+      "options": [
+        "BaseException",
+        "Exception",
+        "Error",
+        "object"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Files & Exceptions",
+      "explanation": "Custom errors should inherit from Exception; BaseException is reserved for system-exiting exceptions like KeyboardInterrupt. Error is not a built-in base."
+    },
+    {
+      "question": "What does the with statement guarantee for files?",
+      "options": [
+        "The file is read in binary mode",
+        "The file is duplicated",
+        "The file is never closed",
+        "__exit__ closes the file even if an exception occurs"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Files & Exceptions",
+      "explanation": "The context manager closes the resource during __exit__ whether the body succeeds or fails. It does not alter the mode or duplicate handles."
+    },
+    {
+      "question": "What does csv.reader yield for each row?",
+      "options": [
+        "A dict keyed by header",
+        "A tuple of integers",
+        "A list of strings",
+        "A JSON object"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Files & Exceptions",
+      "explanation": "csv.reader parses each record into a list of strings; DictReader is the variant that returns dictionaries. No numeric conversion is done automatically."
+    },
+    {
+      "question": "What does csv.DictReader return per row?",
+      "options": [
+        "A dict keyed by header names",
+        "A list of strings",
+        "A csv.writer object",
+        "A set"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Files & Exceptions",
+      "explanation": "DictReader uses the first row as fieldnames and yields a dict for every subsequent record. The plain reader yields lists instead."
+    },
+    {
+      "question": "What does pickle.dump(obj, f) do?",
+      "options": [
+        "Writes human-readable text",
+        "Writes CSV rows",
+        "Serializes obj into a binary stream",
+        "Deletes obj"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Files & Exceptions",
+      "explanation": "pickle writes a Python-specific binary representation that preserves object structure. It is not a text, CSV, or JSON format."
+    },
+    {
+      "question": "Why is unpickling untrusted data dangerous?",
+      "options": [
+        "It can execute arbitrary code during reconstruction",
+        "It always raises ValueError",
+        "It only accepts ASCII text",
+        "It silently converts objects to JSON"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Files & Exceptions",
+      "explanation": "Pickle may invoke import and callable hooks while rebuilding objects, so malicious payloads can run code. Only trust data you created yourself."
+    },
+    {
+      "question": "What is the correct order of try-statement clauses?",
+      "options": [
+        "try, finally, except, else",
+        "except, try, else, finally",
+        "try, else, except, finally",
+        "try, except, else, finally"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Files & Exceptions",
+      "explanation": "A try block may be followed by except clauses, then an optional else suite, then an optional finally suite in that exact order."
+    },
+    {
+      "question": "What does except Exception as e: do?",
+      "options": [
+        "Catches only KeyboardInterrupt",
+        "Binds the caught exception to e",
+        "Re-raises the exception",
+        "Ignores all errors"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Files & Exceptions",
+      "explanation": "The 'as' clause stores the caught exception object in a local name for inspection. It still catches only Exception subclasses, not system-exiting ones."
+    },
+    {
+      "question": "What does raise ValueError('x') from err do?",
+      "options": [
+        "Sets __cause__ to err and shows explicit chaining",
+        "Deletes err",
+        "Raises two separate exceptions",
+        "Converts the error to RuntimeError"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Files & Exceptions",
+      "explanation": "The from clause records err as the explicit cause, which appears in the traceback. Only 'raise ... from None' hides the original context."
+    },
+    {
+      "question": "Which exception does d['k'] raise if k is missing?",
+      "options": [
+        "IndexError",
+        "AttributeError",
+        "KeyError",
+        "LookupError"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Files & Exceptions",
+      "explanation": "Dictionary lookup of an absent key raises KeyError specifically. LookupError is its base class, and IndexError applies to sequence positions."
+    },
+    {
+      "question": "Which exception does int('abc') raise?",
+      "options": [
+        "TypeError",
+        "ValueError",
+        "NameError",
+        "SyntaxError"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Files & Exceptions",
+      "explanation": "The string has the right type but an invalid value, so int() raises ValueError. TypeError would arise for an unsupported object type."
+    },
+    {
+      "question": "What does assert x > 0 raise when false?",
+      "options": [
+        "ValueError",
+        "TypeError",
+        "RuntimeError",
+        "AssertionError"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Files & Exceptions",
+      "explanation": "A failed assert raises AssertionError. Assertions can be stripped under -O, so they should not be used for runtime data validation."
+    },
+    {
+      "question": "What does f.seek(0) do on a file object?",
+      "options": [
+        "Deletes the file",
+        "Flushes buffers only",
+        "Returns the file size",
+        "Moves the cursor to the start"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Files & Exceptions",
+      "explanation": "seek(0) repositions the file pointer to byte offset zero so the next read starts over. It does not truncate or delete anything."
+    },
+    {
+      "question": "What does f.tell() return?",
+      "options": [
+        "The number of lines read",
+        "The current file position",
+        "The file's size always",
+        "None"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Files & Exceptions",
+      "explanation": "tell() reports the current cursor position as an opaque number. In binary mode it is a byte offset; in text mode it should be treated as a cookie."
+    },
+    {
+      "question": "What does Path.read_text() do?",
+      "options": [
+        "Reads and decodes the file using the locale default encoding unless one is given",
+        "Writes text to the path",
+        "Returns a list of Path objects",
+        "Opens the file in binary mode"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Files & Exceptions",
+      "explanation": "pathlib's read_text() opens in text mode and decodes with the locale encoding by default. Passing encoding explicitly is recommended for portable code."
+    },
+    {
+      "question": "What does open(path, 'a+') allow?",
+      "options": [
+        "Read and truncate",
+        "Write bytes only",
+        "Read and append at the end",
+        "Read-only access"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Files & Exceptions",
+      "explanation": "The a+ mode allows both reading and appending; writes always go to the end. It does not truncate, and it operates in text, not binary, mode."
+    },
+    {
+      "question": "What does json.load(f) expect?",
+      "options": [
+        "A JSON string",
+        "A file-like object containing JSON text",
+        "A dict object",
+        "A bytes-only stream"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Files & Exceptions",
+      "explanation": "load() reads JSON from a .read()-supporting file object and returns Python data. loads() is the counterpart that parses a string."
+    },
+    {
+      "question": "In text mode on Windows, what happens to newline characters?",
+      "options": [
+        "They are stripped entirely",
+        "They are converted to null bytes",
+        "They are doubled",
+        "Universal newline translation converts CRLF to \\n"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Files & Exceptions",
+      "explanation": "Text mode normalizes CRLF line endings to a single newline on reading. Opening with newline='' disables that translation."
+    },
+    {
+      "question": "What does except (A, B): do?",
+      "options": [
+        "Catches only A",
+        "Requires both A and B to be raised",
+        "Catches either A or B",
+        "Creates a new exception class"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Files & Exceptions",
+      "explanation": "A tuple of exception classes in except matches any one of them. It is equivalent to separate handlers with a shared body."
+    },
+    {
+      "question": "What does a bare raise inside an except block do?",
+      "options": [
+        "Re-raises the current exception",
+        "Raises RuntimeError",
+        "Returns None",
+        "Suppresses the exception"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Files & Exceptions",
+      "explanation": "With no expression, raise repeats the active exception and preserves its traceback. Outside an exception handler it raises RuntimeError."
+    },
+    {
+      "question": "Which module provides regular expressions?",
+      "options": [
+        "regex",
+        "re",
+        "string",
+        "fnmatch"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Libraries",
+      "explanation": "The standard re module implements regular expression matching. fnmatch does shell-style globs, and string is a collection of constants."
+    },
+    {
+      "question": "What does math.sqrt(16) return?",
+      "options": [
+        "4.0",
+        "4",
+        "2",
+        "16"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Libraries",
+      "explanation": "math.sqrt() always returns a float even for a perfect square, so the result is 4.0, not the integer 4. The other numbers are unrelated values."
+    },
+    {
+      "question": "What values can random.randint(1, 3) produce?",
+      "options": [
+        "1 and 3 only",
+        "1, 2, 3 and 4",
+        "0, 1 and 2",
+        "1, 2 or 3, both endpoints included"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Libraries",
+      "explanation": "randint(a, b) is inclusive of both a and b. It returns integers only, so 4 is excluded and zero is never produced."
+    },
+    {
+      "question": "What does datetime.date.today() return?",
+      "options": [
+        "A string",
+        "A date object",
+        "A datetime object with time",
+        "The current timestamp as float"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Libraries",
+      "explanation": "date.today() returns a date instance containing year, month and day. datetime.now() is the function that includes the time of day."
+    },
+    {
+      "question": "Which module supplies Counter and deque?",
+      "options": [
+        "collections",
+        "itertools",
+        "functools",
+        "statistics"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Libraries",
+      "explanation": "collections holds container datatypes such as Counter, deque, defaultdict and namedtuple. itertools supplies iterator tools, not containers."
+    },
+    {
+      "question": "What is statistics.median([3, 1, 2])?",
+      "options": [
+        "1",
+        "3",
+        "2",
+        "2.0"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Libraries",
+      "explanation": "After sorting to 1, 2, 3 the middle value is 2. With an odd count the median is an actual data element, not an average."
+    },
+    {
+      "question": "What does os.getcwd() return?",
+      "options": [
+        "The home directory path",
+        "The current working directory as a string",
+        "A list of directory entries",
+        "The operating system name"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Libraries",
+      "explanation": "getcwd() returns the absolute path of the process's current working directory as a string. os.listdir() gives entries and os.name gives the platform."
+    },
+    {
+      "question": "What does sys.argv[0] hold?",
+      "options": [
+        "The first command-line argument",
+        "The number of arguments",
+        "The current directory",
+        "The script name or path used to start Python"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Libraries",
+      "explanation": "argv[0] is the program name as invoked; user arguments begin at index 1. len(sys.argv) gives the argument count."
+    },
+    {
+      "question": "Which module is used to spawn and control external processes?",
+      "options": [
+        "os alone",
+        "threading",
+        "socket",
+        "subprocess"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Libraries",
+      "explanation": "The subprocess module provides run() and Popen() for launching processes and capturing their output. os.system is a limited legacy alternative."
+    },
+    {
+      "question": "What does re.match check?",
+      "options": [
+        "A match anywhere in the string",
+        "A match only at the start of the string",
+        "Only whole-string equality",
+        "The number of matches"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Libraries",
+      "explanation": "match() anchors the pattern at position zero. re.search() looks anywhere, and fullmatch() requires the entire string to match."
+    },
+    {
+      "question": "What does itertools.count() produce?",
+      "options": [
+        "An infinite arithmetic sequence",
+        "A finite counter object",
+        "A list of integers",
+        "A dictionary of counts"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Libraries",
+      "explanation": "count(start, step) yields values indefinitely with the given step. It is lazy, so it does not allocate a list or terminate on its own."
+    },
+    {
+      "question": "What does math.floor(-1.5) return?",
+      "options": [
+        "-1",
+        "-2.0",
+        "-2",
+        "1"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Libraries",
+      "explanation": "floor() returns the greatest integer less than or equal to the input, so -2. It returns an int, not a float, and it rounds toward negative infinity."
+    },
+    {
+      "question": "What does re.search return?",
+      "options": [
+        "All matches as a list",
+        "A match object or None",
+        "The matched substring only",
+        "A boolean"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Libraries",
+      "explanation": "search() scans the whole string and returns a Match object on success or None on failure. findall() returns strings and fullmatch() still returns a Match."
+    },
+    {
+      "question": "What does re.findall return?",
+      "options": [
+        "A single Match object",
+        "An iterator of Match objects",
+        "The number of matches",
+        "A list of matching strings or tuples"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Libraries",
+      "explanation": "findall() builds a list of matched substrings, or tuples for multiple groups. It is not a Match object, an iterator, or a count."
+    },
+    {
+      "question": "What does subprocess.run(..., capture_output=True) do?",
+      "options": [
+        "Runs the command in a background thread",
+        "Skips execution and returns immediately",
+        "Captures stdout and stderr",
+        "Redirects output to a file"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Libraries",
+      "explanation": "capture_output is shorthand for PIPE on both stdout and stderr, making them available on the CompletedProcess. It does not run in a thread."
+    },
+    {
+      "question": "What does pathlib.Path('a') / 'b' produce?",
+      "options": [
+        "Path('a/b')",
+        "The string 'a/b'",
+        "A list of paths",
+        "An error"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Libraries",
+      "explanation": "The / operator joins path segments and returns a new Path using the platform separator. It does not produce a plain string or fail."
+    },
+    {
+      "question": "What does datetime.timedelta represent?",
+      "options": [
+        "A wall-clock time zone",
+        "A formatted date string",
+        "A duration or difference between dates",
+        "A calendar month"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Libraries",
+      "explanation": "timedelta stores a duration in days, seconds and microseconds and supports date arithmetic. Time zones are handled by tzinfo classes."
+    },
+    {
+      "question": "What does random.choice([1, 2, 3]) do?",
+      "options": [
+        "Returns one randomly selected element",
+        "Shuffles the list in place",
+        "Removes an element",
+        "Returns three elements"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Libraries",
+      "explanation": "choice() selects a single element from a sequence. shuffle() rearranges in place, and sample() chooses multiple items."
+    },
+    {
+      "question": "What does math.ceil(2.1) return?",
+      "options": [
+        "2",
+        "2.1",
+        "3.0",
+        "3"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Libraries",
+      "explanation": "ceil() returns the smallest integer greater than or equal to x, so 3. It yields an int, not a float, and never rounds down."
+    },
+    {
+      "question": "What does itertools.chain([1, 2], [3]) yield?",
+      "options": [
+        "[1, 2, 3] as a list",
+        "1, 2, 3 as a single iterator",
+        "[(1, 2), (3,)]",
+        "Nothing"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Libraries",
+      "explanation": "chain() links iterables into one lazy iterator producing 1, 2 then 3. It does not allocate a list or nest the inputs."
+    },
+    {
+      "question": "What does collections.defaultdict(list) do?",
+      "options": [
+        "Creates an empty list for each missing key on access",
+        "Converts all keys to lists",
+        "Sorts the dictionary keys",
+        "Raises KeyError for missing keys"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Libraries",
+      "explanation": "defaultdict calls its factory when a missing key is looked up, inserting a fresh list. A normal dict would raise KeyError instead."
+    },
+    {
+      "question": "What does statistics.mode([1, 1, 2]) return?",
+      "options": [
+        "2",
+        "1.5",
+        "1",
+        "A list [1, 2]"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Libraries",
+      "explanation": "mode() returns the most frequently occurring datum, which is 1. It does not average values or list every distinct item."
+    },
+    {
+      "question": "What does re.sub('a', 'x', 'banana') return?",
+      "options": [
+        "'banana'",
+        "'bxnxnx'",
+        "'bxnxnx' only for the first match",
+        "3"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Libraries",
+      "explanation": "re.sub replaces every occurrence of the pattern, so the three a's become x's and the result is 'bxnxnx'. A count of 3 would come from re.subn."
+    },
+    {
+      "question": "What does sys.exit(1) do?",
+      "options": [
+        "Returns 1 from the current function",
+        "Closes standard input",
+        "Prints an error message",
+        "Raises SystemExit with code 1"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Libraries",
+      "explanation": "sys.exit() raises SystemExit so the interpreter terminates with the given status code. SystemExit inherits from BaseException, so bare except Exception does not catch it."
+    },
+    {
+      "question": "What does os.makedirs(path, exist_ok=True) do?",
+      "options": [
+        "Deletes the directory tree",
+        "Changes the current directory",
+        "Lists directory contents",
+        "Creates directories and does not fail if they exist"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Libraries",
+      "explanation": "With exist_ok=True, makedirs creates intermediate directories silently when the target already exists. Without it a FileExistsError is raised."
+    },
+    {
+      "question": "What distinguishes an aware datetime from a naive one?",
+      "options": [
+        "Aware objects store milliseconds",
+        "Aware objects carry tzinfo/time-zone information",
+        "Aware objects are always UTC",
+        "Naive objects cannot be compared"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Libraries",
+      "explanation": "A datetime with tzinfo is timezone-aware and can be converted unambiguously; naive datetimes have no zone attached. Aware does not mean specifically UTC."
+    },
+    {
+      "question": "What does re.compile provide?",
+      "options": [
+        "A reusable compiled pattern object",
+        "A list of all matches",
+        "A replacement string",
+        "A new regular expression syntax"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Libraries",
+      "explanation": "compile() creates a Pattern object that can be reused with match(), search() and findall(). Matching functions also compile and cache patterns internally."
+    },
+    {
+      "question": "What does itertools.groupby require for correct grouping?",
+      "options": [
+        "A reversed iterable",
+        "A set input",
+        "Input sorted by the grouping key",
+        "A dictionary input"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Libraries",
+      "explanation": "groupby only groups consecutive items sharing a key, so unsorted input produces repeated groups. Sorting by the same key is the usual preparation."
+    },
+    {
+      "question": "What does subprocess.Popen return?",
+      "options": [
+        "The exit code directly",
+        "A process object for managing the child",
+        "The command's stdout string",
+        "A boolean"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Libraries",
+      "explanation": "Popen starts the process and returns a handle with methods like communicate() and wait(). The exit code becomes available through those calls."
+    },
+    {
+      "question": "What does random.seed(42) ensure?",
+      "options": [
+        "True randomness",
+        "The generator never repeats",
+        "Only integers are generated",
+        "A reproducible sequence of values"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Libraries",
+      "explanation": "Seeding initializes the pseudo-random generator so the same sequence can be replayed. It does not create true entropy or restrict the types produced."
+    },
+    {
+      "question": "How does math.isclose differ from == for floats?",
+      "options": [
+        "It ignores NaN values",
+        "It always returns True for floats",
+        "It compares using relative and absolute tolerances",
+        "It compares only exponents"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Libraries",
+      "explanation": "isclose() accepts rel_tol and abs_tol to tolerate small rounding errors, unlike exact ==. It does not ignore NaN or simply compare exponents."
+    },
+    {
+      "question": "What is a virtual environment in Python?",
+      "options": [
+        "An isolated interpreter with its own site-packages",
+        "A sandbox for network calls",
+        "A built-in debugger mode",
+        "A special kind of generator"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Advanced Concepts",
+      "explanation": "A virtual environment keeps a project's dependencies separate by providing its own interpreter links and site-packages directory."
+    },
+    {
+      "question": "Which command installs a package from PyPI?",
+      "options": [
+        "python compile",
+        "os.install",
+        "pip install",
+        "pkg add"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Advanced Concepts",
+      "explanation": "The pip installer fetches and installs distributions from PyPI with 'pip install package'. The other listed commands are not Python installation tools."
+    },
+    {
+      "question": "What does the CPython GIL allow?",
+      "options": [
+        "Only one thread executing Python bytecode at a time",
+        "Unlimited parallel bytecode execution",
+        "No thread switching ever",
+        "Automatic multiprocessing"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Advanced Concepts",
+      "explanation": "The Global Interpreter Lock allows just one thread to run Python bytecode at a time. Threads still switch at intervals, and true parallelism needs processes."
+    },
+    {
+      "question": "Which module achieves parallelism by using separate processes?",
+      "options": [
+        "threading",
+        "asyncio",
+        "queue",
+        "multiprocessing"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Advanced Concepts",
+      "explanation": "multiprocessing spawns separate interpreter processes with independent memory and GILs. Threading and asyncio stay within one process."
+    },
+    {
+      "question": "What does async/await enable in Python?",
+      "options": [
+        "Multiple CPU cores for bytecode",
+        "Cooperative concurrency with suspendable coroutines",
+        "Automatic caching",
+        "Manual memory allocation"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Advanced Concepts",
+      "explanation": "async functions create coroutines that suspend at await, letting an event loop interleave tasks. It is concurrency, not parallel CPU execution."
+    },
+    {
+      "question": "Which standard module provides type-hint building blocks?",
+      "options": [
+        "typing",
+        "types",
+        "typing_extensions only",
+        "inspect"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Advanced Concepts",
+      "explanation": "typing defines helpers such as Optional, Union and Protocol. inspect examines objects, while types contains core type utilities."
+    },
+    {
+      "question": "What does the annotation list[int] denote?",
+      "options": [
+        "A list containing exactly one integer",
+        "A list of lists",
+        "A list whose elements are ints",
+        "A tuple of integers"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Advanced Concepts",
+      "explanation": "PEP 585 lets built-in generics be used directly in annotations, so list[int] means a list of integers. It does not constrain the length."
+    },
+    {
+      "question": "What is introspection?",
+      "options": [
+        "Compiling Python to C",
+        "Examining objects and their properties at runtime",
+        "Deleting unused variables",
+        "Encrypting source files"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Advanced Concepts",
+      "explanation": "Introspection means querying type, attributes, signature or source of live objects. Tools such as dir(), inspect and type() support it."
+    },
+    {
+      "question": "Which built-in lists the accessible names of an object or namespace?",
+      "options": [
+        "vars()",
+        "help()",
+        "type()",
+        "dir()"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Advanced Concepts",
+      "explanation": "dir() returns a sorted list of names, including inherited attributes. vars() returns the __dict__ mapping rather than just names."
+    },
+    {
+      "question": "What does id(obj) return?",
+      "options": [
+        "The object's class name",
+        "The object's value",
+        "The size in bytes",
+        "An integer identity, typically its memory address"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Advanced Concepts",
+      "explanation": "id() returns a unique stable integer for an object's lifetime, usually its address in CPython. It is not the type, value or size."
+    },
+    {
+      "question": "What does sys.getrefcount(obj) report?",
+      "options": [
+        "The permanent reference count with no adjustment",
+        "The reference count including a temporary argument reference",
+        "The number of attributes",
+        "The object's byte size"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Advanced Concepts",
+      "explanation": "Passing obj to getrefcount creates a temporary reference, so the reported count is one higher than in surrounding code."
+    },
+    {
+      "question": "When does CPython's reference counting free an object?",
+      "options": [
+        "When its reference count reaches zero",
+        "Immediately after creation",
+        "Only at interpreter shutdown",
+        "When the GC module is imported"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Advanced Concepts",
+      "explanation": "CPython deallocates an object as soon as its final reference disappears. The cyclic collector is needed separately for reference cycles."
+    },
+    {
+      "question": "What does the weakref module provide?",
+      "options": [
+        "References that keep objects alive forever",
+        "A faster list implementation",
+        "References that do not prevent garbage collection",
+        "Encryption of object data"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Advanced Concepts",
+      "explanation": "A weak reference points to an object without incrementing its reference count, so the target can still be collected. It is not a container or encryption feature."
+    },
+    {
+      "question": "What is a metaclass?",
+      "options": [
+        "A class that inherits from object only",
+        "A class whose instances are classes",
+        "A decorator for functions",
+        "A built-in exception type"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Advanced Concepts",
+      "explanation": "Metaclasses are the classes of classes; type is the default metaclass. Their __new__ and __init__ run while class objects are created."
+    },
+    {
+      "question": "What does an instance __dict__ store?",
+      "options": [
+        "Only class methods",
+        "The module's globals",
+        "The bytecode cache",
+        "The instance's own attributes"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Advanced Concepts",
+      "explanation": "An instance __dict__ maps that object's own attribute names to values. Class methods, globals and bytecode caches are stored in different places."
+    },
+    {
+      "question": "Which tool performs static type checking of annotations?",
+      "options": [
+        "pylint",
+        "black",
+        "mypy",
+        "pytest"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Advanced Concepts",
+      "explanation": "mypy analyses type annotations without executing the program. pylint lints style, black formats code and pytest runs tests."
+    },
+    {
+      "question": "What does asyncio.gather do?",
+      "options": [
+        "Runs awaitables concurrently and collects results",
+        "Starts new operating-system processes",
+        "Serializes objects",
+        "Replaces the event loop"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Advanced Concepts",
+      "explanation": "gather schedules several awaitables on the same event loop and returns a future resolving to their results in argument order."
+    },
+    {
+      "question": "What is a coroutine?",
+      "options": [
+        "A thread with its own stack",
+        "A subprocess wrapper",
+        "An awaitable object produced by an async function",
+        "A generator that cannot be resumed"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Advanced Concepts",
+      "explanation": "Calling an async function produces a coroutine object that runs when awaited or scheduled on an event loop. It is not a thread or process."
+    },
+    {
+      "question": "What does threading.Lock primarily prevent?",
+      "options": [
+        "Race conditions on shared mutable state",
+        "Memory leaks",
+        "Import errors",
+        "Garbage collection cycles"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Advanced Concepts",
+      "explanation": "A Lock serializes a critical section so threads cannot interleave mutations of shared data. It does not manage memory, imports or collection cycles."
+    },
+    {
+      "question": "Why do threads usually not speed up CPU-bound Python code?",
+      "options": [
+        "Threads cannot share objects",
+        "Threads have no stack",
+        "The OS disables multicore mode",
+        "The GIL serializes bytecode execution"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Advanced Concepts",
+      "explanation": "The Global Interpreter Lock permits only one thread to execute Python bytecode at a time, limiting CPU-bound scaling. Threads do share objects and have stacks."
+    },
+    {
+      "question": "What does multiprocessing.Pool.map do?",
+      "options": [
+        "Creates a thread per item",
+        "Applies a function across items using multiple processes",
+        "Maps dictionary keys to values",
+        "Sorts a multiprocessing queue"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Advanced Concepts",
+      "explanation": "Pool.map distributes chunks of an iterable to worker processes and returns results in order. It uses processes, not threads."
+    },
+    {
+      "question": "What does pip freeze output?",
+      "options": [
+        "A list of installed distributions with pinned versions",
+        "The Python source tree",
+        "A list of running processes",
+        "A bytecode disassembly"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Advanced Concepts",
+      "explanation": "pip freeze prints installed packages in requirements format, commonly redirected into a requirements.txt file."
+    },
+    {
+      "question": "What does the venv module create?",
+      "options": [
+        "A compiled executable only",
+        "A global package cache",
+        "An isolated environment with its own site-packages",
+        "A new Python language version"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Advanced Concepts",
+      "explanation": "venv builds a directory tree with interpreter links and a private site-packages so project dependencies stay isolated."
+    },
+    {
+      "question": "What is the difference between is and ==?",
+      "options": [
+        "They are identical in all cases",
+        "is compares identity while == compares value equality",
+        "is compares values and == compares types",
+        "is works only on numbers"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Advanced Concepts",
+      "explanation": "is checks whether two references point to the same object; == calls __eq__ to compare values. Equal values may be distinct objects."
+    },
+    {
+      "question": "What does gc.collect() do?",
+      "options": [
+        "Frees all globals",
+        "Rebuilds the import cache",
+        "Compiles modules to bytecode",
+        "Runs the cyclic garbage collector immediately"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Advanced Concepts",
+      "explanation": "gc.collect() explicitly runs the cyclic collector to reclaim unreachable objects in reference cycles. It does not clear globals or compile bytecode."
+    },
+    {
+      "question": "How does copy.deepcopy differ from copy.copy?",
+      "options": [
+        "deepcopy only works on lists",
+        "copy returns a tuple",
+        "deepcopy is always faster",
+        "deepcopy recursively copies nested objects"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Advanced Concepts",
+      "explanation": "A shallow copy builds a new outer container but shares nested objects; deepcopy recursively duplicates them, avoiding later aliasing surprises."
+    },
+    {
+      "question": "What does copy.copy produce?",
+      "options": [
+        "A fully independent deep copy",
+        "A shallow copy sharing nested objects",
+        "A serialized string",
+        "The same object reference"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Advanced Concepts",
+      "explanation": "copy.copy creates a new outer object but nested mutable objects remain shared. A deep copy is required for full independence."
+    },
+    {
+      "question": "Which descriptor method is invoked when reading obj.x?",
+      "options": [
+        "__get__",
+        "__set__",
+        "__delete__",
+        "__call__"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Advanced Concepts",
+      "explanation": "Attribute lookup on a descriptor calls __get__, with __set__ and __delete__ handling writes and deletes. __call__ concerns invocation."
+    },
+    {
+      "question": "How is obj.x resolved when x is absent from the instance dictionary?",
+      "options": [
+        "It always raises AttributeError",
+        "It creates a global variable",
+        "It looks up class attributes and descriptors along the MRO",
+        "It calls __new__ again"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Advanced Concepts",
+      "explanation": "Lookup falls back to the class and its bases, honoring descriptor precedence, before raising AttributeError. No globals are consulted or objects reconstructed."
+    },
+    {
+      "question": "What does __init_subclass__ do?",
+      "options": [
+        "Initializes instances of the class",
+        "Runs when a subclass is created to configure it",
+        "Defines a private attribute",
+        "Replaces the metaclass"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Advanced Concepts",
+      "explanation": "The hook runs at subclass creation time after the class body executes, allowing registration or validation without a custom metaclass."
+    },
+    {
+      "question": "What does sys.settrace provide?",
+      "options": [
+        "A profiling report only",
+        "An import hook",
+        "A faster garbage collector",
+        "A tracing hook called on Python events"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Advanced Concepts",
+      "explanation": "sys.settrace installs a trace function receiving call, line, return and exception events, which debuggers rely on. Profiling is a separate module."
+    }
+  ]
+}

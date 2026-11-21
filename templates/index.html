@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Exam Dashboard · ExamPulse 1000{% endblock %}
+{% block body_class %}page-lobby{% endblock %}
+
+{% block content %}
+<section class="lobby-hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="pulse-dot"></span> NTA / TCS-iON inspired CBT engine</div>
+    <h1>One thousand questions.<br><span>Zero guesswork.</span></h1>
+    <p>Practice Python, Data Mining, .NET and Web Design with a real exam interface,
+       live timer, question palette and a forensic post-exam analytics report.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>{{ question_counts.total }}</strong><span>Indexed questions</span></div>
+      <div class="hero-stat"><strong>04</strong><span>Core tracks</span></div>
+      <div class="hero-stat"><strong>03</strong><span>Practice modes</span></div>
+      <div class="hero-stat"><strong>−0.25</strong><span>Negative marking</span></div>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="visual-card visual-main">
+      <div class="visual-top"><span class="visual-chip">LIVE CBT</span><span class="visual-timer">00:24:57</span></div>
+      <div class="visual-q">Which data structure gives O(1) average lookup?</div>
+      <div class="visual-options"><i class="sel"></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="visual-card visual-palette">
+      {% for n in range(1, 25) %}<b class="{% if n % 4 == 0 %}v-green{% elif n % 5 == 0 %}v-purple{% elif n % 3 == 0 %}v-red{% else %}v-blue{% endif %}">{{ n }}</b>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="section-head">
+    <div>
+      <h2>Choose your track</h2>
+      <p>Every track contains 250 exam-grade questions with detailed solutions.</p>
+    </div>
+    <span class="section-badge">4 TRACKS · 1,000 Q&amp;As</span>
+  </div>
+
+  <div class="subject-grid">
+    {% for slug, subject in subjects.items() %}
+    <article class="subject-card" style="--accent:{{ subject.accent }}; --glow:{{ subject.glow }}">
+      <div class="card-top">
+        <div class="subject-icon {{ subject.icon }}">{{ subject.code }}</div>
+        <div class="card-count"><strong>{{ question_counts.get(slug, 0) }}</strong><span>questions</span></div>
+      </div>
+      <h3>{{ subject.name }}</h3>
+      <p class="subject-description">{{ subject.description }}</p>
+      <div class="topic-chips">
+        {% for topic in subject.topics[:3] %}<span>{{ topic }}</span>{% endfor %}
+        <span class="more-chip">+{{ subject.topics|length - 3 }} more</span>
+      </div>
+      <div class="mode-list">
+        {% for mode_slug, mode in modes.items() %}
+        <a class="mode-btn mode-{{ mode_slug }}" href="{{ url_for('exam.exam_arena', subject=slug, mode=mode_slug) }}">
+          <span class="mode-icon">{{ '⚡' if mode_slug == 'quick' else ('🎯' if mode_slug == 'mock' else '📚') }}</span>
+          <span class="mode-text"><strong>{{ mode.label }}</strong><small>{{ mode.hint }} · {{ mode.questions }} Qs</small></span>
+          <span class="mode-arrow">→</span>
+        </a>
+        {% endfor %}
+      </div>
+      <a class="bank-link" href="{{ url_for('exam.study_bank', subject=slug) }}">Open Study Bank &amp; search all answers <span>↗</span></a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% if recent %}
+<section class="section-block recent-block">
+  <div class="section-head">
+    <div><h2>Recent attempts</h2><p>Jump back into your last performance reports.</p></div>
+    <a class="text-link" href="{{ url_for('exam.all_results') }}">View all results →</a>
+  </div>
+  <div class="recent-list">
+    {% for item in recent %}
+    <a class="recent-row" href="{{ url_for('exam.result', code=item.code) }}">
+      <span class="recent-code">{{ item.code }}</span>
+      <span class="recent-subject">{{ subjects[item.subject].short if item.subject in subjects else item.subject }}</span>
+      <span class="recent-mode">{{ modes[item.mode].label if item.mode in modes else item.mode }}</span>
+      <span class="recent-score">{{ item.score }}/{{ item.max }}</span>
+      <span class="recent-acc">{{ item.accuracy }}%</span>
+      <span class="recent-arrow">→</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="how-section">
+  <h2>How the exam engine works</h2>
+  <div class="how-grid">
+    <div class="how-step"><span>01</span><h3>Pick a track &amp; mode</h3><p>25, 100 or all 250 randomized questions from the SQLite bank.</p></div>
+    <div class="how-step"><span>02</span><h3>Attempt in CBT arena</h3><p>Save &amp; Next, Mark for Review, Clear Response and a live countdown.</p></div>
+    <div class="how-step"><span>03</span><h3>Submit &amp; analyse</h3><p>Accuracy, negative marks, weak topics and a full solution walkthrough.</p></div>
+    <div class="how-step"><span>04</span><h3>Export scorecard</h3><p>Download a print-ready PDF summary of the entire attempt.</p></div>
+  </div>
+</section>
+{% endblock %}

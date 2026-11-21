@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Study Bank · {{ subject.short }} · ExamPulse 1000{% endblock %}
+{% block body_class %}page-bank{% endblock %}
+
+{% block content %}
+<div class="bank-shell">
+  <div class="bank-head" style="--accent:{{ subject.accent }}">
+    <div>
+      <div class="eyebrow"><span class="pulse-dot"></span> Full bank explorer · explanations visible</div>
+      <h1>Study Bank: <span>{{ subject.name }}</span></h1>
+      <p>Browse, search and revise all {{ total }} questions. Filter by topic and difficulty.</p>
+    </div>
+    <a class="btn btn-primary" href="{{ url_for('exam.exam_arena', subject=subject_slug, mode='full') }}">Take full 250-Q mock →</a>
+  </div>
+
+  <form class="bank-filters" method="get" action="{{ url_for('exam.study_bank', subject=subject_slug) }}">
+    <div class="search-field">
+      <span class="search-icon">⌕</span>
+      <input type="search" name="q" value="{{ query }}" placeholder="Search questions, options or explanations…">
+    </div>
+    <select name="topic" aria-label="Filter by topic">
+      <option value="">All topics</option>
+      {% for topic in subject.topics %}
+      <option value="{{ topic }}" {% if active_topic == topic %}selected{% endif %}>{{ topic }}</option>
+      {% endfor %}
+    </select>
+    <select name="difficulty" aria-label="Filter by difficulty">
+      <option value="">All difficulties</option>
+      {% for d in ['Easy','Medium','Hard'] %}
+      <option value="{{ d }}" {% if active_difficulty == d %}selected{% endif %}>{{ d }}</option>
+      {% endfor %}
+    </select>
+    <button class="btn btn-primary" type="submit">Apply filters</button>
+    {% if query or active_topic or active_difficulty %}
+    <a class="clear-filters" href="{{ url_for('exam.study_bank', subject=subject_slug) }}">Clear</a>
+    {% endif %}
+  </form>
+
+  <div class="bank-meta">Showing {{ items|length }} of {{ total }} matching questions</div>
+
+  <div class="bank-list">
+    {% for q in items %}
+    <article class="bank-card">
+      <div class="bank-card-head">
+        <span class="review-num">#{{ q.id }}</span>
+        <span class="tag tag-difficulty d-{{ q.difficulty|lower }}">{{ q.difficulty }}</span>
+        <span class="tag tag-topic">{{ q.topic }}</span>
+      </div>
+      <h3>{{ q.question }}</h3>
+      <div class="bank-options">
+        {% for letter in ['A','B','C','D'] %}
+        <div class="bank-option {% if letter == q.correct_option %}is-correct{% endif %}">
+          <b>{{ letter }}</b><span>{{ q.options[letter] }}</span>
+          {% if letter == q.correct_option %}<em>✓ Answer</em>{% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      <details class="bank-explain">
+        <summary>View detailed explanation</summary>
+        <p>{{ q.explanation }}</p>
+      </details>
+    </article>
+    {% endfor %}
+  </div>
+
+  {% set per_page = 50 %}
+  {% set pages = ((total + per_page - 1) // per_page) %}
+  {% if pages > 1 %}
+  {% set current = (request.args.get('offset', 0)|int // per_page) + 1 %}
+  <nav class="pagination" aria-label="Study bank pagination">
+    {% for p in range(1, pages + 1) %}
+    <a class="{% if p == current %}active{% endif %}"
+       href="{{ url_for('exam.study_bank', subject=subject_slug, q=query, topic=active_topic, difficulty=active_difficulty, offset=(p-1)*per_page) }}">{{ p }}</a>
+    {% endfor %}
+  </nav>
+  {% endif %}
+</div>
+{% endblock %}

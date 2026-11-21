@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block title %}Analytics Report · {{ report.code }} · ExamPulse 1000{% endblock %}
+{% block body_class %}page-report{% endblock %}
+
+{% block content %}
+<div class="report-shell" id="reportShell"
+     data-code="{{ report.code }}"
+     data-subject="{{ report.subject }}">
+  <div class="report-head">
+    <div>
+      <div class="eyebrow"><span class="pulse-dot"></span> Attempt {{ report.code }} · {{ report.subject_name }} · {{ report.mode_label }}</div>
+      <h1>Performance report for <span>{{ report.candidate }}</span></h1>
+      <p>Submitted {{ report.submitted_at[:16]|replace('T', ' ') if report.submitted_at else '—' }} UTC · Time taken {{ (report.time_taken_seconds // 60)|string ~ 'm ' ~ (report.time_taken_seconds % 60)|string ~ 's' }}</p>
+    </div>
+    <div class="report-actions">
+      <a class="btn btn-outline" href="{{ url_for('exam.scorecard_pdf', code=report.code) }}">⬇ Download PDF</a>
+      <button type="button" class="btn btn-ghost" onclick="window.print()">🖨 Print</button>
+      <a class="btn btn-primary" href="{{ url_for('exam.exam_arena', subject=report.subject, mode=report.mode) }}">Retry mock →</a>
+    </div>
+  </div>
+
+  <section class="score-hero">
+    <div class="score-main">
+      <div class="score-ring" style="--pct:{{ report.percentage }}">
+        <div class="score-ring-inner">
+          <strong>{{ report.marks_earned|round(2) }}</strong>
+          <span>of {{ report.max_marks|round(2) }}</span>
+        </div>
+      </div>
+      <div class="score-copy">
+        <span class="verdict {{ 'pass' if report.passed else 'fail' }}">{{ 'QUALIFIED' if report.passed else 'NEEDS PRACTICE' }}</span>
+        <h2>{{ report.percentage }}% scored</h2>
+        <p>{{ report.correct }} correct · {{ report.wrong }} incorrect · {{ report.unanswered }} unanswered out of {{ report.total_questions }} questions.</p>
+      </div>
+    </div>
+    <div class="score-metrics">
+      <div class="metric"><strong>{{ report.accuracy }}<small>%</small></strong><span>Accuracy</span><i class="metric-bar" style="--w:{{ report.accuracy }}%"></i></div>
+      <div class="metric"><strong class="red">{{ report.negative_marks }}</strong><span>Negative marks</span><i class="metric-bar red" style="--w:{{ (report.negative_marks / (report.total_questions * 0.25) * 100)|round(1) if report.total_questions else 0 }}%"></i></div>
+      <div class="metric"><strong>{{ report.correct }}/{{ report.total_questions }}</strong><span>Correct ratio</span><i class="metric-bar green" style="--w:{{ (report.correct / report.total_questions * 100)|round(1) if report.total_questions else 0 }}%"></i></div>
+      <div class="metric"><strong>{{ report.wrong + report.unanswered }}</strong><span>Lost questions</span><i class="metric-bar amber" style="--w:{{ ((report.wrong + report.unanswered) / report.total_questions * 100)|round(1) if report.total_questions else 0 }}%"></i></div>
+    </div>
+  </section>
+
+  <div class="report-grid">
+    <section class="panel">
+      <div class="panel-head"><h2>Marking breakdown</h2><span>+1 / −0.25</span></div>
+      <div class="breakdown">
+        <div class="breakdown-row"><span class="b-dot green"></span><b>Correct answers</b><em>{{ report.correct }} × +1</em><strong class="green">+{{ report.correct }}</strong></div>
+        <div class="breakdown-row"><span class="b-dot red"></span><b>Wrong answers</b><em>{{ report.wrong }} × −0.25</em><strong class="red">−{{ report.negative_marks }}</strong></div>
+        <div class="breakdown-row"><span class="b-dot slate"></span><b>Unanswered</b><em>{{ report.unanswered }} × 0</em><strong>0</strong></div>
+        <div class="breakdown-total"><span>Final score</span><strong>{{ report.marks_earned }} / {{ report.max_marks }}</strong></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h2>Topic-wise weak areas</h2><span>lowest accuracy first</span></div>
+      <div class="topic-analysis">
+        {% for topic in report.topics %}
+        <div class="topic-row">
+          <div class="topic-name"><span>{{ topic.topic }}</span><em>{{ topic.correct }}/{{ topic.total }}</em></div>
+          <div class="topic-track"><i class="{{ 'weak' if topic.weak else 'strong' }}" style="--w:{{ topic.accuracy }}%"></i></div>
+          <strong class="{{ 'red' if topic.weak else 'green' }}">{{ topic.accuracy }}%</strong>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+
+  <section class="review-section">
+    <div class="review-head">
+      <div><h2>Question-by-question review</h2><p>Correct answers in green, your responses in red, with a detailed explanation.</p></div>
+      <div class="filter-tabs" role="tablist">
+        <button class="filter-tab active" data-filter="all" type="button">All <span>{{ report.total_questions }}</span></button>
+        <button class="filter-tab" data-filter="correct" type="button">Correct <span>{{ report.correct }}</span></button>
+        <button class="filter-tab" data-filter="wrong" type="button">Incorrect <span>{{ report.wrong }}</span></button>
+        <button class="filter-tab" data-filter="unanswered" type="button">Skipped <span>{{ report.unanswered }}</span></button>
+      </div>
+    </div>
+
+    <div class="review-list" id="reviewList">
+      {% for q in report.questions %}
+      <article class="review-card" data-status="{{ q.status }}">
+        <div class="review-top">
+          <span class="review-num">Q{{ q.position }}</span>
+          <span class="tag tag-difficulty d-{{ q.difficulty|lower }}">{{ q.difficulty }}</span>
+          <span class="tag tag-topic">{{ q.topic }}</span>
+          <span class="result-chip {{ q.status }}">{{ '✓ Correct' if q.status == 'correct' else ('✕ Incorrect' if q.status == 'wrong' else '○ Not answered') }}</span>
+        </div>
+        <h3>{{ q.question }}</h3>
+        <div class="review-options">
+          {% for letter in ['A','B','C','D'] %}
+          <div class="review-option
+                      {% if letter == q.correct_option %}is-correct{% endif %}
+                      {% if letter == q.selected_option and letter != q.correct_option %}is-wrong{% endif %}">
+            <b>{{ letter }}</b><span>{{ q.options[letter] }}</span>
+            {% if letter == q.correct_option %}<em>✓ Correct answer</em>{% endif %}
+            {% if letter == q.selected_option and letter != q.correct_option %}<em>✕ Your answer</em>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        <div class="explanation">
+          <strong>Explanation</strong>
+          <p>{{ q.explanation }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="empty-filter" id="emptyFilter" hidden>No questions match this filter.</p>
+  </section>
+</div>
+<script>window.REPORT_BOOT = {{ report_json|safe }};</script>
+{% endblock %}

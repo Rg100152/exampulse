@@ -1,0 +1,3257 @@
+{
+  "subject": "datamining",
+  "title": "Data Mining & Warehousing",
+  "total_questions": 250,
+  "questions": [
+    {
+      "question": "Which of the following is the correct sequence of stages in the Knowledge Discovery in Databases (KDD) process?",
+      "options": [
+        "Selection, Preprocessing, Transformation, Data Mining, Evaluation",
+        "Preprocessing, Selection, Evaluation, Data Mining, Transformation",
+        "Data Mining, Selection, Transformation, Evaluation, Preprocessing",
+        "Selection, Transformation, Evaluation, Preprocessing, Data Mining"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "KDD & Preprocessing",
+      "explanation": "KDD selects target data, cleans and preprocesses it, transforms it into a suitable representation, applies data mining algorithms, and finally evaluates the discovered patterns; the other orders place evaluation or mining before the data is prepared."
+    },
+    {
+      "question": "In the KDD process, what is the primary purpose of the selection step?",
+      "options": [
+        "To convert all attributes into numeric form",
+        "To apply clustering algorithms to the dataset",
+        "To identify and retrieve the subset of data relevant to the mining goal from available sources",
+        "To deploy the mined model into production"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Selection decides which sources, tables, and records are relevant and extracts them; numeric conversion belongs to transformation, clustering is a mining step, and deployment is the final CRISP-DM phase."
+    },
+    {
+      "question": "Which of these is NOT one of the six phases of the CRISP-DM methodology?",
+      "options": [
+        "Business Understanding",
+        "Data Deployment",
+        "Data Preparation",
+        "Modeling"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "KDD & Preprocessing",
+      "explanation": "The CRISP-DM phases are Business Understanding, Data Understanding, Data Preparation, Modeling, Evaluation, and Deployment. The last is simply called Deployment, not Data Deployment; the other three listed options are genuine phases."
+    },
+    {
+      "question": "Which CRISP-DM phase directly follows Data Understanding in the standard sequence?",
+      "options": [
+        "Business Understanding",
+        "Modeling",
+        "Deployment",
+        "Data Preparation"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "KDD & Preprocessing",
+      "explanation": "The sequence is Business Understanding, Data Understanding, Data Preparation, Modeling, Evaluation, Deployment, so preparation follows understanding. Modeling comes after preparation, and deployment is the final phase."
+    },
+    {
+      "question": "Which CRISP-DM phase is concerned with putting a validated model into operational use?",
+      "options": [
+        "Data Understanding",
+        "Modeling",
+        "Evaluation",
+        "Deployment"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Deployment operationalizes the model, for example by integrating it into a business process. Modeling builds candidate models, Evaluation judges them against objectives, and Data Understanding explores data quality."
+    },
+    {
+      "question": "A dataset has 100 values with mean 50 and population variance 100. Ten missing values are replaced by the mean 50. What happens to the variance of the completed attribute?",
+      "options": [
+        "It remains exactly 100 because the mean is unchanged",
+        "It becomes zero because all deviations vanish",
+        "It increases to 110 because the record count grows",
+        "It decreases to about 90.9 because mean imputation adds zero-deviation values"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Total squared deviation is 100 times 100 = 10000. Adding ten values equal to the mean adds no squared deviation but raises the count to 110, giving 10000/110 about 90.9. Mean imputation therefore shrinks variance and biases standard errors downward."
+    },
+    {
+      "question": "For a nominal attribute such as Color with missing entries, which imputation method is most appropriate?",
+      "options": [
+        "Replace missing values with the arithmetic mean of the category codes",
+        "Delete every row containing a missing value regardless of proportion",
+        "Replace missing values with the mode, that is the most frequent category",
+        "Replace missing values with the alphabetically largest category"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "KDD & Preprocessing",
+      "explanation": "The mode is the natural central value for nominal data. A mean of arbitrary category codes is meaningless, wholesale deletion can discard large amounts of data, and the alphabetically largest value is not a typical value."
+    },
+    {
+      "question": "Which technique flags values below Q1 minus 1.5 times the IQR or above Q3 plus 1.5 times the IQR?",
+      "options": [
+        "Tukey boxplot (IQR) rule",
+        "Z-score normalization",
+        "Min-max normalization",
+        "Equal-frequency binning"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Tukey rule marks points outside the 1.5 times IQR fences around the quartiles. Z-score and min-max are scaling transforms, while binning groups values rather than flagging outliers."
+    },
+    {
+      "question": "What is the key distinction between noise and an outlier in data cleaning?",
+      "options": [
+        "Noise is random error or corruption in a measured value, while an outlier is a point far from the rest that may be genuine",
+        "Outliers are always erroneous and must be deleted, while noise is always valid",
+        "Noise occurs only in categorical attributes, outliers only in numeric ones",
+        "There is no difference; the two terms are exact synonyms"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Noise refers to measurement error or random variance, whereas an outlier is simply an unusual observation that can be legitimate, such as a very high income. Outliers should be examined before removal, so treating them as always wrong is incorrect."
+    },
+    {
+      "question": "A distance-based clustering algorithm is applied to raw data where Income ranges 0 to 100000 and Age ranges 0 to 100. Which preprocessing step is most critical before clustering?",
+      "options": [
+        "Convert Income into a purely categorical attribute",
+        "Remove all records with above-average Income",
+        "Normalize or standardize the attributes so each contributes comparably",
+        "Apply TF-IDF weighting to the numeric columns"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Euclidean distance is dominated by the large-scale Income attribute unless features are put on comparable scales, which z-score or min-max scaling achieves. Categorizing loses information, deleting high incomes biases the data, and TF-IDF applies to text term weights."
+    },
+    {
+      "question": "What does z-score standardization produce for an attribute?",
+      "options": [
+        "Values strictly in the range from 0 to 1",
+        "A transformed attribute with mean 0 and standard deviation 1",
+        "A sorted rank ordering of all values",
+        "A set of equal-width intervals"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Subtracting the mean and dividing by the standard deviation centers the data at 0 and scales to unit variance. The range 0 to 1 describes min-max normalization, ranking gives ordinal positions, and intervals come from discretization."
+    },
+    {
+      "question": "Under min-max normalization to the range [0, 1], a value v = 75 in an attribute with min = 50 and max = 100 becomes what?",
+      "options": [
+        "0.75",
+        "1.5",
+        "25",
+        "0.5"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Min-max normalization computes (v minus min) divided by (max minus min) = (75 minus 50)/(100 minus 50) = 25/50 = 0.5. The other choices use the raw value, omit subtraction, or fail to divide by the range."
+    },
+    {
+      "question": "Which discretization method divides an attribute's value range into intervals of identical width?",
+      "options": [
+        "Equal-frequency binning",
+        "Entropy-based binning",
+        "Chi-square merging",
+        "Equal-width binning"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Equal-width binning partitions the range from min to max into bins of the same size. Equal-frequency puts the same number of records in each bin, while entropy and chi-square methods use class information to choose boundaries."
+    },
+    {
+      "question": "Equal-frequency discretization is applied to 100 sorted values split into 5 bins. What is true of the result?",
+      "options": [
+        "Each bin has the same width but may hold different counts",
+        "Each bin contains exactly 20 values, but bin widths may differ",
+        "All bins have identical width and identical counts",
+        "The number of bins must equal the number of distinct values"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Equal-frequency binning places n/k records per bin, here 20, so widths vary with data density. Equal-width binning gives constant widths with varying counts; identical widths and counts occur only for uniformly distributed data."
+    },
+    {
+      "question": "Which data integration problem arises when the same real-world entity is recorded differently in two source systems?",
+      "options": [
+        "Curse of dimensionality",
+        "Entity identification and schema mismatch",
+        "Overfitting",
+        "Class imbalance"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Integration must match equivalent entities and reconcile heterogeneous schemas. The curse of dimensionality concerns sparse high-dimensional data, overfitting concerns generalization, and class imbalance is an unequal class distribution."
+    },
+    {
+      "question": "When merging two databases, attribute cust_id in one and customer_number in the other refer to the same field. What is this issue called?",
+      "options": [
+        "Schema integration (naming and semantic heterogeneity)",
+        "Numerosity reduction",
+        "Noise smoothing",
+        "Discretization"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Schema integration resolves naming and semantic conflicts so equivalent fields are recognized as one attribute. Numerosity reduction shrinks data volume, noise smoothing removes small variations, and discretization converts continuous values into intervals."
+    },
+    {
+      "question": "Which statement about Principal Component Analysis is correct?",
+      "options": [
+        "PCA finds orthogonal directions of maximum variance and projects data onto the top few",
+        "PCA requires class labels to compute the projection",
+        "PCA maximizes the distance between labeled class centroids",
+        "PCA always increases the number of attributes"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "KDD & Preprocessing",
+      "explanation": "PCA is unsupervised: it takes eigenvectors of the covariance matrix, orders them by variance, and keeps the top orthogonal components. It needs no labels, does not target class separation, which is LDA, and reduces rather than increases dimensions."
+    },
+    {
+      "question": "The first principal component of a dataset is the direction that:",
+      "options": [
+        "minimizes the variance of the projected data",
+        "is always parallel to the attribute with the largest mean",
+        "accounts for the largest possible variance in the data",
+        "maximizes correlation with a target class label"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "KDD & Preprocessing",
+      "explanation": "The first principal component is the eigenvector with the largest eigenvalue, hence the direction of maximum variance. Minimizing variance would be useless, means do not define directions, and PCA is unsupervised so it ignores class labels."
+    },
+    {
+      "question": "How does correlation differ from covariance?",
+      "options": [
+        "Covariance is dimensionless while correlation carries squared units",
+        "Correlation can only be positive, while covariance can be negative",
+        "Correlation is normalized covariance, bounded between minus 1 and plus 1, making it scale-independent",
+        "They are mathematically identical for every dataset"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Correlation equals covariance divided by the product of the standard deviations, removing units and bounding the value in [minus 1, 1]. Covariance carries units, both measures can be negative, and they coincide only for standardized variables."
+    },
+    {
+      "question": "Two attributes X and Y have covariance exactly 0. Which conclusion is valid?",
+      "options": [
+        "X and Y are statistically independent",
+        "X and Y are perfectly correlated",
+        "The Pearson correlation coefficient must be 1",
+        "X and Y have no linear relationship, but a nonlinear relationship may still exist"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Zero covariance indicates no linear association only; variables can be strongly dependent nonlinearly, for example Y = X squared with symmetric X. Independence implies zero covariance, but the reverse implication is not valid."
+    },
+    {
+      "question": "Which distance measure is computed as the square root of the sum of squared differences between coordinates?",
+      "options": [
+        "Manhattan distance",
+        "Cosine similarity",
+        "Jaccard distance",
+        "Euclidean distance"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Euclidean distance is the square root of the sum of squared coordinate differences. Manhattan sums absolute differences without squaring, cosine compares angles through normalized dot products, and Jaccard operates on sets."
+    },
+    {
+      "question": "For points p = (1, 2) and q = (4, 6), what is the Manhattan distance?",
+      "options": [
+        "5",
+        "7",
+        "25",
+        "the square root of 7"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Manhattan distance sums absolute coordinate differences: |1-4| plus |2-6| = 3 plus 4 = 7. Euclidean distance would be the square root of 25, which is 5; 25 is squared Euclidean distance, and the square root of 7 is unrelated."
+    },
+    {
+      "question": "Which distance measure generalizes both Euclidean and Manhattan distance through a parameter p?",
+      "options": [
+        "Hamming distance",
+        "Mahalanobis distance",
+        "Minkowski distance",
+        "Jaccard distance"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Minkowski distance is the p-th root of the sum of absolute differences raised to p: p = 1 gives Manhattan and p = 2 gives Euclidean. Hamming counts mismatched positions, Mahalanobis accounts for covariance, and Jaccard compares sets."
+    },
+    {
+      "question": "Two TF-IDF document vectors point in the same direction but one has twice the magnitude of the other. Which measure still returns the maximum similarity of 1?",
+      "options": [
+        "Cosine similarity",
+        "Euclidean distance",
+        "Manhattan distance",
+        "Minkowski distance with p = 3"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Cosine similarity divides the dot product by the product of magnitudes, so it depends only on angle and gives 1 for parallel vectors. Euclidean, Manhattan, and Minkowski distances all grow with vector length."
+    },
+    {
+      "question": "Cosine similarity between vectors x and y is defined as:",
+      "options": [
+        "(x dot y) divided by (norm(x) times norm(y))",
+        "the sum of squared differences between x and y",
+        "the sum of absolute differences between x and y",
+        "the size of the intersection divided by the size of the union"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Cosine similarity is the dot product normalized by the L2 norms, that is the cosine of the angle. The squared-difference sum is squared Euclidean distance, the absolute sum is Manhattan distance, and the set ratio is Jaccard."
+    },
+    {
+      "question": "For sets A = {1, 2, 3} and B = {2, 3, 4, 5}, what is the Jaccard similarity?",
+      "options": [
+        "0.5",
+        "0.6",
+        "0.4",
+        "2"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Jaccard similarity is the intersection size divided by the union size: 2/5 = 0.4. Option 0.5 divides by the smaller set size, 0.6 divides by the size of B, and 2 is merely the intersection size."
+    },
+    {
+      "question": "Which similarity coefficient suits sparse binary attributes where presence is rare and absent-absent matches should be ignored?",
+      "options": [
+        "Simple matching coefficient",
+        "Jaccard coefficient",
+        "Cosine distance on raw counts",
+        "Euclidean distance"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Jaccard ignores double-zero matches, which is appropriate for sparse binary data such as rare keyword presence. The simple matching coefficient counts zero-zero agreements as matches and inflates similarity, while Euclidean and raw cosine do not specifically discount absences."
+    },
+    {
+      "question": "Which KDD activity is primarily responsible for detecting inconsistent, noisy, or missing values before mining?",
+      "options": [
+        "Evaluation",
+        "Data mining",
+        "Knowledge presentation",
+        "Preprocessing and cleaning"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Cleaning and preprocessing handle missing values, noise, and inconsistency. Evaluation assesses discovered patterns, data mining extracts patterns, and knowledge presentation visualizes results."
+    },
+    {
+      "question": "In binning-based smoothing, replacing every value in a bin by that bin's mean is called:",
+      "options": [
+        "Boundary smoothing",
+        "Median smoothing",
+        "Entropy smoothing",
+        "Mean smoothing"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Mean smoothing replaces bin members with the bin average. Median smoothing uses the median, boundary smoothing adjusts only extreme values toward the nearest bin boundaries, and entropy smoothing is not a standard binning-smoothing term."
+    },
+    {
+      "question": "A dataset has 10000 features and only 200 records. Which issue is most likely for a distance-based learner applied to it?",
+      "options": [
+        "Underfitting caused by excessive training data",
+        "The curse of dimensionality: distances concentrate and data become sparse",
+        "A guaranteed accuracy gain from adding more features",
+        "Class imbalance caused directly by high dimensionality"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "KDD & Preprocessing",
+      "explanation": "When the number of features far exceeds the number of records, space becomes sparse and pairwise distances concentrate, degrading distance-based methods and encouraging overfitting rather than underfitting. More features do not guarantee improvement and do not create class imbalance."
+    },
+    {
+      "question": "Aggregating daily sales records into monthly totals is an example of which data transformation?",
+      "options": [
+        "Normalization",
+        "Discretization",
+        "Aggregation",
+        "Imputation"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "KDD & Preprocessing",
+      "explanation": "Aggregation combines several values into a summary such as a sum, average, or count, here daily values into monthly totals. Normalization rescales values, discretization bins continuous values, and imputation fills missing entries."
+    },
+    {
+      "question": "In market basket analysis, what does the support of an itemset X mean?",
+      "options": [
+        "The fraction of all transactions that contain X",
+        "The fraction of transactions containing X that also contain Y",
+        "The ratio of confidence to lift",
+        "The number of distinct items in the database"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Association Rules",
+      "explanation": "Support is the count of transactions containing X divided by the total transaction count. The conditional fraction involving Y is confidence, while lift compares observed support with the independence expectation."
+    },
+    {
+      "question": "In the association rule Milk implies Bread, the item Milk is called the:",
+      "options": [
+        "Consequent",
+        "Support count",
+        "Antecedent",
+        "Frequent itemset"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Association Rules",
+      "explanation": "In a rule X implies Y, X is the antecedent on the left and Y is the consequent on the right. Support count is a frequency, and the itemset may or may not satisfy the frequency threshold."
+    },
+    {
+      "question": "In a database of 1000 transactions, the itemset Milk and Bread appears in 200 transactions. What is its support?",
+      "options": [
+        "2%",
+        "200%",
+        "80%",
+        "20%"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Association Rules",
+      "explanation": "Support is 200/1000 = 0.2, that is 20 percent. Two percent would require only 20 transactions, 200 percent is impossible for a fraction, and 80 percent is the complement of the correct value."
+    },
+    {
+      "question": "The Apriori property states that:",
+      "options": [
+        "Every superset of a frequent itemset is frequent",
+        "Support is always greater than confidence",
+        "Frequent itemsets must contain at least three items",
+        "Every nonempty subset of a frequent itemset must also be frequent"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Association Rules",
+      "explanation": "Apriori anti-monotonicity says that if an itemset is frequent, all of its subsets are frequent, so an infrequent subset allows its supersets to be pruned. Supersets need not be frequent and no minimum size is imposed."
+    },
+    {
+      "question": "Given minimum support 30 percent, frequent 1-itemsets A at 40 percent and B at 35 percent, and candidate A B with support 25 percent, what should Apriori conclude?",
+      "options": [
+        "Keep A B because both of its subsets are frequent",
+        "Round the support of A B up to 30 percent",
+        "Generate a 3-itemset containing A B without checking A B",
+        "Discard A B and prune all of its supersets from further candidate generation"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Association Rules",
+      "explanation": "A candidate is frequent only if its own support meets the threshold; 25 percent is below 30 percent. By anti-monotonicity, every superset containing the infrequent pair is also infrequent, so all are pruned. Frequent subsets are necessary but not sufficient."
+    },
+    {
+      "question": "The confidence of a rule X implies Y is defined as:",
+      "options": [
+        "support(X union Y) divided by support(Y)",
+        "support(X) divided by support(Y)",
+        "support(X) times support(Y)",
+        "support(X union Y) divided by support(X)"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Association Rules",
+      "explanation": "Confidence is the conditional probability P(Y given X) = support(X union Y)/support(X). Dividing by support(Y) gives the reverse rule's confidence, and the product of supports relates to the independence assumption behind lift."
+    },
+    {
+      "question": "Out of 500 transactions, 100 contain Tea and 40 contain both Tea and Biscuit. What is the confidence of Tea implies Biscuit?",
+      "options": [
+        "8%",
+        "40%",
+        "25%",
+        "100%"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Association Rules",
+      "explanation": "Confidence is support(Tea and Biscuit)/support(Tea) = (40/500)/(100/500) = 40/100 = 40 percent. Eight percent is the pair support, and 25 percent is the confidence of the reverse rule."
+    },
+    {
+      "question": "The lift of a rule X implies Y is computed as:",
+      "options": [
+        "support(X) times support(Y)",
+        "confidence(X implies Y) divided by support(Y)",
+        "support(X union Y) divided by support(X union Y)",
+        "confidence(Y implies X) times lift(Y implies X)"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Association Rules",
+      "explanation": "Lift is P(Y given X)/P(Y), that is confidence divided by support of the consequent. Lift of 1 means independence, above 1 positive association, below 1 negative; the product of supports is the expected support under independence."
+    },
+    {
+      "question": "Given support(A) = 0.5, support(B) = 0.4, and support(A and B) = 0.3, what is lift(A implies B)?",
+      "options": [
+        "1.5, indicating positive association",
+        "0.75, indicating negative association",
+        "1.2, indicating a weak rule",
+        "0.3, equal to the pair support"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Association Rules",
+      "explanation": "Confidence is 0.3/0.5 = 0.6 and expected support under independence is 0.5 times 0.4 = 0.2, so lift is 0.3/0.2 = 1.5, equivalently 0.6/0.4. Lift above 1 signals positive association; 0.75 comes from dividing 0.3 by 0.4."
+    },
+    {
+      "question": "A lift value of exactly 1 for a rule X implies Y indicates:",
+      "options": [
+        "X and Y occur independently",
+        "X and Y are perfectly negatively correlated",
+        "The rule has maximum possible confidence",
+        "The rule's support is 100 percent"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Association Rules",
+      "explanation": "Lift of 1 means P(Y given X) equals P(Y), so knowing X gives no information about Y. Values below 1 imply negative association, and lift does not imply maximum confidence or full support."
+    },
+    {
+      "question": "Which structure does FP-Growth use to compress a transaction database without generating candidate itemsets?",
+      "options": [
+        "A decision tree with Gini splits",
+        "A hash table of all possible supersets",
+        "A frequent-pattern tree with a header table",
+        "A confusion matrix of item co-occurrences"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Association Rules",
+      "explanation": "FP-Growth builds a compact prefix tree called an FP-tree plus a header table of frequent items, then mines conditional pattern bases. Unlike Apriori, it avoids explicit candidate generation; decision trees classify and confusion matrices evaluate classifiers."
+    },
+    {
+      "question": "Compared with Apriori, what is the main advantage of FP-Growth?",
+      "options": [
+        "It does not require a minimum support threshold",
+        "It avoids generating and testing huge candidate itemsets",
+        "It works only for numeric attributes",
+        "It always produces fewer association rules"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Association Rules",
+      "explanation": "FP-Growth compresses the database into an FP-tree and mines frequent patterns directly, avoiding Apriori expensive candidate generation. It still needs minimum support, targets categorical transaction data, and rule counts depend on thresholds."
+    },
+    {
+      "question": "A frequent itemset I is called closed if:",
+      "options": [
+        "It contains no other frequent itemset as a subset",
+        "Its support equals its confidence",
+        "It can no longer be extended by any item in the database",
+        "None of its proper supersets has the same support as I"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Association Rules",
+      "explanation": "A closed itemset is maximal among itemsets sharing the same support, so it preserves all support information compactly. Having no frequent subset describes a 1-itemset, support and confidence are different measures, and non-extendability at all defines maximal, not closed."
+    },
+    {
+      "question": "A frequent itemset is maximal if:",
+      "options": [
+        "It has the highest support in the database",
+        "It contains every frequent item",
+        "Its confidence equals 1",
+        "No frequent superset of it exists"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Association Rules",
+      "explanation": "A maximal frequent itemset cannot be extended by any item while remaining frequent. It need not have the highest support, need not contain all items, and confidence is a property of rules rather than itemsets."
+    },
+    {
+      "question": "With 10 transactions, A occurs in 6, B in 5, and A and B together in 4. Which rule has higher confidence and what are the values?",
+      "options": [
+        "A implies B with 0.8, versus 0.667 for B implies A",
+        "B implies A with 0.8, versus 0.667 for A implies B",
+        "Both rules have confidence 0.4",
+        "A implies B with 0.6, versus 0.5 for B implies A"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Association Rules",
+      "explanation": "Confidence is support(X and Y)/support(X): 4/6 about 0.667 for A implies B and 4/5 = 0.8 for B implies A. The 0.4 value is the pair's support, and option A reverses the two calculations."
+    },
+    {
+      "question": "Why might a mining task use multiple minimum support thresholds?",
+      "options": [
+        "It removes the need to compute confidence",
+        "It guarantees every rule has lift above 1",
+        "Rare but strongly associated items can still produce useful rules",
+        "It reduces the number of transactions in the database"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Association Rules",
+      "explanation": "A single high threshold discards patterns involving rare yet important items; item-specific thresholds address this rare-item problem. Confidence and lift still must be computed and checked, and thresholds do not change transaction counts."
+    },
+    {
+      "question": "Turning discovered frequent itemsets into IF-THEN rules mainly involves:",
+      "options": [
+        "Splitting each itemset into antecedent and consequent and checking confidence",
+        "Assigning class labels to every transaction",
+        "Computing Euclidean distance between transactions",
+        "Clustering transactions by their support values"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Association Rules",
+      "explanation": "Rule generation partitions a frequent itemset into nonempty antecedent and consequent parts and keeps those meeting minimum confidence. No labels are assigned, and distance or clustering are unrelated to rule formation."
+    },
+    {
+      "question": "A rule Diapers implies Beer has support 0.02, confidence 0.6, and support(Beer) = 0.05. What is its lift?",
+      "options": [
+        "12, indicating a strong positive association",
+        "0.03, indicating independence",
+        "0.6, equal to its confidence",
+        "1.2, indicating only a weak association"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Association Rules",
+      "explanation": "Lift is confidence divided by support of the consequent: 0.6/0.05 = 12, far above 1 and therefore strongly positive. Option B multiplies supports, and treating lift as confidence ignores the denominator entirely."
+    },
+    {
+      "question": "A rule X implies Y has confidence 0.85 but lift 0.9. What can be concluded?",
+      "options": [
+        "X and Y are positively correlated and the rule is highly useful",
+        "The support of Y must be less than 0.8",
+        "P(Y) is about 0.94, so X is associated with a slightly lower-than-baseline chance of Y",
+        "Such a confidence and lift combination is mathematically impossible"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Association Rules",
+      "explanation": "Lift equals confidence/support(Y), so support(Y) = 0.85/0.9 about 0.944, which exceeds the conditional probability 0.85. Thus X slightly suppresses Y. High confidence with lift below 1 is valid but misleading, and Y's support is high, not low."
+    },
+    {
+      "question": "Which algorithm uses the anti-monotonic property of frequent itemsets to prune the search space?",
+      "options": [
+        "Naive Bayes",
+        "Apriori",
+        "K-means",
+        "PageRank"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Association Rules",
+      "explanation": "Apriori prunes candidates using the fact that all subsets of a frequent itemset are frequent. Naive Bayes is a classifier, K-means is a clustering algorithm, and PageRank ranks nodes in a web graph."
+    },
+    {
+      "question": "The support count of an itemset is:",
+      "options": [
+        "The number of items in the itemset",
+        "The ratio of transactions without the itemset",
+        "The number of rules derived from the itemset",
+        "The number of transactions containing that itemset"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Association Rules",
+      "explanation": "Support count is the raw absolute frequency of transactions containing the itemset; dividing by total transactions gives support. Itemset size, complement counts, and derived rule counts are different quantities."
+    },
+    {
+      "question": "Association rule mining was originally motivated by which classic problem?",
+      "options": [
+        "Predicting house prices from area",
+        "Grouping documents by topic",
+        "Market basket analysis of supermarket transactions",
+        "Detecting outliers in sensor readings"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Association Rules",
+      "explanation": "The textbook diapers and beer example comes from market basket analysis. Price prediction is regression, document grouping is clustering or text mining, and sensor anomaly detection is a different mining task."
+    },
+    {
+      "question": "If the itemset A B C is frequent, which of the following must also be frequent?",
+      "options": [
+        "A B C D",
+        "A B",
+        "D",
+        "A D"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Association Rules",
+      "explanation": "By the Apriori property every subset of a frequent itemset, such as A B, is frequent. Supersets and itemsets involving a new item D are not guaranteed to be frequent."
+    },
+    {
+      "question": "Which threshold decides whether a candidate rule is retained after frequent itemsets are found?",
+      "options": [
+        "Maximum support",
+        "Minimum Euclidean distance",
+        "Minimum confidence",
+        "Minimum entropy"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Association Rules",
+      "explanation": "Frequent itemsets are generated with minimum support, then candidate rules are filtered by minimum confidence. There is no maximum-support filter, while distance and entropy thresholds belong to clustering and decision trees."
+    },
+    {
+      "question": "Itemset I has support 0.1, and a proper superset of I also has support 0.1. Which statement is correct?",
+      "options": [
+        "I is not closed, but it may still be frequent",
+        "I must be maximal",
+        "I cannot be frequent",
+        "The confidence of I is 1"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Association Rules",
+      "explanation": "A closed itemset has no proper superset with identical support, so I fails closure; with support 0.1 it can still be frequent if the threshold is at most 0.1. Since a frequent superset exists, I cannot be maximal, and confidence applies to rules."
+    },
+    {
+      "question": "With support(X) = 0.6, support(Y) = 0.1, and support(X and Y) = 0.09, what is lift(X implies Y)?",
+      "options": [
+        "1.5",
+        "0.15",
+        "0.6",
+        "0.09"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Association Rules",
+      "explanation": "Lift is support(X and Y)/(support(X) times support(Y)) = 0.09/(0.6 times 0.1) = 0.09/0.06 = 1.5. Option B is the confidence, C is support(X), and D is the pair support."
+    },
+    {
+      "question": "Which of the following is an example of a 2-itemset?",
+      "options": [
+        "Milk",
+        "Milk, Bread, Butter",
+        "Milk, Bread",
+        "The rule Milk implies Bread"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Association Rules",
+      "explanation": "A k-itemset contains exactly k items, so Milk and Bread is a 2-itemset. Milk alone is a 1-itemset, the three items form a 3-itemset, and an implication rule is not an itemset."
+    },
+    {
+      "question": "In Apriori candidate generation, two frequent (k-1)-itemsets are joined when they share:",
+      "options": [
+        "All k-1 items",
+        "At least one distinct item each",
+        "Their first k-2 items",
+        "The same support count"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Association Rules",
+      "explanation": "The join step combines two frequent (k-1)-itemsets whose first k-2 items match, producing a k-itemset. Sharing all k-1 items would make them identical, and equal support is not required."
+    },
+    {
+      "question": "A database holds 10000 transactions and an itemset appears in 3 of them. If minimum support is 0.05 percent, is the itemset frequent?",
+      "options": [
+        "Yes, because any nonzero support qualifies",
+        "Yes, because 3 exceeds a minimum count of 1",
+        "No, because its support is 0.3 percent",
+        "No, because its support of 0.03 percent is below the threshold"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Association Rules",
+      "explanation": "Support is 3/10000 = 0.0003 = 0.03 percent, below 0.05 percent, which corresponds to 5 transactions, so the itemset is infrequent. Option C misplaces the decimal by a factor of ten."
+    },
+    {
+      "question": "Which pattern is a classic example of an association rule discovered in market basket data?",
+      "options": [
+        "Customers earning above 50000 belong to cluster 2",
+        "A loan default can be predicted by a decision tree",
+        "December sales are double the annual average",
+        "If a customer buys diapers, they are likely to buy beer also"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Association Rules",
+      "explanation": "The diapers implies beer pattern is the textbook association rule, an implication between items. Cluster labels, decision-tree predictions, and aggregate trends belong to other mining tasks."
+    },
+    {
+      "question": "Which statement about confidence is correct?",
+      "options": [
+        "Confidence is always equal to lift",
+        "Confidence can be high even when lift is below 1",
+        "Confidence cannot exceed support",
+        "Confidence is computed over all transactions regardless of the antecedent"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Association Rules",
+      "explanation": "If the consequent is already common, P(Y given X) can be high while P(Y given X)/P(Y) is below 1, so confidence and lift diverge. Confidence conditions on the antecedent and can exceed the pair's support."
+    },
+    {
+      "question": "The arrow in an association rule X implies Y is read as:",
+      "options": [
+        "X causes Y",
+        "X and Y are mutually exclusive",
+        "if X occurs, then Y tends to occur",
+        "X is statistically independent of Y"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Association Rules",
+      "explanation": "Association rules express co-occurrence implications, not causation; transactions containing X often also contain Y. Independence would give lift 1 and no interesting rule, and mutual exclusivity is the opposite relationship."
+    },
+    {
+      "question": "Which of the following is a supervised learning task?",
+      "options": [
+        "Predicting whether a patient has diabetes from labeled records",
+        "Grouping customers by purchase similarity without labels",
+        "Reducing 50 features to 2 principal components",
+        "Finding frequent itemsets in transaction data"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Classification",
+      "explanation": "Supervised learning uses labeled examples to learn a mapping to a target, and diabetes prediction has labels. Customer grouping and frequent itemsets are unsupervised, and PCA is unsupervised dimensionality reduction."
+    },
+    {
+      "question": "In a decision tree, what does a leaf node represent?",
+      "options": [
+        "A split condition on an attribute",
+        "A predicted class label or target value",
+        "The entire training dataset",
+        "A measure of the tree's depth"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Classification",
+      "explanation": "Leaf nodes carry the final prediction, while internal nodes test attributes and the root holds the first test. The full dataset is not stored in a node, and depth is a structural property rather than node content."
+    },
+    {
+      "question": "For a binary dataset with 50 positive and 50 negative examples, what is the entropy of the class distribution?",
+      "options": [
+        "0 bits",
+        "0.5 bits",
+        "2 bits",
+        "1 bit"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Classification",
+      "explanation": "Entropy is minus the sum of p log2 p: minus (0.5 times minus 1 plus 0.5 times minus 1) = 1 bit, the maximum for two classes. Zero entropy means a pure set, 0.5 bits corresponds to roughly 0.8/0.2, and binary entropy never exceeds 1."
+    },
+    {
+      "question": "In ID3, the attribute chosen at a node is the one that maximizes:",
+      "options": [
+        "Gini index",
+        "Information gain",
+        "Euclidean distance",
+        "Support"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Classification",
+      "explanation": "ID3 uses entropy-based information gain, the reduction in entropy after splitting. CART uses Gini impurity, while distance and support play no role in ID3 attribute selection."
+    },
+    {
+      "question": "Which algorithm builds a decision tree using Gini impurity as the splitting criterion?",
+      "options": [
+        "ID3",
+        "C4.5",
+        "Naive Bayes",
+        "CART"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Classification",
+      "explanation": "CART, or Classification and Regression Trees, uses Gini impurity. ID3 uses information gain, C4.5 uses gain ratio, and Naive Bayes is a probabilistic classifier that does not build trees."
+    },
+    {
+      "question": "The Gini impurity of a node with class probabilities p1 and p2 is:",
+      "options": [
+        "Minus (p1 log p1 plus p2 log p2)",
+        "p1 squared plus p2 squared",
+        "p1 times p2",
+        "1 minus (p1 squared plus p2 squared)"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Classification",
+      "explanation": "Gini is 1 minus the sum of squared class probabilities, the probability of mislabeling a randomly chosen item. The logarithmic expression is entropy, the sum of squares alone is the purity term, and the product is not Gini."
+    },
+    {
+      "question": "A parent node has 8 positives and 8 negatives, entropy 1. Attribute A splits it into a child with 7 positives and 1 negative and another with 1 positive and 7 negatives. What is the information gain?",
+      "options": [
+        "Approximately 0.544 bits",
+        "Approximately 0.456 bits",
+        "Exactly 1.0 bit",
+        "Approximately 0.189 bits"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Classification",
+      "explanation": "Each child's entropy is minus 0.875 log2 0.875 minus 0.125 log2 0.125, about 0.544 bits. With equal child sizes the weighted entropy is also about 0.544, so gain = 1 minus 0.544, about 0.456. Option A reports remaining impurity, not the gain."
+    },
+    {
+      "question": "What does pruning in decision trees primarily aim to prevent?",
+      "options": [
+        "Underfitting caused by too few training samples",
+        "Loss of information during data cleaning",
+        "Class imbalance in the training set",
+        "Overfitting to noise in the training data"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Classification",
+      "explanation": "Pruning removes branches that capture noise or idiosyncrasies, improving generalization. It does not solve having too little data, class balance issues, or information lost during cleaning."
+    },
+    {
+      "question": "Which statement distinguishes pre-pruning from post-pruning in decision trees?",
+      "options": [
+        "Pre-pruning stops tree growth early; post-pruning removes branches after full growth",
+        "Pre-pruning removes leaves; post-pruning adds new attributes",
+        "Pre-pruning applies only to regression trees",
+        "Post-pruning requires a minimum support threshold"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Classification",
+      "explanation": "Pre-pruning halts splitting early using limits such as maximum depth or minimum samples; post-pruning grows the full tree then prunes using validation data or statistical tests. Neither is regression-only, and support thresholds belong to association mining."
+    },
+    {
+      "question": "C4.5 uses which criterion to reduce ID3's bias toward attributes with many values?",
+      "options": [
+        "Gain ratio",
+        "Gini impurity",
+        "Support ratio",
+        "Information gain alone"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Classification",
+      "explanation": "Gain ratio divides information gain by the attribute's intrinsic split information, countering ID3 preference for high-cardinality attributes. Gini belongs to CART, and raw information gain is the biased measure C4.5 improves on."
+    },
+    {
+      "question": "Naive Bayes is called naive because it:",
+      "options": [
+        "Ignores the prior probability of each class",
+        "Requires no training data",
+        "Assumes features are conditionally independent given the class",
+        "Can only handle two features"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Classification",
+      "explanation": "The naive assumption is conditional independence of attributes given the class, simplifying the likelihood to a product. Priors are still used, training data is required, and arbitrarily many features can be handled."
+    },
+    {
+      "question": "Which formula expresses the posterior probability in Naive Bayes classification?",
+      "options": [
+        "P(C given X) = P(X given C) divided by P(C)",
+        "P(C given X) proportional to P(C) times the product of P(xi given C)",
+        "P(C given X) = the product of P(xi) divided by P(C)",
+        "P(C given X) = P(C) plus the sum of P(xi given C)"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Classification",
+      "explanation": "By Bayes theorem with conditional independence, the posterior is proportional to the prior times the product of class-conditional likelihoods, with evidence as a common normalizer. The other forms misplace the prior or use sums."
+    },
+    {
+      "question": "In a Naive Bayes spam filter, P(spam) = 0.4, P(word given spam) = 0.3, P(word given ham) = 0.02, and P(ham) = 0.6. An email contains only this word. How is it classified?",
+      "options": [
+        "Spam score 0.3, ham score 0.02, so spam",
+        "Spam score 0.12, ham score 0.012, so ham",
+        "Spam score 0.7, ham score 0.3, so spam",
+        "Spam score 0.12, ham score 0.012, so spam"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Classification",
+      "explanation": "Unnormalized posteriors are prior times likelihood: 0.4 times 0.3 = 0.12 for spam and 0.6 times 0.02 = 0.012 for ham, so spam wins. Options A and C use likelihoods directly, and B draws the wrong conclusion from correct scores."
+    },
+    {
+      "question": "What is a major practical weakness of the basic Naive Bayes classifier?",
+      "options": [
+        "Its inability to handle categorical features",
+        "The zero-frequency problem for unseen feature values in a class",
+        "Its need for a large ensemble of trees",
+        "Its reliance on Euclidean distance"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Classification",
+      "explanation": "When a feature value never appears for a class in training, one likelihood is zero and the whole product collapses; Laplace add-one smoothing fixes it. Naive Bayes handles categorical data well, uses no trees, and is not distance-based."
+    },
+    {
+      "question": "In k-Nearest Neighbors classification, an unseen point is assigned the class:",
+      "options": [
+        "Of the single nearest point regardless of k",
+        "Most common among its k closest training points",
+        "That maximizes the Euclidean distance",
+        "Given by a decision tree learned on the same data"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Classification",
+      "explanation": "k-NN uses majority vote among the k nearest neighbors, with distance-weighted voting as a variant. Using one neighbor ignores k, maximizing distance is the opposite rule, and no explicit tree model is built."
+    },
+    {
+      "question": "For k-NN, choosing a very small k such as k = 1 most likely causes:",
+      "options": [
+        "High bias and oversmoothing",
+        "Guaranteed improvement in generalization",
+        "High variance and sensitivity to noisy points",
+        "Loss of the ability to compute distances"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Classification",
+      "explanation": "Small k fits local noise, giving low bias but high variance; large k smooths the boundary and can create high bias. No k guarantees improvement, and distances remain computable."
+    },
+    {
+      "question": "With k = 5 in a binary k-NN problem, neighbors are Positive, Positive, Negative, Positive, Negative. Distance-weighted voting assigns the two Negatives weight 0.9 each and the three Positives 0.2, 0.2, 0.3. What is the prediction?",
+      "options": [
+        "Negative, because the weighted vote is 1.8 versus 0.7",
+        "Positive, because three Positive neighbors outnumber two",
+        "Positive, because 0.9 exceeds 0.7",
+        "A tie, because both classes appear"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Classification",
+      "explanation": "Weights are summed per class: Negative = 0.9 plus 0.9 = 1.8 exceeds Positive = 0.2 plus 0.2 plus 0.3 = 0.7. The closer Negative neighbors win despite being outnumbered; option B ignores the weights."
+    },
+    {
+      "question": "What is the primary goal of a Support Vector Machine?",
+      "options": [
+        "Find a hyperplane that maximizes the margin between classes",
+        "Find the hyperplane with the smallest possible margin",
+        "Group unlabeled points into k clusters",
+        "Compute the support of frequent itemsets"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Classification",
+      "explanation": "SVM selects the separating hyperplane with maximum margin, determined by the closest points called support vectors. A small margin would hurt generalization, clustering is unsupervised, and support is an association-mining notion."
+    },
+    {
+      "question": "Training points lying on the margin boundaries of an SVM are called:",
+      "options": [
+        "Centroids",
+        "Support vectors",
+        "Outliers by definition",
+        "Leaf nodes"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Classification",
+      "explanation": "Support vectors are the closest training points that lie on or inside the margin and determine the boundary. Centroids belong to k-means, such points need not be outliers, and leaves are decision-tree nodes."
+    },
+    {
+      "question": "What does the kernel trick allow an SVM to do?",
+      "options": [
+        "Reduce the training set to a single point",
+        "Learn a nonlinear decision boundary by implicitly mapping data into a higher-dimensional space",
+        "Replace labeled training with unlabeled data",
+        "Eliminate the need for a margin"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Classification",
+      "explanation": "Kernels compute inner products in a high-dimensional feature space without an explicit transformation, enabling nonlinear boundaries. They do not shrink data, remove labels, or remove the margin."
+    },
+    {
+      "question": "Which SVM kernel is well suited to a curved, localized class boundary?",
+      "options": [
+        "Linear kernel",
+        "Polynomial kernel of degree 1",
+        "RBF (Gaussian) kernel",
+        "Jaccard kernel"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Classification",
+      "explanation": "The RBF kernel maps data into a very high-dimensional space and handles localized nonlinear boundaries. A linear or degree-1 polynomial kernel only fits straight boundaries, and Jaccard is a set-similarity measure, not a standard SVM kernel."
+    },
+    {
+      "question": "Logistic regression predicts:",
+      "options": [
+        "A continuous unbounded real value directly",
+        "The number of clusters in the data",
+        "The entropy of a decision tree split",
+        "The probability of class membership using the sigmoid function"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Classification",
+      "explanation": "Logistic regression applies the sigmoid to a linear score to output a probability in the open interval (0, 1). Unbounded linear output is linear regression, cluster counts come from clustering, and entropy is a tree-splitting measure."
+    },
+    {
+      "question": "The sigmoid function sigma(z) = 1/(1 + exp(-z)) maps z to which interval?",
+      "options": [
+        "(0, 1)",
+        "(-1, 1)",
+        "[0, 100]",
+        "(-infinity, infinity)"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Classification",
+      "explanation": "As z tends to minus infinity sigma tends to 0 and as z tends to plus infinity sigma tends to 1, without reaching either endpoint, so the range is (0, 1). The interval (-1, 1) is the tanh range, and unbounded reals are the input."
+    },
+    {
+      "question": "Bagging primarily reduces which source of error in an ensemble?",
+      "options": [
+        "Bias",
+        "Variance",
+        "Label noise",
+        "The need for training data"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Classification",
+      "explanation": "Bagging trains learners on bootstrap samples and averages them, reducing variance especially for unstable models such as trees, while bias is roughly unchanged. It neither removes label noise nor removes the need for data."
+    },
+    {
+      "question": "How does a Random Forest differ from ordinary bagged decision trees?",
+      "options": [
+        "It also selects a random subset of features at each split",
+        "It uses the entire dataset without resampling",
+        "It requires feature scaling",
+        "It grows only a single tree"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Classification",
+      "explanation": "Random Forest adds random feature selection at each split to bootstrap sampling, decorrelating the trees. It still resamples data, does not require scaling, and is an ensemble of many trees."
+    },
+    {
+      "question": "How does boosting differ from bagging?",
+      "options": [
+        "It trains weak learners sequentially, focusing on previously misclassified examples",
+        "It trains each learner independently on a random sample",
+        "It always uses neural networks as base learners",
+        "It averages predictions without reweighting data"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Classification",
+      "explanation": "Boosting fits weak learners one after another, reweighting or fitting residuals to concentrate on hard examples; bagging builds learners in parallel from bootstrap samples. Boosting is not restricted to neural networks and does reweight."
+    },
+    {
+      "question": "In AdaBoost, after a weak learner is trained, the weights of correctly classified examples are:",
+      "options": [
+        "Increased for all examples equally",
+        "Set to zero for all examples",
+        "Decreased, while misclassified examples get increased weights",
+        "Replaced by random weights"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Classification",
+      "explanation": "AdaBoost lowers the weights of correct examples and raises those of errors so later learners focus on them, while learner weights depend on the error rate. Uniform increases, zeroing, or randomization would defeat the adaptive focus."
+    },
+    {
+      "question": "Which of the following is an ensemble method?",
+      "options": [
+        "K-means",
+        "AdaBoost",
+        "PCA",
+        "Apriori"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Classification",
+      "explanation": "AdaBoost combines many weak learners into a strong one. K-means is clustering, PCA is dimensionality reduction, and Apriori mines frequent itemsets."
+    },
+    {
+      "question": "A neural network uses ReLU activation defined as max(0, z). What is its output for z = -3?",
+      "options": [
+        "-3",
+        "3",
+        "0.047",
+        "0"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Classification",
+      "explanation": "ReLU returns 0 for negative input and z itself for positive input, so max(0, -3) = 0. Option A ignores rectification, B takes an absolute value, and C is the sigmoid value at -3."
+    },
+    {
+      "question": "In a feedforward neural network, backpropagation is used to:",
+      "options": [
+        "Initialize the weights randomly",
+        "Split the dataset into training and test sets",
+        "Compute gradients of the loss with respect to weights for updates",
+        "Select the number of clusters"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Classification",
+      "explanation": "Backpropagation applies the chain rule to propagate error backward and compute gradients used by optimizers such as gradient descent. Initialization, data splitting, and cluster-count selection are separate steps."
+    },
+    {
+      "question": "A classifier always predicts the majority class on data where 95 percent of instances are majority. Which statement is true?",
+      "options": [
+        "The model is clearly the best possible choice",
+        "Accuracy is 95 percent, but the model has little practical value",
+        "Precision for the minority class is 95 percent",
+        "The confusion matrix has no false negatives"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Classification",
+      "explanation": "Always predicting the majority class yields 95 percent accuracy while identifying no minority cases, the accuracy paradox. Such a trivial model is not necessarily best, minority precision is undefined or zero, and all minority cases are false negatives."
+    },
+    {
+      "question": "Which metric is most appropriate when missing a rare positive is very costly?",
+      "options": [
+        "Accuracy alone",
+        "Number of training iterations",
+        "Recall (sensitivity)",
+        "Euclidean distance to the nearest centroid"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Classification",
+      "explanation": "Recall is the fraction of actual positives found, which matters when misses are costly. Accuracy is misleading under imbalance, and iteration counts or centroid distances are not evaluation metrics."
+    },
+    {
+      "question": "K-means aims to minimize which objective?",
+      "options": [
+        "The within-cluster sum of squared distances from points to their centroid",
+        "The distance between cluster centroids",
+        "The entropy of the class labels",
+        "The size of the largest cluster"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Clustering",
+      "explanation": "K-means minimizes within-cluster squared error by alternating assignment and centroid updates. Maximizing inter-centroid separation is a different objective, labels are unused, and cluster size is not optimized."
+    },
+    {
+      "question": "In K-means, the centroid update step does which of the following?",
+      "options": [
+        "Assigns every point to its nearest centroid",
+        "Recomputes each centroid as the mean of its assigned points",
+        "Randomly reinitializes all centroids",
+        "Merges the two closest clusters"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Clustering",
+      "explanation": "K-means alternates the assignment step, nearest centroid, with the update step, mean of assigned points. Random initialization happens at the start, and merging closest clusters is agglomerative hierarchical clustering."
+    },
+    {
+      "question": "Which parameter must be specified in advance to run K-means?",
+      "options": [
+        "Class labels of training points",
+        "The learning rate",
+        "The number of clusters k",
+        "A minimum support threshold"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Clustering",
+      "explanation": "The analyst chooses k before running K-means. The method needs no labels because it is unsupervised, has no learning rate, and minimum support belongs to association rule mining."
+    },
+    {
+      "question": "The elbow method for choosing k looks for:",
+      "options": [
+        "The k with the highest within-cluster SSE",
+        "The k equal to the number of attributes",
+        "The k requiring the most iterations",
+        "The k where adding clusters gives diminishing improvement in within-cluster SSE"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Clustering",
+      "explanation": "The elbow is the bend in the SSE curve where extra clusters bring little further reduction. SSE decreases as k grows, so the highest SSE is not the goal, and iteration counts or feature counts are irrelevant."
+    },
+    {
+      "question": "The silhouette coefficient of a point combines which two quantities?",
+      "options": [
+        "Cluster size and centroid distance only",
+        "Precision and recall of cluster labels",
+        "The number of clusters and the number of attributes",
+        "Mean distance to its own cluster a and to the nearest other cluster b, via (b-a)/max(a,b)"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Clustering",
+      "explanation": "Silhouette is (b minus a)/max(a, b), with a the mean intra-cluster distance and b the mean distance to the nearest other cluster, ranging from minus 1 to 1. It uses no labels and does not directly use cluster or attribute counts."
+    },
+    {
+      "question": "A silhouette score close to +1 indicates that a point:",
+      "options": [
+        "Lies exactly between two clusters",
+        "Has certainly been assigned to the wrong cluster",
+        "Is well matched to its own cluster and far from other clusters",
+        "Is an outlier with a negative score"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Clustering",
+      "explanation": "Scores near +1 mean a is much smaller than b, that is compact and well separated. Values near 0 indicate boundary points and negative values suggest misassignment; the score itself is not an outlier flag."
+    },
+    {
+      "question": "Which initialization method helps K-means avoid poor local optima by spreading initial centroids?",
+      "options": [
+        "Random points all chosen from one dense region",
+        "K-means++",
+        "Setting every centroid to the global mean",
+        "Using class labels as centroids"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Clustering",
+      "explanation": "K-means++ chooses starting centroids with probability proportional to squared distance from existing ones, spreading them out. The other choices concentrate centroids or misuse labels."
+    },
+    {
+      "question": "Hierarchical clustering that starts with each point as its own cluster and repeatedly merges pairs is called:",
+      "options": [
+        "Divisive",
+        "Partitional",
+        "Agglomerative",
+        "Density-based"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Clustering",
+      "explanation": "Agglomerative clustering is bottom-up: every point starts alone and pairs merge until one cluster remains. Divisive is top-down splitting, partitional methods create flat partitions, and density-based methods grow dense regions."
+    },
+    {
+      "question": "A dendrogram in hierarchical clustering displays:",
+      "options": [
+        "The sequence of merges or splits and the distances at which they occur",
+        "Fixed cluster labels for one particular k",
+        "The support and confidence of association rules",
+        "The gradient of a neural network's loss"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Clustering",
+      "explanation": "A dendrogram is a tree recording merge or split order and linkage distances. Cutting it at a chosen height yields labels for a chosen k, so labels are not fixed by the diagram. Rule metrics and loss gradients are unrelated."
+    },
+    {
+      "question": "Which linkage measure defines cluster distance as the distance between the closest pair of points, one from each cluster?",
+      "options": [
+        "Single linkage",
+        "Complete linkage",
+        "Average linkage",
+        "Ward's linkage"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Clustering",
+      "explanation": "Single linkage uses the minimum pairwise distance and can produce chaining. Complete linkage uses the maximum, average linkage the mean pairwise distance, and Ward linkage minimizes the increase in within-cluster variance."
+    },
+    {
+      "question": "Single linkage hierarchical clustering is particularly prone to which effect?",
+      "options": [
+        "Always producing equal-sized spherical clusters",
+        "Sensitivity only to categorical attributes",
+        "Chaining, where clusters merge through intermediate points and become elongated",
+        "Guaranteed discovery of the true number of clusters"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Clustering",
+      "explanation": "Using the minimum pairwise distance, single linkage merges clusters via one close pair even if most points are far apart, creating long chains. It does not force spherical shapes, applies to numeric distances, and cannot determine k."
+    },
+    {
+      "question": "DBSCAN groups points based on:",
+      "options": [
+        "A preselected number of clusters k",
+        "Density: connected dense regions with low-density points treated as noise",
+        "Class labels supplied by the user",
+        "The mean of the entire dataset"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Clustering",
+      "explanation": "DBSCAN uses radius epsilon and MinPts to find dense connected regions and label sparse points as noise. It needs no k or labels and does not summarize data by one global mean."
+    },
+    {
+      "question": "In DBSCAN, a point with at least MinPts neighbors within radius epsilon is called a:",
+      "options": [
+        "Noise point",
+        "Border point",
+        "Centroid",
+        "Core point"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Clustering",
+      "explanation": "Core points have enough neighbors to anchor dense regions. Border points have fewer neighbors but lie within epsilon of a core point, noise points are neither, and centroids belong to K-means."
+    },
+    {
+      "question": "Which DBSCAN parameter controls how many points within epsilon qualify a point as core?",
+      "options": [
+        "k",
+        "Learning rate",
+        "MinPts",
+        "Minimum support"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Clustering",
+      "explanation": "MinPts, often called min_samples, is the neighbor-count threshold within epsilon. The parameter k belongs to K-means, learning rate to optimization, and minimum support to association mining."
+    },
+    {
+      "question": "Unlike K-means, a key advantage of DBSCAN is that it:",
+      "options": [
+        "Requires the number of clusters in advance",
+        "Can discover arbitrarily shaped clusters and identify noise points",
+        "Always produces equal-sized spherical clusters",
+        "Depends entirely on class labels"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Clustering",
+      "explanation": "DBSCAN finds non-convex dense regions and flags outliers as noise, without needing k. Spherical equal-sized clusters are a K-means assumption, and the algorithm is unsupervised."
+    },
+    {
+      "question": "Gaussian Mixture Model clustering assumes that:",
+      "options": [
+        "All clusters share the same spherical shape and size",
+        "Every point has a hard label with no uncertainty",
+        "Data are generated from a mixture of several Gaussian distributions",
+        "Clusters are defined only by dense connected regions"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Clustering",
+      "explanation": "A GMM models data as a probabilistic mixture of Gaussians, allowing elliptical components of different sizes and soft memberships. Fixed spherical shapes are restrictive, and density connectivity is DBSCAN."
+    },
+    {
+      "question": "The EM algorithm used to fit a GMM alternates between:",
+      "options": [
+        "An E-step computing cluster responsibilities and an M-step updating Gaussian parameters",
+        "Assigning points to nearest centroids and recomputing centroids",
+        "Merging clusters and splitting clusters",
+        "Selecting attributes and pruning trees"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Clustering",
+      "explanation": "Expectation-Maximization computes posterior responsibilities in the E-step, then updates means, covariances, and mixing weights in the M-step. Centroid assignment is K-means, and the other choices are unrelated."
+    },
+    {
+      "question": "Which clustering algorithm gives each point a probability of belonging to each cluster rather than a hard label?",
+      "options": [
+        "Gaussian Mixture Model",
+        "K-means",
+        "DBSCAN",
+        "Agglomerative clustering"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Clustering",
+      "explanation": "A GMM produces soft memberships through posterior probabilities. K-means gives hard nearest-centroid labels, DBSCAN labels core, border, or noise, and agglomerative clustering produces a hierarchy of hard groupings."
+    },
+    {
+      "question": "K-means tends to perform poorly when clusters are:",
+      "options": [
+        "Compact and well separated",
+        "Spherical with similar variance",
+        "Non-convex or highly elongated with very different sizes",
+        "Described by numeric attributes"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Clustering",
+      "explanation": "K-means assumes roughly spherical, similarly sized clusters and uses centroid distances, so it fails on elongated or unequal-size shapes. Compact spherical numeric data is exactly where it performs well."
+    },
+    {
+      "question": "Which of the following is an unsupervised learning task?",
+      "options": [
+        "Predicting loan default from labeled histories",
+        "Grouping news articles into topics with no predefined labels",
+        "Classifying emails as spam or ham",
+        "Estimating house price from area"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Clustering",
+      "explanation": "Clustering unlabeled articles is unsupervised. Default prediction, spam classification, and price estimation learn from labeled targets and are therefore supervised tasks."
+    },
+    {
+      "question": "Two clusterings of 100 points are compared. There are 1500 pairs together in both clusterings and 2500 pairs separated in both, out of 4950 total pairs. What is the Rand index?",
+      "options": [
+        "Approximately 0.303",
+        "Approximately 0.505",
+        "Approximately 0.600",
+        "Approximately 0.808"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Clustering",
+      "explanation": "The Rand index is the fraction of pairs on which the clusterings agree: (1500 plus 2500)/4950, about 0.808. The 0.303 and 0.505 values count only one kind of agreement, and 0.600 is their ratio."
+    },
+    {
+      "question": "The main difference between K-means and K-medoids is that:",
+      "options": [
+        "K-means works only with categorical data",
+        "K-medoids uses actual data points as centers, improving robustness to outliers",
+        "K-medoids requires class labels",
+        "K-means always finds the global optimum"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Clustering",
+      "explanation": "K-medoids chooses real points as centers, reducing outlier sensitivity compared with mean-based K-means centers. K-means is for numeric data, neither method uses labels, and K-means can get stuck in local minima."
+    },
+    {
+      "question": "Which algorithm repeatedly merges the two closest clusters until one cluster remains?",
+      "options": [
+        "K-means",
+        "Agglomerative hierarchical clustering",
+        "DBSCAN",
+        "Naive Bayes"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Clustering",
+      "explanation": "Agglomerative hierarchical clustering is a bottom-up sequence of merges. K-means reassigns points to fixed centroids, DBSCAN grows density-connected regions, and Naive Bayes is a classifier."
+    },
+    {
+      "question": "In K-means, convergence typically means that:",
+      "options": [
+        "All clusters have exactly equal size",
+        "Every available attribute has been used",
+        "Cluster assignments no longer change or centroids move less than a tolerance",
+        "The number of clusters increases automatically"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Clustering",
+      "explanation": "K-means stops when assignments stabilize or centroid movement falls below a tolerance. Equal cluster sizes are not required, attributes are fixed by the data, and k never changes on its own."
+    },
+    {
+      "question": "For points on a line at positions 1, 2, 8, and 9 with k = 2 and initial centroids 1.5 and 8.5, what are the centroids after K-means converges?",
+      "options": [
+        "1.5 and 8.5",
+        "2 and 8",
+        "1 and 9",
+        "5 and 5"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Clustering",
+      "explanation": "Points 1 and 2 are closest to 1.5 while 8 and 9 are closest to 8.5; recomputed means are (1 plus 2)/2 = 1.5 and (8 plus 9)/2 = 8.5, so assignments do not change and the algorithm has converged."
+    },
+    {
+      "question": "Standard K-means assigns a point to the cluster with:",
+      "options": [
+        "The smallest distance from the point to the centroid",
+        "The largest cosine similarity to every centroid",
+        "The highest support count",
+        "The greatest number of attributes"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Clustering",
+      "explanation": "Standard K-means uses a distance measure such as Euclidean distance and picks the nearest centroid. Support and attribute counts are unrelated, and cosine similarity is used in other variants."
+    },
+    {
+      "question": "Which scenario most strongly suggests DBSCAN rather than K-means?",
+      "options": [
+        "Compact spherical clusters with known k",
+        "Class labels are available for evaluation",
+        "A crescent-shaped cluster plus scattered noise, with k unknown",
+        "The dataset has only one numeric attribute"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Clustering",
+      "explanation": "DBSCAN handles arbitrary shapes and noise without specifying k, making it suitable for crescents plus outliers. Compact spherical data with known k favors K-means, labels do not drive the choice, and a single attribute is not decisive."
+    },
+    {
+      "question": "In hierarchical clustering, complete linkage uses:",
+      "options": [
+        "The minimum distance between points in two clusters",
+        "The maximum distance between any pair of points in the two clusters",
+        "The average pairwise distance",
+        "Only the distance between centroids"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Clustering",
+      "explanation": "Complete or farthest-neighbor linkage takes the largest pairwise distance and tends to form compact clusters. Single linkage uses the minimum, average linkage the mean, and centroid linkage uses centroids."
+    },
+    {
+      "question": "A three-component GMM fitted to 2D data has, for each component:",
+      "options": [
+        "A single support count",
+        "A class label and an entropy value",
+        "Only a radius and a noise threshold",
+        "A mean vector, a covariance matrix, and a mixing weight"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Clustering",
+      "explanation": "Each Gaussian component has a mean vector, a covariance matrix controlling shape and orientation, and a mixing weight or prior probability. Support is an association concept, GMM has no labels, and radius and threshold are DBSCAN parameters."
+    },
+    {
+      "question": "Which validity index can be computed without ground-truth labels?",
+      "options": [
+        "Accuracy",
+        "F1-score",
+        "Precision",
+        "Silhouette coefficient"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Clustering",
+      "explanation": "The silhouette coefficient uses only within- and between-cluster distances, making it an internal validation measure. Accuracy, precision, and F1 compare predictions with known labels and are external measures."
+    },
+    {
+      "question": "If K-means with k = 3 collapses into one effectively nonempty cluster because of duplicate centroids, what happens to within-cluster SSE and silhouette?",
+      "options": [
+        "SSE is minimized and silhouette is near 1",
+        "SSE is large and silhouette is near 0 or undefined",
+        "Both measures are guaranteed to be exactly 0",
+        "SSE is undefined but silhouette is 1"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Clustering",
+      "explanation": "Collapsed centroids leave distant points in one cluster, inflating within-cluster SSE, and with fewer than two nonempty clusters silhouette is undefined or at best near 0. Good clustering yields low SSE and high silhouette, not zeros."
+    },
+    {
+      "question": "Which set of characteristics distinguishes a data warehouse from an operational database?",
+      "options": [
+        "Optimized for frequent single-record updates",
+        "Subject-oriented, integrated, time-variant, and nonvolatile",
+        "Contains only current up-to-the-second values",
+        "Designed primarily for transaction processing"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Inmon's definition describes a warehouse as subject-oriented, integrated, time-variant, and nonvolatile. Fast record updates, current-state focus, and transaction processing are hallmarks of OLTP systems."
+    },
+    {
+      "question": "In a star schema, the central table holding measures and foreign keys is called the:",
+      "options": [
+        "Fact table",
+        "Dimension table",
+        "Metadata repository",
+        "Staging table"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "The fact table stores quantitative measures plus keys linking to surrounding dimension tables. Dimension tables hold descriptive attributes, metadata describes data, and staging tables are temporary ETL areas."
+    },
+    {
+      "question": "Which schema normalizes dimension tables into several related tables to reduce redundancy?",
+      "options": [
+        "Snowflake schema",
+        "Star schema",
+        "Galaxy schema",
+        "Flat-file schema"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "A snowflake schema normalizes dimensions into sub-dimensions, saving space at the cost of extra joins. A star keeps dimensions denormalized, and a galaxy contains multiple fact tables sharing dimensions."
+    },
+    {
+      "question": "A warehouse has Sales and Returns fact tables sharing the same Product and Time dimensions. Which schema is this?",
+      "options": [
+        "Star schema",
+        "Snowflake schema",
+        "Galaxy (fact constellation) schema",
+        "Single denormalized table schema"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "A galaxy or fact constellation has multiple fact tables that share conformed dimensions. A star has one fact table with denormalized dimensions, and snowflaking refers to normalized dimensions rather than multiple fact tables."
+    },
+    {
+      "question": "Which column type in a fact table stores values such as revenue or units sold?",
+      "options": [
+        "Dimension primary key only",
+        "Numeric measure (fact)",
+        "Free-text description",
+        "ETL load timestamp"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Measures are the numeric quantities being analyzed, such as sales amount or quantity. Dimension keys are foreign keys for joining, descriptions belong in dimension tables, and load timestamps are metadata."
+    },
+    {
+      "question": "A slowly changing dimension is used to:",
+      "options": [
+        "Delete old dimension rows whenever a value changes",
+        "Store only the current state of each entity",
+        "Increase the number of fact tables",
+        "Preserve historical accuracy when dimension attributes change over time"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "SCD techniques such as Type 2 add dated version rows so past facts remain linked to the dimension values valid at the time. Deleting history or keeping only current values destroys that accuracy."
+    },
+    {
+      "question": "Which SCD type adds a new row with a surrogate key and effective dates when an attribute changes?",
+      "options": [
+        "Type 0",
+        "Type 1",
+        "Type 3",
+        "Type 2"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Type 2 preserves full history by inserting a new version row with effective dates and a surrogate key. Type 1 overwrites the old value, Type 3 keeps an old-value column, and Type 0 leaves attributes unchanged."
+    },
+    {
+      "question": "In SCD Type 1, a change to a dimension attribute is handled by:",
+      "options": [
+        "Overwriting the existing row, losing the old value",
+        "Adding a new row with effective dates",
+        "Creating a new fact table",
+        "Adding an extra previous-value column"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Type 1 updates the row in place, so the old value is lost. Adding dated rows is Type 2, adding a column for the previous value is Type 3, and no new fact table is involved."
+    },
+    {
+      "question": "ETL stands for:",
+      "options": [
+        "Encode, Transfer, Link",
+        "Extract, Transfer, Log",
+        "Extract, Transform, Load",
+        "Evaluate, Transform, List"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "ETL extracts data from sources, transforms it through cleaning and conforming, and loads it into the warehouse. The other expansions are not standard data warehousing terms."
+    },
+    {
+      "question": "What is the key difference between ETL and ELT?",
+      "options": [
+        "ELT loads raw data into the target first and transforms it there, while ETL transforms before loading",
+        "ETL never performs data cleaning",
+        "ELT can only be used with relational databases",
+        "ETL is a query language and ELT is a storage format"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "ELT leverages target-system compute by loading raw data then transforming in place, common in cloud warehouses, whereas ETL transforms in staging before loading. Both can clean data and work with diverse systems."
+    },
+    {
+      "question": "The Transform stage of ETL typically includes:",
+      "options": [
+        "Cleaning, formatting, and conforming data to a common schema",
+        "Executing user OLAP queries",
+        "Generating reports for end users",
+        "Training predictive models"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Transformation handles cleansing, type and format conversion, deduplication, and key generation so source data conform to the warehouse model. Querying, reporting, and model training are downstream activities."
+    },
+    {
+      "question": "OLAP is primarily designed for:",
+      "options": [
+        "Processing daily order transactions at high speed",
+        "Managing user authentication",
+        "Storing only unstructured text documents",
+        "Interactive multidimensional analysis of aggregated historical data"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "OLAP supports complex analytical queries over large aggregated datasets through slicing, dicing, and drill-down. Fast transaction processing is OLTP, while document storage and authentication are unrelated."
+    },
+    {
+      "question": "Which OLAP operation moves to a higher aggregation level, such as month to year?",
+      "options": [
+        "Drill-down",
+        "Slice",
+        "Roll-up",
+        "Pivot"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Roll-up summarizes data by ascending a concept hierarchy or reducing dimensions. Drill-down is the reverse, slice selects one dimension value, and pivot rotates the view axes."
+    },
+    {
+      "question": "An analyst views sales only for Region equal to East from a cube. This OLAP operation is a:",
+      "options": [
+        "Roll-up",
+        "Drill-down",
+        "Dice",
+        "Slice"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "A slice fixes one dimension to a single value, reducing the cube by one dimension. Dice selects values across two or more dimensions, while roll-up and drill-down change the aggregation level."
+    },
+    {
+      "question": "Selecting sales where Region is East or West and Product is Laptop or Tablet is an example of:",
+      "options": [
+        "Slice",
+        "Roll-up",
+        "Drill-down",
+        "Dice"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Dice restricts two or more dimensions to specified value sets, producing a sub-cube. A slice fixes one dimension value, and roll-up or drill-down change aggregation rather than selecting members."
+    },
+    {
+      "question": "Drill-down in OLAP is the opposite of roll-up because it:",
+      "options": [
+        "Removes all dimensions from the cube",
+        "Moves to finer detail, for example yearly totals to monthly figures",
+        "Aggregates months into years",
+        "Changes the database vendor"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Drill-down reveals finer detail by descending a hierarchy or adding dimensions. Aggregating months into years is roll-up, and neither operation removes all dimensions or changes systems."
+    },
+    {
+      "question": "What does the OLAP operation pivot (rotate) do?",
+      "options": [
+        "Deletes unwanted records",
+        "Changes the orientation of dimensions in the displayed table or cube",
+        "Computes a single average of all measures",
+        "Adds new data sources to the warehouse"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Pivoting rotates the data axes, such as swapping rows and columns, to present another view. It does not delete data, compute a global average, or modify source systems."
+    },
+    {
+      "question": "A data mart differs from a full data warehouse in that it:",
+      "options": [
+        "Is a subject-specific subset aimed at one department or business line",
+        "Always contains the entire organization's history",
+        "Cannot use a star schema",
+        "Is built without any ETL process"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "A data mart is a focused department-level subset such as Sales only. It can use star schemas and still needs ETL, and it deliberately does not cover the whole enterprise."
+    },
+    {
+      "question": "Which architecture builds a data mart directly from operational source systems without a central warehouse?",
+      "options": [
+        "Independent data mart architecture",
+        "Hub-and-spoke centralized warehouse architecture",
+        "Federated virtual warehouse",
+        "OLTP architecture"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Independent data marts are fed straight from sources, which risks inconsistency. In a hub-and-spoke design, a central warehouse is loaded first and then feeds dependent marts."
+    },
+    {
+      "question": "Which statement about conformed dimensions is correct?",
+      "options": [
+        "They change value at every transaction",
+        "They are stored only in data marts, never in warehouses",
+        "They are shared, consistent dimensions used across multiple fact tables, enabling integrated analysis",
+        "They replace numeric measures in a fact table"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Conformed dimensions have consistent keys and attributes across fact tables, which is essential for galaxy schemas and cross-mart analysis. They are stable reference data, not per-transaction values, and do not replace measures."
+    },
+    {
+      "question": "The grain of a fact table refers to:",
+      "options": [
+        "The number of dimension tables",
+        "The level of detail represented by each row, such as one sales line",
+        "The physical disk block size",
+        "The number of ETL jobs loading it"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Grain defines what one fact row represents, such as one order line or one daily total, and must be decided early. Dimension count, block size, and job count are unrelated."
+    },
+    {
+      "question": "Which dimension attribute would typically support rolling sales up by quarter?",
+      "options": [
+        "Customer phone number",
+        "Product color",
+        "Store manager name",
+        "Time hierarchy: day to month to quarter to year"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "A time hierarchy supplies levels for aggregating daily facts into months, quarters, and years. Phone numbers, colors, and manager names are descriptive attributes without a natural temporal hierarchy."
+    },
+    {
+      "question": "In a star schema, joining a fact table to a dimension table uses:",
+      "options": [
+        "The measure column only",
+        "The dimension's descriptive text",
+        "The ETL load timestamp",
+        "A surrogate or natural key stored as a foreign key in the fact table"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Fact tables carry foreign keys, usually integer surrogate keys, referencing dimension primary keys. Measures are numeric values, descriptive text is not a join key, and timestamps are metadata."
+    },
+    {
+      "question": "A daily sales fact table has date_key, product_key, store_key, qty, and amount. How many rows cover one month of 30 days for 100 products in 10 stores if every combination has one row per day?",
+      "options": [
+        "3000",
+        "30000",
+        "100000",
+        "300"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "One row per day-product-store combination gives 30 times 100 times 10 = 30000 rows. Option A omits a factor of ten, C confuses the product-store total, and D ignores days entirely."
+    },
+    {
+      "question": "Which is a benefit of normalizing dimensions in a snowflake schema?",
+      "options": [
+        "Fewer joins in every query",
+        "Reduced redundancy for hierarchical dimension attributes",
+        "Queries are always faster than with a star schema",
+        "Elimination of the fact table"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Snowflaking splits hierarchies such as product, brand, and category into separate tables, reducing redundancy. It adds joins, can slow queries, and never removes the fact table."
+    },
+    {
+      "question": "Which layer holds cleaned, integrated data ready for analytical queries in a warehouse architecture?",
+      "options": [
+        "The warehouse presentation layer",
+        "The source OLTP systems",
+        "The staging area only",
+        "The end-user reporting tool"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "The warehouse or presentation layer stores cleansed, conformed, query-ready data. Sources hold operational data, staging holds raw intermediate data during ETL, and reporting tools consume rather than store curated data."
+    },
+    {
+      "question": "Which tool category builds multidimensional cubes and supports roll-up, drill-down, slice, and dice?",
+      "options": [
+        "OLAP server or multidimensional analysis tool",
+        "Antivirus software",
+        "Operating system kernel",
+        "Web browser"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "OLAP tools construct and query multidimensional cubes supporting those operations. Antivirus tools protect systems, kernels manage hardware, and browsers are generic clients."
+    },
+    {
+      "question": "Which is a typical characteristic of OLTP compared with OLAP?",
+      "options": [
+        "Complex queries over large historical aggregates",
+        "Read-only analysis of multi-year trends",
+        "A high volume of short, simple transactions with frequent writes",
+        "A mandatory star schema storage model"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "OLTP handles many small, fast inserts and updates such as orders, while OLAP runs complex read-heavy analytical queries over history. Star schemas are common in warehouses, not mandatory in OLTP."
+    },
+    {
+      "question": "Which field in a dimension table is usually a system-generated integer used for joining?",
+      "options": [
+        "Natural key only",
+        "Surrogate key",
+        "Measure",
+        "Fact timestamp"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Surrogate keys are artificial integers assigned by the warehouse and preferred for joins because natural keys may change or be composite. Measures and timestamps belong in fact tables."
+    },
+    {
+      "question": "A customer dimension has 1000 rows; Type 2 SCD processing adds 50 new version rows over a year and deletes no customers. How many rows exist at year end?",
+      "options": [
+        "1000",
+        "950",
+        "1100",
+        "1050"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Type 2 never overwrites or deletes old versions; it inserts a row per change, so 1000 plus 50 gives 1050 rows. Option A assumes no history is kept, B wrongly deletes rows, and C adds an unsupported amount."
+    },
+    {
+      "question": "Which best describes a factless fact table?",
+      "options": [
+        "A table with measures but no dimension keys",
+        "An empty fact table created during ETL",
+        "A fact table storing only text descriptions",
+        "A table recording events or coverage with keys but no numeric measures"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Data Warehousing & OLAP",
+      "explanation": "Factless fact tables capture occurrences such as attendance or promotion eligibility using dimension foreign keys without additive measures; the row count itself acts as the measure. They are not empty, do include keys, and are not text-only."
+    },
+    {
+      "question": "In a confusion matrix, TP stands for:",
+      "options": [
+        "Total Precision",
+        "True Prediction",
+        "Test Positive",
+        "True Positive"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Evaluation Metrics",
+      "explanation": "TP counts instances that are actually positive and predicted positive. Precision and predicted counts are separate quantities, and Test Positive is not a confusion-matrix term."
+    },
+    {
+      "question": "For a binary classifier with TP = 40, FN = 10, FP = 20, and TN = 30, what is the accuracy?",
+      "options": [
+        "40%",
+        "60%",
+        "70%",
+        "80%"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Evaluation Metrics",
+      "explanation": "Accuracy is (TP plus TN)/(TP plus TN plus FP plus FN) = 70/100 = 70 percent. Option A is just TP over total, B misweights errors, and D is recall, which is 40/50 = 80 percent."
+    },
+    {
+      "question": "Using TP = 40, FN = 10, FP = 20, and TN = 30, compute precision, recall, and F1.",
+      "options": [
+        "Precision about 0.667, recall 0.8, F1 about 0.727",
+        "Precision 0.8, recall about 0.667, F1 about 0.727",
+        "Precision about 0.667, recall 0.8, F1 0.733",
+        "Precision 0.4, recall 0.3, F1 0.34"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Evaluation Metrics",
+      "explanation": "Precision is 40/(40 plus 20) about 0.667, recall is 40/(40 plus 10) = 0.8, and F1 = 2PR/(P plus R) about 0.727. Option B swaps precision and recall, and C uses their arithmetic mean instead of the harmonic mean."
+    },
+    {
+      "question": "Recall is also known as:",
+      "options": [
+        "Sensitivity or true positive rate",
+        "Specificity",
+        "Fall-out",
+        "Negative predictive value"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Evaluation Metrics",
+      "explanation": "Recall is TP/(TP plus FN), also called sensitivity or true positive rate. Specificity is TN/(TN plus FP), fall-out is FP/(TN plus FP), and negative predictive value is TN/(TN plus FN)."
+    },
+    {
+      "question": "Specificity of a classifier is defined as:",
+      "options": [
+        "TP/(TP plus FN)",
+        "TP/(TP plus FP)",
+        "(TP plus TN)/total",
+        "TN/(TN plus FP)"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Evaluation Metrics",
+      "explanation": "Specificity, the true negative rate, is the fraction of actual negatives correctly identified. Option A is recall or sensitivity, B is precision, and C is accuracy."
+    },
+    {
+      "question": "The F1-score is the:",
+      "options": [
+        "Arithmetic mean of precision and recall",
+        "Harmonic mean of precision and recall",
+        "Sum of precision and recall",
+        "Product of precision and recall"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Evaluation Metrics",
+      "explanation": "F1 is 2PR/(P plus R), the harmonic mean, which penalizes extreme imbalance between precision and recall more than an arithmetic mean. Sums and products are not bounded, meaningful combined scores."
+    },
+    {
+      "question": "A ROC curve plots:",
+      "options": [
+        "Precision against recall",
+        "Accuracy against the number of features",
+        "Recall against specificity",
+        "True positive rate against false positive rate at various thresholds"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Evaluation Metrics",
+      "explanation": "ROC plots TPR on the vertical axis against FPR, which is 1 minus specificity, on the horizontal axis as the decision threshold varies. A precision-recall curve is a different plot."
+    },
+    {
+      "question": "A ROC AUC of exactly 0.5 indicates:",
+      "options": [
+        "A perfect classifier",
+        "The classifier always predicts the negative class",
+        "Accuracy is necessarily 50 percent",
+        "Performance equivalent to random guessing"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Evaluation Metrics",
+      "explanation": "An AUC of 0.5 is the diagonal chance line, meaning a random positive is ranked above a random negative with probability 0.5. AUC 1 is perfect, and an always-negative classifier need not have 50 percent accuracy."
+    },
+    {
+      "question": "A classifier reports 99% accuracy on data where 99% of instances are negative. Which statement is most justified?",
+      "options": [
+        "It is certainly excellent at detecting positives",
+        "Accuracy is misleading here; precision, recall, or AUC should be examined",
+        "It must have 99% precision",
+        "Its ROC AUC must be 0.99"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Evaluation Metrics",
+      "explanation": "An always-negative classifier gets 99 percent accuracy while finding zero positives, the accuracy paradox, so class-specific metrics are needed. Accuracy says nothing about positive precision and does not fix AUC."
+    },
+    {
+      "question": "In k-fold cross-validation, the dataset is:",
+      "options": [
+        "Split once into a fixed 50/50 train-test pair",
+        "Duplicated k times into identical copies",
+        "Split into k subsets, each used once for validation while the other k-1 subsets form training data",
+        "Used entirely for training k times with no validation"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Evaluation Metrics",
+      "explanation": "K-fold rotates the held-out fold so every observation is validated exactly once and used for training k-1 times. A single split is a holdout estimate, duplication would leak data, and training without validation yields no estimate."
+    },
+    {
+      "question": "Overfitting occurs when a model:",
+      "options": [
+        "Performs well on training data but poorly on unseen data",
+        "Performs poorly on both training and test data",
+        "Uses too few training examples yet generalizes perfectly",
+        "Has zero training error and zero test error"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Evaluation Metrics",
+      "explanation": "Overfitting means the model memorized training noise, giving low training error but high test error. Poor performance everywhere is underfitting, and zero errors on both sets would be ideal, not overfitting."
+    },
+    {
+      "question": "Which practice most directly reduces overfitting in a decision tree?",
+      "options": [
+        "Pruning or setting a minimum number of samples per leaf",
+        "Increasing tree depth without any limit",
+        "Discarding all validation data",
+        "Adding more irrelevant features"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Evaluation Metrics",
+      "explanation": "Pruning and minimum-sample constraints limit tree complexity and noise fitting. Unbounded depth, no validation data, and irrelevant features all encourage overfitting rather than preventing it."
+    },
+    {
+      "question": "In 5-fold cross-validation on 1000 instances, how many instances are used for training in each fold?",
+      "options": [
+        "200 instances (20%)",
+        "500 instances (50%)",
+        "800 instances (80%)",
+        "1000 instances (100%)"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Evaluation Metrics",
+      "explanation": "Each fold holds out 1000/5 = 200 instances for validation, leaving 800 for training. Option A is the validation size, B ignores the fold count, and D would leak validation data into training."
+    },
+    {
+      "question": "Underfitting is best described as:",
+      "options": [
+        "High bias, where the model is too simple to capture the underlying pattern",
+        "Low bias with high variance",
+        "Perfect generalization to new data",
+        "Caused only by having too much training data"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Evaluation Metrics",
+      "explanation": "Underfitting comes from excessive simplicity, giving high bias and poor training as well as test performance. Overfitting is low bias with high variance, and more data usually helps rather than causes underfitting."
+    },
+    {
+      "question": "Which metric is most suitable when false positives are very costly?",
+      "options": [
+        "Recall",
+        "Accuracy",
+        "True positive rate",
+        "Precision"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Evaluation Metrics",
+      "explanation": "Precision is TP/(TP plus FP), so it directly reflects how many positive predictions are correct. Recall and true positive rate concern missed positives, and accuracy is distorted by class imbalance."
+    },
+    {
+      "question": "Specificity is also known as:",
+      "options": [
+        "Sensitivity",
+        "Recall",
+        "Fall-out",
+        "True negative rate"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Evaluation Metrics",
+      "explanation": "Specificity equals TN/(TN plus FP), the true negative rate. Sensitivity and recall are synonyms for the true positive rate, and fall-out is the false positive rate."
+    },
+    {
+      "question": "A confusion matrix has TP = 50, FP = 50, and FN = 0. What is the precision?",
+      "options": [
+        "1.0",
+        "0.5",
+        "0.67",
+        "0"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Evaluation Metrics",
+      "explanation": "Precision is TP/(TP plus FP) = 50/100 = 0.5. Option A is recall, which here is 50/(50 plus 0) = 1, C uses an incorrect denominator, and D ignores the 50 true positives."
+    },
+    {
+      "question": "What does ROC stand for in ROC curve?",
+      "options": [
+        "Random Operating Curve",
+        "Relative Operating Characteristics",
+        "Receiver Operating Characteristic",
+        "Recall-Oriented Criterion"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Evaluation Metrics",
+      "explanation": "ROC stands for Receiver Operating Characteristic, a name originating in signal detection theory. The other expansions are not recognized terms in classifier evaluation."
+    },
+    {
+      "question": "A model has ROC AUC = 0.8. What does this mean?",
+      "options": [
+        "A randomly chosen positive is ranked above a randomly chosen negative with probability 0.8",
+        "Exactly 80% of its predictions are correct",
+        "Its true positive rate is 0.8 at every threshold",
+        "Its precision is 0.8"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Evaluation Metrics",
+      "explanation": "AUC is the probability that a randomly selected positive example receives a higher score than a randomly selected negative one. It is threshold-independent and neither fixes accuracy nor any single threshold's TPR or precision."
+    },
+    {
+      "question": "Which of these metrics is threshold-independent?",
+      "options": [
+        "ROC AUC",
+        "Accuracy",
+        "Precision",
+        "F1-score"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Evaluation Metrics",
+      "explanation": "ROC AUC summarizes performance over all possible decision thresholds. Accuracy, precision, and F1 are computed from the confusion matrix at one chosen threshold."
+    },
+    {
+      "question": "Stratified k-fold cross-validation is preferred especially when:",
+      "options": [
+        "The data are already sorted by target",
+        "All features are categorical",
+        "Classes are imbalanced and each fold should preserve class proportions",
+        "The training set is extremely large"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Evaluation Metrics",
+      "explanation": "Stratification samples each fold so class proportions match the overall dataset, avoiding folds that miss a rare class. Sorting, categorical features, and data volume are not the reasons for stratification."
+    },
+    {
+      "question": "Leave-one-out cross-validation is k-fold cross-validation with k equal to:",
+      "options": [
+        "2",
+        "The number of instances",
+        "10",
+        "5"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Evaluation Metrics",
+      "explanation": "In leave-one-out validation, each single instance serves as a validation fold in turn, so k equals the number of instances. Values 2, 5, and 10 describe other k-fold choices."
+    },
+    {
+      "question": "A dataset of 200 instances is split 70/30 into train and test. The model classifies 40 of the 60 test instances correctly. What is the test accuracy?",
+      "options": [
+        "40%",
+        "70%",
+        "80%",
+        "About 66.7%"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Evaluation Metrics",
+      "explanation": "The test set has 200 times 0.30 = 60 instances, so accuracy is 40/60, about 66.7 percent. Option A is the raw correct count, B is the train proportion, and C incorrectly divides by 50."
+    },
+    {
+      "question": "Which metric answers the question: of all instances predicted positive, how many were actually positive?",
+      "options": [
+        "Recall",
+        "Specificity",
+        "Sensitivity",
+        "Precision"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Evaluation Metrics",
+      "explanation": "Precision is TP/(TP plus FP), conditioning on predicted positives. Recall and sensitivity condition on actual positives, and specificity conditions on actual negatives."
+    },
+    {
+      "question": "A confusion matrix has TN = 90 and FP = 10. What is the false positive rate (fall-out)?",
+      "options": [
+        "0.9",
+        "0.1",
+        "0.5",
+        "0.99"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Evaluation Metrics",
+      "explanation": "False positive rate is FP/(TN plus FP) = 10/100 = 0.1. Option A is specificity 0.9, C ignores the counts, and D resembles a high-accuracy figure rather than a rate over negatives."
+    },
+    {
+      "question": "Which of the following is NOT a classification evaluation metric?",
+      "options": [
+        "F1-score",
+        "ROC AUC",
+        "Silhouette coefficient",
+        "Log loss"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Evaluation Metrics",
+      "explanation": "The silhouette coefficient evaluates clustering quality using distances and needs no labels. F1, ROC AUC, and log loss are all used to assess classifiers."
+    },
+    {
+      "question": "A rare disease affects 1% of a population. A test has recall 90% and specificity 95%. Among 1000 people, approximately how many false positives occur?",
+      "options": [
+        "About 50",
+        "About 10",
+        "About 90",
+        "About 5"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Evaluation Metrics",
+      "explanation": "About 990 people are healthy and the false positive rate is 1 minus 0.95 = 0.05, giving roughly 49.5 false positives. Recall concerns the 10 sick people, producing about 9 true positives, not false positives."
+    },
+    {
+      "question": "The F1-score reaches its maximum value of 1 when:",
+      "options": [
+        "Both precision and recall are 1",
+        "Precision is 1 regardless of recall",
+        "Accuracy equals 0.5",
+        "Recall is 1 and precision is 0"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Evaluation Metrics",
+      "explanation": "The harmonic mean of two values in [0,1] equals 1 only when both are 1. If recall is 1 but precision is 0, F1 is 0, and accuracy of 0.5 does not imply perfect precision and recall."
+    },
+    {
+      "question": "Given precision 0.2 and recall 1.0, what is the F1-score?",
+      "options": [
+        "0.6",
+        "0.2",
+        "About 0.333",
+        "1.0"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Evaluation Metrics",
+      "explanation": "F1 = 2 times 0.2 times 1.0 divided by (0.2 plus 1.0) = 0.4/1.2, about 0.333. Option A is the arithmetic mean 0.6, B is precision alone, and D is recall alone."
+    },
+    {
+      "question": "Which statement about accuracy under class imbalance is correct?",
+      "options": [
+        "Accuracy is always the best evaluation metric",
+        "Accuracy is undefined when classes are imbalanced",
+        "Accuracy ignores true negatives",
+        "A high accuracy can hide poor performance on the minority class"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Evaluation Metrics",
+      "explanation": "With a dominant majority class, a trivial classifier can score high accuracy while missing every minority case. Accuracy does include true negatives, remains well defined, and is not always the best choice."
+    },
+    {
+      "question": "Which metric is the harmonic mean of precision and recall?",
+      "options": [
+        "Accuracy",
+        "Recall",
+        "ROC AUC",
+        "F1-score"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Evaluation Metrics",
+      "explanation": "F1 balances precision and recall through their harmonic mean, 2PR/(P plus R). Accuracy is an overall correctness ratio, recall is a single-class rate, and AUC is a ranking measure."
+    },
+    {
+      "question": "Which text preprocessing step splits a raw string into words or tokens?",
+      "options": [
+        "Stemming",
+        "Lemmatization",
+        "Stop-word removal",
+        "Tokenization"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Text Mining",
+      "explanation": "Tokenization segments text into words or other units. Stemming and lemmatization reduce tokens to base forms, and stop-word removal deletes common function words after tokens exist."
+    },
+    {
+      "question": "A corpus has 1000 documents; the term matrix appears in 20 documents and occurs 5 times in document D, which has 200 words. Using tf as raw count and idf = log2(N/df), what is the TF-IDF weight in D?",
+      "options": [
+        "About 5.64",
+        "About 28.2",
+        "About 50",
+        "About 0.1"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Text Mining",
+      "explanation": "tf = 5 and idf = log2(1000/20) = log2(50) about 5.64, so tf-idf is 5 times 5.64, about 28.2. Option A is idf alone, C is the ratio N/df, and D inverts the ratio incorrectly."
+    },
+    {
+      "question": "Which preprocessing step removes very common words such as 'the' and 'is'?",
+      "options": [
+        "Stemming",
+        "Tokenization",
+        "Stop-word removal",
+        "Lemmatization"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Text Mining",
+      "explanation": "Stop-word removal filters out frequent function words that carry little discriminative information. Stemming and lemmatization alter word forms, and tokenization only splits the text."
+    },
+    {
+      "question": "How does stemming differ from lemmatization?",
+      "options": [
+        "Stemming heuristically chops word endings and may create non-words",
+        "Stemming always produces valid dictionary words",
+        "Stemming requires labeled training examples",
+        "Stemming is applied only to numeric tokens"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Text Mining",
+      "explanation": "Stemming uses crude rules such as stripping suffixes, producing forms like 'runn' that are not words. Lemmatization uses vocabulary and morphological analysis to return valid dictionary headwords; neither needs labels or numeric data."
+    },
+    {
+      "question": "The Porter algorithm is a classic method for:",
+      "options": [
+        "Stemming",
+        "Lemmatization",
+        "Sentiment scoring",
+        "Part-of-speech tagging"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Text Mining",
+      "explanation": "The Porter stemming algorithm applies successive suffix-stripping rules to reduce English words to stems. Lemmatization, sentiment scoring, and POS tagging are different NLP tasks."
+    },
+    {
+      "question": "Lemmatization of the word 'running' in a verb context most likely yields:",
+      "options": [
+        "runn",
+        "runningly",
+        "run",
+        "runner"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Text Mining",
+      "explanation": "Lemmatization maps an inflected word to its dictionary headword, here the verb 'run', using vocabulary and morphological analysis. 'runn' is a stem-like truncation, and 'runner' is a different lexical item."
+    },
+    {
+      "question": "A bag-of-words representation of a document:",
+      "options": [
+        "Preserves the exact order of all words",
+        "Records word frequencies while ignoring word order",
+        "Stores only adjectives and adverbs",
+        "Assigns a sentiment label to each sentence"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Text Mining",
+      "explanation": "Bag-of-words treats a document as an unordered multiset of terms, typically stored as counts or binary flags. It discards sequence, keeps all word types, and does not itself assign sentiment."
+    },
+    {
+      "question": "A document-term matrix has 500 rows and 2000 columns. What do the dimensions usually represent?",
+      "options": [
+        "500 terms and 2000 documents",
+        "500 topics and 2000 words",
+        "500 sentences and 2000 documents",
+        "500 documents and 2000 vocabulary terms"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Text Mining",
+      "explanation": "By convention rows are documents and columns are vocabulary terms, with cell values giving frequencies or TF-IDF weights. The other choices swap or misidentify these dimensions."
+    },
+    {
+      "question": "In text mining, an n-gram with n = 2 is called a:",
+      "options": [
+        "Unigram",
+        "Trigram",
+        "Quadgram",
+        "Bigram"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Text Mining",
+      "explanation": "An n-gram is a contiguous sequence of n tokens; n = 2 gives a bigram. A unigram has one token, a trigram three, and a quadgram four."
+    },
+    {
+      "question": "Sentiment analysis aims to:",
+      "options": [
+        "Translate text into another language",
+        "Determine the emotional polarity or opinion expressed in text",
+        "Infer the author's age from vocabulary",
+        "Compress documents into smaller files"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Text Mining",
+      "explanation": "Sentiment analysis detects opinions and polarities such as positive, negative, or neutral. Translation, age inference, and compression are separate NLP or storage tasks."
+    },
+    {
+      "question": "Which sentiment analysis approach uses a dictionary of words with polarity scores?",
+      "options": [
+        "K-means clustering",
+        "Apriori association mining",
+        "Lexicon-based sentiment scoring",
+        "Principal component analysis"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Text Mining",
+      "explanation": "Lexicon-based methods sum or aggregate polarity scores from a sentiment dictionary, often adjusting for negation. K-means, Apriori, and PCA do not supply sentiment scores by themselves."
+    },
+    {
+      "question": "A sentiment lexicon scores 'great' as +2 and treats 'not' as a polarity flip. What score does the phrase 'not great' receive?",
+      "options": [
+        "-2",
+        "+2",
+        "0",
+        "+1"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Text Mining",
+      "explanation": "Negation reverses the polarity of the following term, so +2 becomes -2. Keeping +2 ignores negation, 0 would mean no sentiment, and +1 would be a partial flip not specified by the rule."
+    },
+    {
+      "question": "TF-IDF gives a high weight to a term that:",
+      "options": [
+        "Appears frequently in one document but rarely in the corpus",
+        "Appears in every document",
+        "Is a common stop word",
+        "Has only two characters"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Text Mining",
+      "explanation": "High term frequency raises the weight while low document frequency raises IDF, so distinctive terms score highly. Terms in every document have low IDF, and stop words are usually removed."
+    },
+    {
+      "question": "Inverse document frequency primarily reduces the weight of:",
+      "options": [
+        "Rare technical terms",
+        "Long documents",
+        "Terms common across many documents",
+        "Proper nouns only"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Text Mining",
+      "explanation": "IDF is log(N/df), so it is small for terms appearing in many documents and large for rare terms. It does not specifically target document length or proper nouns."
+    },
+    {
+      "question": "Which technique uses a vocabulary and morphological rules to return a word's dictionary base form?",
+      "options": [
+        "Tokenization",
+        "Lemmatization",
+        "Stemming",
+        "Stop-word removal"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Text Mining",
+      "explanation": "Lemmatization performs morphological analysis and consults a lexicon to produce a valid headword. Tokenization splits text, stemming uses simpler suffix rules, and stop-word removal deletes words."
+    },
+    {
+      "question": "Why is cosine similarity preferred over Euclidean distance for comparing document term vectors?",
+      "options": [
+        "It counts spelling errors automatically",
+        "It is always computationally cheaper",
+        "It requires class labels",
+        "It compares vector orientation, largely ignoring document length"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Text Mining",
+      "explanation": "Cosine similarity normalizes by vector magnitudes, so two documents with the same relative term distribution but different lengths are considered identical. Euclidean distance grows with length, and metrics do not need labels."
+    },
+    {
+      "question": "Named entity recognition identifies:",
+      "options": [
+        "Part-of-speech categories",
+        "Sentiment polarity",
+        "Frequent itemsets",
+        "Names of people, organizations, locations, and similar entities"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Text Mining",
+      "explanation": "NER locates and classifies entity mentions such as persons, organizations, and places. POS tagging assigns grammatical categories, sentiment scoring assigns polarity, and itemsets come from transaction mining."
+    },
+    {
+      "question": "Why is part-of-speech tagging often performed before lemmatization?",
+      "options": [
+        "Because it removes all stop words first",
+        "Because the correct base form can depend on the word's grammatical role",
+        "Because it computes TF-IDF weights",
+        "Because it clusters the documents"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Text Mining",
+      "explanation": "Lemmatizers use the POS tag to distinguish, for example, the noun 'saw' from the verb 'saw', which have different headwords. POS tagging does not remove stop words, compute weights, or cluster documents."
+    },
+    {
+      "question": "Topic modeling with Latent Dirichlet Allocation is used to:",
+      "options": [
+        "Assign positive or negative sentiment labels",
+        "Translate documents between languages",
+        "Discover latent themes that explain word distributions across documents",
+        "Detect duplicate database rows"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Text Mining",
+      "explanation": "LDA is a generative probabilistic model in which documents are mixtures of topics and topics are distributions over words, revealing hidden themes. It does not label sentiment, translate, or deduplicate records."
+    },
+    {
+      "question": "Word2Vec represents words as:",
+      "options": [
+        "Dense real-valued vectors in a continuous space capturing semantic relationships",
+        "Single integer scalars",
+        "Binary flags indicating frequency",
+        "Small decision trees"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Text Mining",
+      "explanation": "Word2Vec learns dense embeddings in which words used in similar contexts occupy nearby positions, capturing analogical and semantic relations. It does not output scalars, flags, or trees."
+    },
+    {
+      "question": "In Word2Vec, words that appear in similar contexts tend to have:",
+      "options": [
+        "Similar vector representations",
+        "Identical spellings",
+        "Zero-valued vectors",
+        "Strictly decreasing frequencies"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Text Mining",
+      "explanation": "The distributional hypothesis underlying Word2Vec makes contextually similar words map to nearby embedding vectors. Spelling, zero vectors, and frequency trends are not implied."
+    },
+    {
+      "question": "Document A has term vector (1, 2, 0) and document B has (2, 4, 0). What is their cosine similarity?",
+      "options": [
+        "0",
+        "0.5",
+        "1",
+        "2"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Text Mining",
+      "explanation": "Vector B is exactly twice vector A, so the vectors are parallel and the angle between them is zero, giving cosine similarity 1. Option B is the component ratio, D is a magnitude ratio, and 0 would mean orthogonal vectors."
+    },
+    {
+      "question": "Which of the following is a typical English stop word?",
+      "options": [
+        "Database",
+        "The",
+        "Mining",
+        "Algorithm"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Text Mining",
+      "explanation": "Function words such as 'the' are usually removed because they carry little topical information. Database, mining, and algorithm are content-bearing terms normally retained."
+    },
+    {
+      "question": "Text normalization typically includes:",
+      "options": [
+        "Only encryption of the raw bytes",
+        "Only file compression",
+        "Lowercasing, punctuation removal, and reduction to base forms",
+        "Only translation into another language"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Text Mining",
+      "explanation": "Normalization standardizes text through case folding, punctuation handling, tokenization, and stemming or lemmatization. Encryption, compression, and translation are not normalization steps."
+    },
+    {
+      "question": "A unigram language model estimates word probabilities using:",
+      "options": [
+        "Pairs of adjacent words",
+        "Full syntactic parse trees",
+        "Latent document topics",
+        "Individual words without considering neighboring words"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Text Mining",
+      "explanation": "A unigram model treats each word independently, estimating P(w) from its frequency. Bigrams use adjacent pairs, parse trees require syntactic analysis, and topics belong to topic models."
+    },
+    {
+      "question": "Which text-mining weight combines term frequency with inverse document frequency?",
+      "options": [
+        "Jaccard coefficient",
+        "TF-IDF",
+        "Gini impurity",
+        "Silhouette coefficient"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Text Mining",
+      "explanation": "TF-IDF multiplies term frequency by inverse document frequency to emphasize terms frequent in a document but rare across the corpus. Jaccard compares sets, Gini splits trees, and silhouette validates clusters."
+    },
+    {
+      "question": "Classifying a product review as positive, negative, or neutral is an example of:",
+      "options": [
+        "Clustering",
+        "Regression",
+        "Text classification",
+        "Association rule mining"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Text Mining",
+      "explanation": "Assigning a document to predefined sentiment categories is supervised text classification. Clustering has no predefined labels, regression predicts a continuous value, and association mining finds co-occurring items."
+    },
+    {
+      "question": "A corpus has 10000 documents and term t appears in 100 of them. Using idf = ln(N/df), what is idf(t)?",
+      "options": [
+        "About 4.605",
+        "About 2.303",
+        "About 100",
+        "About 0.01"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Text Mining",
+      "explanation": "N/df = 10000/100 = 100 and the natural log of 100 is about 4.605. Option B is ln(10), C is the document-frequency count, and D is df/N."
+    },
+    {
+      "question": "Which is a possible drawback of stemming?",
+      "options": [
+        "It may merge words with different meanings into the same stem",
+        "It always produces valid dictionary words",
+        "It requires numeric input features",
+        "It necessarily enlarges the vocabulary"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Text Mining",
+      "explanation": "Crude suffix removal can conflate distinct concepts, for example 'university' and 'universe' sharing a stem. Stemming does not guarantee dictionary words, needs no numeric features, and typically reduces vocabulary size."
+    },
+    {
+      "question": "Which representation stores the frequency of each vocabulary term for each document?",
+      "options": [
+        "Confusion matrix",
+        "Dendrogram",
+        "Document-term matrix",
+        "FP-tree"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Text Mining",
+      "explanation": "A document-term matrix has one row per document and one column per term, with counts or weights as cells. A confusion matrix evaluates classifiers, a dendrogram shows cluster merges, and an FP-tree stores frequent itemsets."
+    },
+    {
+      "question": "Which text-mining task groups similar documents without using predefined categories?",
+      "options": [
+        "Sentiment classification",
+        "Machine translation",
+        "Part-of-speech tagging",
+        "Document clustering"
+      ],
+      "correct_option": "D",
+      "difficulty": "Medium",
+      "topic": "Text Mining",
+      "explanation": "Document clustering organizes unlabeled documents by similarity, often using TF-IDF vectors and cosine distance. Sentiment classification is supervised, POS tagging labels tokens, and translation converts languages."
+    },
+    {
+      "question": "The three Vs most commonly used to characterize big data are:",
+      "options": [
+        "Voltage, Velocity, Volume",
+        "Volume, Variability, Vision",
+        "Velocity, Veracity, Value only",
+        "Volume, Velocity, Variety"
+      ],
+      "correct_option": "D",
+      "difficulty": "Hard",
+      "topic": "Big Data Concepts",
+      "explanation": "The canonical three Vs are Volume, Velocity, and Variety, often extended with Veracity and Value. Voltage is not a data characteristic, and omitting Variety gives an incomplete standard definition."
+    },
+    {
+      "question": "HDFS is the:",
+      "options": [
+        "Programming language for writing analytics",
+        "In-memory SQL query engine",
+        "Job scheduler for workflows",
+        "Distributed file system that stores large files across a cluster"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Big Data Concepts",
+      "explanation": "The Hadoop Distributed File System stores very large files in blocks spread across commodity machines. It is not a language, a SQL engine, or a job scheduler."
+    },
+    {
+      "question": "In HDFS, a file is divided into blocks that are:",
+      "options": [
+        "Stored only on the NameNode",
+        "Replicated across multiple DataNodes, commonly three copies",
+        "Always encrypted and never replicated",
+        "Fixed at 1 KB regardless of file size"
+      ],
+      "correct_option": "B",
+      "difficulty": "Medium",
+      "topic": "Big Data Concepts",
+      "explanation": "HDFS splits files into large blocks, commonly 128 MB, and keeps multiple replicas, by default three, on different DataNodes for fault tolerance. The NameNode stores metadata, not file blocks."
+    },
+    {
+      "question": "Which HDFS component manages the namespace and tracks where blocks are stored?",
+      "options": [
+        "DataNode",
+        "NameNode",
+        "ResourceManager",
+        "NodeManager"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Big Data Concepts",
+      "explanation": "The NameNode holds the directory tree and block-to-DataNode mappings. DataNodes store actual blocks, while ResourceManager and NodeManager are YARN components."
+    },
+    {
+      "question": "What is the role of an HDFS DataNode?",
+      "options": [
+        "Store and serve data blocks and report block information to the NameNode",
+        "Manage the file system namespace",
+        "Compile and optimize SQL queries",
+        "Execute only the reduce tasks of a job"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Big Data Concepts",
+      "explanation": "DataNodes keep block replicas, serve read and write requests, and send heartbeats and block reports to the NameNode. Namespace management is the NameNode's job, and task execution is handled by YARN."
+    },
+    {
+      "question": "The classic MapReduce programming model consists of which two user-defined functions?",
+      "options": [
+        "Map and Reduce",
+        "Sort and Shuffle",
+        "Filter and Join",
+        "Train and Test"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Big Data Concepts",
+      "explanation": "Map transforms input key-value pairs into intermediate pairs and Reduce aggregates values for each key. Shuffle and sort are framework-managed stages, not the two user functions."
+    },
+    {
+      "question": "In a MapReduce word-count job, mappers emit (word, 1) pairs. What does the reduce phase do?",
+      "options": [
+        "Sorts all words alphabetically and stops",
+        "Counts the number of input lines only",
+        "Groups equal keys and sums their values to emit (word, count)",
+        "Assigns each word to a random bucket"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Big Data Concepts",
+      "explanation": "The framework groups intermediate pairs by key and passes each word with its list of 1s to a reducer, which sums them to get the count. Sorting alone, line counting, or random bucketing would not produce word counts."
+    },
+    {
+      "question": "The shuffle phase in MapReduce:",
+      "options": [
+        "Reads the original input splits from HDFS",
+        "Writes only the final output to HDFS",
+        "Transfers mapper output pairs to reducers, grouping values by key",
+        "Compresses the submitted JAR file"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Big Data Concepts",
+      "explanation": "Shuffle moves partitioned mapper output across the network so that all values for a key reach the same reducer. Input reading happens before map, final writing happens after reduce, and JAR compression is unrelated."
+    },
+    {
+      "question": "Which Spark abstraction is an immutable, partitioned, fault-tolerant distributed collection?",
+      "options": [
+        "HDFS block",
+        "Hive table",
+        "MapReduce job",
+        "RDD (Resilient Distributed Dataset)"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Big Data Concepts",
+      "explanation": "An RDD is immutable, split into partitions, and rebuilds lost partitions using lineage information. HDFS blocks, Hive tables, and MapReduce jobs are different storage or execution concepts."
+    },
+    {
+      "question": "How does Spark achieve RDD fault tolerance?",
+      "options": [
+        "By triple-replicating every partition at all times",
+        "By checkpointing after every single transformation",
+        "By recording lineage that permits lost partitions to be recomputed",
+        "By writing each result to a relational database"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Big Data Concepts",
+      "explanation": "Each RDD remembers the transformations that created it, its lineage, so a lost partition can be recomputed from its parents. Continuous triple replication or per-step checkpointing would be costly and is not the default."
+    },
+    {
+      "question": "Spark commonly outperforms MapReduce on iterative algorithms mainly because:",
+      "options": [
+        "It uses no parallelism",
+        "It keeps intermediate data in memory instead of writing to HDFS after each step",
+        "It avoids dividing data into partitions",
+        "It only works on small datasets"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Big Data Concepts",
+      "explanation": "MapReduce materializes each iteration's output in HDFS, while Spark caches intermediate results in memory and reuses them, greatly reducing I/O. Spark is still parallel and partitioned and targets large data."
+    },
+    {
+      "question": "A Spark DataFrame is:",
+      "options": [
+        "An RDD of raw bytes with no structure",
+        "A SQL view permanently stored in HDFS",
+        "A distributed collection of rows organized into named columns with a schema",
+        "A trained machine-learning pipeline"
+      ],
+      "correct_option": "C",
+      "difficulty": "Easy",
+      "topic": "Big Data Concepts",
+      "explanation": "A DataFrame adds a schema and named columns to a distributed row collection, enabling optimized relational-style operations. It is not raw bytes, not necessarily a stored view, and is not a model."
+    },
+    {
+      "question": "Which Spark module supports SQL-style queries over DataFrames?",
+      "options": [
+        "Spark SQL",
+        "Spark Streaming",
+        "MLlib",
+        "GraphX"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Big Data Concepts",
+      "explanation": "Spark SQL exposes DataFrame APIs and SQL queries with Catalyst optimization. Streaming handles continuous data, MLlib provides machine learning, and GraphX handles graph computation."
+    },
+    {
+      "question": "Spark Streaming's discretized-stream approach processes incoming data in:",
+      "options": [
+        "Single records one at a time with no batching",
+        "Micro-batches",
+        "Yearly batches only",
+        "Randomly sized irregular groups"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Big Data Concepts",
+      "explanation": "Spark Streaming divides a live stream into small time-window batches, each processed as an RDD. It is not strictly record-at-a-time, not yearly, and the batches are regular time slices."
+    },
+    {
+      "question": "Spark Structured Streaming treats a live data stream as:",
+      "options": [
+        "A finite sorted file",
+        "A single ever-growing row",
+        "An unbounded table that is continuously appended and queried like a static table",
+        "A distributed file system directory"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Big Data Concepts",
+      "explanation": "Structured Streaming models a stream as an append-only unbounded table and runs familiar batch-like queries over it with incremental execution. This is not a finite file, one row, or a storage system."
+    },
+    {
+      "question": "Which concern does privacy-preserving data mining primarily address?",
+      "options": [
+        "Increasing disk capacity",
+        "Protecting individual identities while still extracting useful patterns",
+        "Speeding up MapReduce shuffles",
+        "Compressing text documents"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Big Data Concepts",
+      "explanation": "Privacy-preserving mining seeks useful aggregate knowledge without exposing sensitive individual records, using techniques such as anonymization and noise addition. Storage, shuffle speed, and compression are performance concerns."
+    },
+    {
+      "question": "A released dataset satisfies k-anonymity when each record is indistinguishable from at least:",
+      "options": [
+        "k other records on quasi-identifiers",
+        "k-1 other records on quasi-identifiers",
+        "k+1 other records on quasi-identifiers",
+        "2k other records on quasi-identifiers"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Big Data Concepts",
+      "explanation": "K-anonymity requires each equivalence class on the quasi-identifiers to contain at least k records, so any one record blends with at least k-1 others. Counting k others would require k+1 records in the class."
+    },
+    {
+      "question": "Differential privacy adds calibrated random noise primarily to:",
+      "options": [
+        "Remove all column names from the dataset",
+        "Encrypt stored files end to end",
+        "Make query outputs barely change whether any one individual is present or absent",
+        "Delete every statistical outlier"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Big Data Concepts",
+      "explanation": "Differential privacy bounds the influence of any single record on the output by adding carefully scaled noise, limiting what an adversary can infer. It does not simply rename, encrypt, or delete records."
+    },
+    {
+      "question": "Which attribute combination is a typical quasi-identifier?",
+      "options": [
+        "A randomly generated internal customer number",
+        "ZIP code together with date of birth",
+        "The prediction target label",
+        "The hash of a user's password"
+      ],
+      "correct_option": "B",
+      "difficulty": "Easy",
+      "topic": "Big Data Concepts",
+      "explanation": "Quasi-identifiers such as ZIP code and birth date are not unique alone but can be linked with external data to re-identify people. Random IDs are direct pseudonyms, labels are outcomes, and password hashes are credentials."
+    },
+    {
+      "question": "Ethical data mining most strongly requires:",
+      "options": [
+        "Maximizing accuracy regardless of harmful consequences",
+        "Collecting as much personal data as technically possible",
+        "Informed consent, fairness, and attention to discriminatory outcomes",
+        "Keeping all methodology secret from affected users"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Big Data Concepts",
+      "explanation": "Responsible mining respects consent, avoids bias and discrimination, and remains accountable. Accuracy alone, indiscriminate collection, and opaque methods conflict with ethical practice."
+    },
+    {
+      "question": "A hiring classifier has 90% overall accuracy but admits women at half the rate of equally qualified men. What is the central ethical problem?",
+      "options": [
+        "Discriminatory bias hidden by high aggregate accuracy",
+        "The model is too accurate to be audited",
+        "Accuracy should be reduced to exactly 50%",
+        "There is no issue because overall accuracy is high"
+      ],
+      "correct_option": "A",
+      "difficulty": "Hard",
+      "topic": "Big Data Concepts",
+      "explanation": "Aggregate metrics can mask disparate impact across protected groups, so fairness must be assessed per subgroup. High accuracy neither prevents bias nor makes auditing unnecessary, and there is clearly an issue."
+    },
+    {
+      "question": "Which Hadoop component acts as a cluster resource manager and schedules jobs?",
+      "options": [
+        "YARN",
+        "HDFS",
+        "Hive",
+        "Pig"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Big Data Concepts",
+      "explanation": "YARN separates resource management and job scheduling from data storage in Hadoop 2. HDFS stores data, Hive offers SQL-like queries, and Pig offers a data-flow language."
+    },
+    {
+      "question": "Apache Hive mainly provides:",
+      "options": [
+        "An in-memory graph processing library",
+        "A distributed deep-learning training framework",
+        "A SQL-like query layer over data stored in Hadoop",
+        "A block replication utility"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Big Data Concepts",
+      "explanation": "Hive maps SQL-like HiveQL queries onto MapReduce or Spark jobs over HDFS-resident data. GraphX handles graphs, deep-learning frameworks train models, and replication is an HDFS function."
+    },
+    {
+      "question": "Apache Pig is primarily used for:",
+      "options": [
+        "Real-time transaction processing only",
+        "Replicating HDFS blocks",
+        "Training convolutional neural networks",
+        "Analyzing large datasets with a high-level data-flow language called Pig Latin"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Big Data Concepts",
+      "explanation": "Pig offers the Pig Latin data-flow language, which compiles into MapReduce jobs for batch analysis of large datasets. It is not a real-time OLTP engine, a neural-network library, or a replication tool."
+    },
+    {
+      "question": "In the CAP theorem, which property means every read receives the most recent write or an error?",
+      "options": [
+        "Availability",
+        "Partition tolerance",
+        "Consistency",
+        "Durability"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Big Data Concepts",
+      "explanation": "CAP consistency means all nodes see the same up-to-date data at the same time. Availability means every request gets a response, partition tolerance means the system survives network splits, and durability is an ACID property."
+    },
+    {
+      "question": "NoSQL databases are often chosen for big data because they:",
+      "options": [
+        "Always enforce stronger ACID guarantees than relational systems",
+        "Require a rigid fixed schema",
+        "Cannot store document or key-value data",
+        "Scale horizontally and tolerate flexible schemas"
+      ],
+      "correct_option": "D",
+      "difficulty": "Easy",
+      "topic": "Big Data Concepts",
+      "explanation": "Many NoSQL stores distribute data across many commodity nodes and allow schemaless or flexible data models. They often relax ACID guarantees, and document and key-value storage are core NoSQL categories."
+    },
+    {
+      "question": "A cluster has 10 nodes with 4 TB of usable disk each and HDFS replication factor 3. Approximately how much unique raw data can be stored?",
+      "options": [
+        "40 TB",
+        "About 13.3 TB",
+        "120 TB",
+        "4 TB"
+      ],
+      "correct_option": "B",
+      "difficulty": "Hard",
+      "topic": "Big Data Concepts",
+      "explanation": "Physical capacity is 10 times 4 = 40 TB, but each logical byte occupies three physical copies, so unique data is roughly 40/3, about 13.3 TB. Option A ignores replication and C multiplies by it."
+    },
+    {
+      "question": "Which Spark operation is an action that triggers actual computation?",
+      "options": [
+        "map()",
+        "filter()",
+        "collect()",
+        "select()"
+      ],
+      "correct_option": "C",
+      "difficulty": "Medium",
+      "topic": "Big Data Concepts",
+      "explanation": "Spark transformations such as map, filter, and select are lazy and build a plan; actions such as collect, count, and save trigger execution and return results or write output."
+    },
+    {
+      "question": "Big data veracity refers to:",
+      "options": [
+        "The trustworthiness and quality of the data",
+        "The speed at which data arrives",
+        "The sheer number of records",
+        "The variety of data formats"
+      ],
+      "correct_option": "A",
+      "difficulty": "Easy",
+      "topic": "Big Data Concepts",
+      "explanation": "Veracity concerns accuracy, consistency, and credibility of data, including uncertainty and noise. Velocity is arrival speed, Volume is size, and Variety is format diversity."
+    },
+    {
+      "question": "Which practice best helps reduce sampling bias in a predictive model's training data?",
+      "options": [
+        "Checking representation across relevant demographic groups and resampling where needed",
+        "Training only on the largest convenient subgroup",
+        "Ignoring all missing values without inspection",
+        "Using data from one source exclusively"
+      ],
+      "correct_option": "A",
+      "difficulty": "Medium",
+      "topic": "Big Data Concepts",
+      "explanation": "Auditing group representation and rebalancing helps ensure the training set reflects the population of deployment. Restricting to one subgroup or source, or ignoring missingness patterns, tends to amplify bias."
+    },
+    {
+      "question": "A stream processor must handle one million events per hour with exactly-once output semantics. Which Spark feature is most relevant?",
+      "options": [
+        "RDD lineage alone",
+        "A static Hive table",
+        "Structured Streaming with checkpointing and write-ahead logs",
+        "A nightly batch MapReduce job"
+      ],
+      "correct_option": "C",
+      "difficulty": "Hard",
+      "topic": "Big Data Concepts",
+      "explanation": "Structured Streaming combines incremental execution with checkpoints and write-ahead logs, and idempotent sinks, to give end-to-end exactly-once results. RDD lineage alone recovers partitions but does not guarantee output semantics, and batch jobs cannot process a live stream."
+    }
+  ]
+}
